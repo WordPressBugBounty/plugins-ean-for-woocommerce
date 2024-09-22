@@ -1,0 +1,1 @@
+# plugins-ean-for-woocommerce
