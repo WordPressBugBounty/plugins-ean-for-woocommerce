@@ -1,0 +1,5 @@
+.wordpress-org/ export-ignore
+.gitignore export-ignore
+.github export-ignore
+README.md export-ignore
+composer.lock export-ignore
