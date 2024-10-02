@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Edit Class
  *
- * @version 4.8.7
+ * @version 5.2.0
  * @since   2.0.0
  *
  * @author  Algoritmika Ltd
@@ -24,7 +24,7 @@ class Alg_WC_EAN_Edit {
 	/**
 	 * Constructor.
 	 *
-	 * @version 4.3.4
+	 * @version 5.2.0
 	 * @since   2.0.0
 	 *
 	 * @todo    (dev) position: new tab (for both simple and variable products)
@@ -44,6 +44,8 @@ class Alg_WC_EAN_Edit {
 			add_action( 'woocommerce_product_quick_edit_end', array( $this, 'add_bulk_and_quick_edit_fields' ), PHP_INT_MAX );
 			add_action( 'woocommerce_product_bulk_edit_end', array( $this, 'add_bulk_and_quick_edit_fields' ), PHP_INT_MAX );
 			add_action( 'woocommerce_product_bulk_and_quick_edit', array( $this, 'save_bulk_and_quick_edit_fields' ), PHP_INT_MAX, 2 );
+			add_action( 'manage_product_posts_custom_column', array( $this, 'add_quick_edit_inline_data' ), 10, 2 );
+			add_action( 'admin_footer', array( $this, 'add_quick_edit_js' ) );
 
 			// "Generate" button
 			$this->do_add_generate_button = ( 'yes' === get_option( 'alg_wc_ean_backend_add_generate_button', 'no' ) );
@@ -53,6 +55,65 @@ class Alg_WC_EAN_Edit {
 			}
 
 		}
+	}
+
+	/**
+	 * add_quick_edit_inline_data.
+	 *
+	 * @version 5.2.0
+	 * @since   5.2.0
+	 *
+	 * @see     https://github.com/woocommerce/woocommerce/blob/9.3.3/plugins/woocommerce/client/legacy/js/admin/quick-edit.js
+	 */
+	function add_quick_edit_inline_data( $column, $product_id ) {
+		if ( 'name' !== $column ) {
+			return;
+		}
+		?>
+		<div class="hidden" id="alg_wc_ean_inline_<?php echo absint( $product_id ); ?>">
+			<div class="alg_wc_ean_quick_edit"><?php echo esc_html( alg_wc_ean()->core->get_ean( $product_id ) ); ?></div>
+		</div>
+		<?php
+	}
+
+	/**
+	 * add_quick_edit_js.
+	 *
+	 * @version 5.2.0
+	 * @since   5.2.0
+	 *
+	 * @see     https://github.com/woocommerce/woocommerce/blob/9.3.3/plugins/woocommerce/includes/admin/list-tables/class-wc-admin-list-table-products.php#L161
+	 *
+	 * @todo    (dev) move to a separate JS file?
+	 */
+	function add_quick_edit_js() {
+		if (
+			! function_exists( 'get_current_screen' ) ||
+			! ( $current_screen = get_current_screen() ) ||
+			! isset( $current_screen->id ) ||
+			'edit-product' !== $current_screen->id
+		) {
+			return;
+		}
+		?>
+		<script>
+		jQuery(
+			function ( $ ) {
+				$( '#the-list' ).on(
+					'click',
+					'.editinline',
+					function () {
+						var post_id = $( this ).closest( 'tr' ).attr( 'id' );
+						post_id = post_id.replace( 'post-', '' );
+						var inline_data = $( '#alg_wc_ean_inline_' + post_id );
+						var ean = inline_data.find( '.alg_wc_ean_quick_edit' ).text();
+						$( 'input[name="_alg_ean_qb"]', '.inline-edit-row' ).val( ean );
+					}
+				);
+			}
+		);
+		</script>
+		<?php
 	}
 
 	/**
@@ -139,18 +200,24 @@ class Alg_WC_EAN_Edit {
 	/**
 	 * add_bulk_and_quick_edit_fields.
 	 *
-	 * @version 2.2.7
+	 * @version 5.2.0
 	 * @since   1.5.0
 	 *
 	 * @todo    (dev) reposition this (e.g., right after the "SKU" field)?
-	 * @todo    (dev) actual value (instead of "No change" placeholder)? (probably need to add value to `woocommerce_inline_`) (quick edit only?)
 	 */
 	function add_bulk_and_quick_edit_fields() {
-		echo ( 'woocommerce_product_quick_edit_end' === current_filter() ? '<br class="clear" />' : '' ) .
+		if ( 'woocommerce_product_quick_edit_end' === current_filter() ) {
+			$start       = '<br class="clear" />';
+			$placeholder = '';
+		} else {
+			$start       = '';
+			$placeholder = __( '- No change -', 'ean-for-woocommerce' );
+		}
+		echo $start .
 			'<label>' .
 				'<span class="title">' . esc_html( get_option( 'alg_wc_ean_title', __( 'EAN', 'ean-for-woocommerce' ) ) ) . '</span>' .
 				'<span class="input-text-wrap">' .
-					'<input type="text" name="_alg_ean_qb" class="text" placeholder="' . __( '- No change -', 'ean-for-woocommerce' ) . '" value="">' .
+					'<input type="text" name="_alg_ean_qb" class="text" placeholder="' . $placeholder . '" value="">' .
 				'</span>' .
 			'</label>';
 	}
@@ -158,7 +225,7 @@ class Alg_WC_EAN_Edit {
 	/**
 	 * save_bulk_and_quick_edit_fields.
 	 *
-	 * @version 4.5.0
+	 * @version 5.2.0
 	 * @since   1.5.0
 	 */
 	function save_bulk_and_quick_edit_fields( $post_id, $post ) {
@@ -175,7 +242,7 @@ class Alg_WC_EAN_Edit {
 			return $post_id;
 		}
 		// Save
-		if ( isset( $_REQUEST['_alg_ean_qb'] ) && '' !== $_REQUEST['_alg_ean_qb'] ) {
+		if ( isset( $_REQUEST['_alg_ean_qb'] ) && ( '' !== $_REQUEST['_alg_ean_qb'] || ! empty( $_REQUEST['woocommerce_quick_edit'] ) ) ) {
 			alg_wc_ean()->core->set_ean( $post_id, wc_clean( $_REQUEST['_alg_ean_qb'] ) );
 		}
 		return $post_id;

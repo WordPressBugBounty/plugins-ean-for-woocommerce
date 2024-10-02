@@ -13,10 +13,10 @@
 #: includes/class-alg-wc-ean-display.php:191
 #: includes/class-alg-wc-ean-display.php:197
 #: includes/class-alg-wc-ean-display.php:457
-#: includes/class-alg-wc-ean-edit.php:134
-#: includes/class-alg-wc-ean-edit.php:151
-#: includes/class-alg-wc-ean-edit.php:265
-#: includes/class-alg-wc-ean-edit.php:299
+#: includes/class-alg-wc-ean-edit.php:195
+#: includes/class-alg-wc-ean-edit.php:218
+#: includes/class-alg-wc-ean-edit.php:332
+#: includes/class-alg-wc-ean-edit.php:366
 #: includes/class-alg-wc-ean-orders.php:51
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:119
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:178
@@ -55,7 +55,7 @@ msgid "Product EAN..."
 msgstr ""
 
 #: includes/class-alg-wc-ean-compatibility.php:493
-#: includes/class-alg-wc-ean-edit.php:134
+#: includes/class-alg-wc-ean-edit.php:195
 #, php-format
 msgid "Generate %s"
 msgstr ""
@@ -66,26 +66,26 @@ msgstr ""
 msgid "EAN: %s"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:153
+#: includes/class-alg-wc-ean-edit.php:214
 msgid "- No change -"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:196
+#: includes/class-alg-wc-ean-edit.php:263
 #: includes/class-alg-wc-ean-shortcodes.php:643
 msgid "Valid EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:197
+#: includes/class-alg-wc-ean-edit.php:264
 #: includes/class-alg-wc-ean-shortcodes.php:644
 msgid "Invalid EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:201
+#: includes/class-alg-wc-ean-edit.php:268
 #: includes/class-alg-wc-ean-shortcodes.php:611
 msgid "Unique EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:202
+#: includes/class-alg-wc-ean-edit.php:269
 #: includes/class-alg-wc-ean-shortcodes.php:612
 msgid "Duplicated EAN"
 msgstr ""
@@ -393,44 +393,44 @@ msgstr ""
 msgid "Barcodes"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:158
+#: includes/pro/class-alg-wc-ean-pro.php:167
 #, php-format
 msgid "Product ID: %s; action: %s; result: %s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:164
+#: includes/pro/class-alg-wc-ean-pro.php:173
 #, php-format
 msgid "Product ID: %s; action: set (min_stock); result: %s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:168
+#: includes/pro/class-alg-wc-ean-pro.php:177
 #, php-format
 msgid "Product ID: %s; action: set (max_stock); result: %s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:171
-#: includes/pro/class-alg-wc-ean-pro.php:174
-#: includes/pro/class-alg-wc-ean-pro.php:200
-#: includes/pro/class-alg-wc-ean-pro.php:203
+#: includes/pro/class-alg-wc-ean-pro.php:180
+#: includes/pro/class-alg-wc-ean-pro.php:183
+#: includes/pro/class-alg-wc-ean-pro.php:209
+#: includes/pro/class-alg-wc-ean-pro.php:212
 #, php-format
 msgid "Error: %s"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:171
-#: includes/pro/class-alg-wc-ean-pro.php:200
+#: includes/pro/class-alg-wc-ean-pro.php:180
+#: includes/pro/class-alg-wc-ean-pro.php:209
 msgid "Empty or wrong security token."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:174
+#: includes/pro/class-alg-wc-ean-pro.php:183
 msgid "Product ID or security token param not set."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:198
+#: includes/pro/class-alg-wc-ean-pro.php:207
 #, php-format
 msgid "Product ID: %s; action: add_to_cart; qty: %s; user_id: %s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:203
+#: includes/pro/class-alg-wc-ean-pro.php:212
 msgid "Product ID, user ID, quantity or security token param not set."
 msgstr ""
 

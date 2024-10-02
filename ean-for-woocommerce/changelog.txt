@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 5.2.0 - 02/10/2024 =
+* Dev - Quick edit - Show current product EAN value.
+* Dev - "Key Manager" added.
+* WC tested up to: 9.3.
+
 = 5.1.1 - 10/09/2024 =
 * Dev - Advanced - Admin settings descriptions updated.
 
