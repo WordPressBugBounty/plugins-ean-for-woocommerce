@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 5.2.1 - 06/10/2024 =
+* Dev - General - "Admin product block editor" option added (defaults to `yes`).
+
 = 5.2.0 - 02/10/2024 =
 * Dev - Quick edit - Show current product EAN value.
 * Dev - "Key Manager" added.

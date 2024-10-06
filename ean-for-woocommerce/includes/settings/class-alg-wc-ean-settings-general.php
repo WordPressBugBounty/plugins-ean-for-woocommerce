@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - General Section Settings
  *
- * @version 4.9.2
+ * @version 5.2.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -92,7 +92,7 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * get_settings.
 	 *
-	 * @version 4.9.2
+	 * @version 5.2.1
 	 * @since   1.0.0
 	 *
 	 * @see     https://www.keyence.com/ss/products/auto_id/barcode_lecture/basic/barcode-types/
@@ -249,6 +249,14 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 				'default'           => 'no',
 				'type'              => 'checkbox',
 				'checkboxgroup'     => 'end',
+			),
+			array(
+				'title'             => __( 'Admin product block editor', 'ean-for-woocommerce' ),
+				'desc'              => __( 'Enable', 'ean-for-woocommerce' ),
+				'desc_tip'          => __( 'This will add the EAN field to the WooCommerce product block editor.', 'ean-for-woocommerce' ),
+				'id'                => 'alg_wc_ean_product_block_editor',
+				'default'           => 'yes',
+				'type'              => 'checkbox',
 			),
 			array(
 				'title'             => __( 'Admin product search', 'ean-for-woocommerce' ),

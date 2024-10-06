@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Core Class
  *
- * @version 4.9.7
+ * @version 5.2.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -15,30 +15,129 @@ if ( ! class_exists( 'Alg_WC_EAN_Core' ) ) :
 class Alg_WC_EAN_Core {
 
 	/**
-	 * public.
+	 * ean_key.
 	 *
 	 * @version 4.7.0
 	 * @since   1.0.0
 	 */
 	public $ean_key;
+
+	/**
+	 * edit.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $edit;
+
+	/**
+	 * admin.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $admin;
+
+	/**
+	 * search.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $search;
+
+	/**
+	 * display.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $display;
+
+	/**
+	 * order_items_table.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $order_items_table;
+
+	/**
+	 * import_export.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $import_export;
+
+	/**
+	 * orders.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $orders;
+
+	/**
+	 * rest_api.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $rest_api;
+
+	/**
+	 * product_tools.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $product_tools;
+
+	/**
+	 * order_tools.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $order_tools;
+
+	/**
+	 * settings_import_export.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $settings_import_export;
+
+	/**
+	 * compatibility.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $compatibility;
+
+	/**
+	 * shortcodes.
+	 *
+	 * @version 4.7.0
+	 * @since   1.0.0
+	 */
 	public $shortcodes;
+
+	/**
+	 * product_block_editor.
+	 *
+	 * @version 5.2.1
+	 * @since   5.2.1
+	 */
+	public $product_block_editor;
 
 	/**
 	 * Constructor.
 	 *
-	 * @version 4.0.0
+	 * @version 5.2.1
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) wpml-config.xml?
@@ -46,7 +145,9 @@ class Alg_WC_EAN_Core {
 	 * @todo    (dev) WPML/Polylang (use default language product ID)
 	 */
 	function __construct() {
+
 		$this->ean_key = get_option( 'alg_wc_ean_meta_key', '_alg_ean' );
+
 		if ( 'yes' === get_option( 'alg_wc_ean_plugin_enabled', 'yes' ) ) {
 			$this->edit                   = require_once( 'class-alg-wc-ean-edit.php' );
 			$this->admin                  = require_once( 'class-alg-wc-ean-admin.php' );
@@ -61,9 +162,12 @@ class Alg_WC_EAN_Core {
 			$this->settings_import_export = require_once( 'class-alg-wc-ean-manage-settings.php' );
 			$this->compatibility          = require_once( 'class-alg-wc-ean-compatibility.php' );
 			$this->shortcodes             = require_once( 'class-alg-wc-ean-shortcodes.php' );
+			$this->product_block_editor   = require_once( 'class-alg-wc-ean-product-block-editor.php' );
 		}
+
 		// Core loaded
 		do_action( 'alg_wc_ean_core_loaded', $this );
+
 	}
 
 	/**
