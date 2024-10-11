@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 5.2.2 - 11/10/2024 =
+* Fix - EAN-14 `maxlength` fixed when the "Type" is set to "Automatic".
+* Dev - Key Manager - Library updated.
+
 = 5.2.1 - 06/10/2024 =
 * Dev - General - "Admin product block editor" option added (defaults to `yes`).
 
