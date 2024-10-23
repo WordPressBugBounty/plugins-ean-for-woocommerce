@@ -19,6 +19,7 @@
 #: includes/class-alg-wc-ean-edit.php:366
 #: includes/class-alg-wc-ean-orders.php:51
 #: includes/class-alg-wc-ean-product-block-editor.php:66
+#: includes/class-alg-wc-ean.php:233 includes/class-alg-wc-ean.php:234
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:119
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:178
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:229
@@ -203,11 +204,11 @@ msgstr ""
 msgid "EAN copied for %s products (%s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean.php:164
+#: includes/class-alg-wc-ean.php:186
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-ean.php:167
+#: includes/class-alg-wc-ean.php:189
 msgid "Go Pro"
 msgstr ""
 
