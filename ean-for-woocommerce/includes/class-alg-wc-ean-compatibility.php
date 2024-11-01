@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Compatibility Class
  *
- * @version 4.9.4
+ * @version 5.3.1
  * @since   2.2.0
  *
  * @author  Algoritmika Ltd
@@ -24,7 +24,7 @@ class Alg_WC_EAN_Compatibility {
 	/**
 	 * Constructor.
 	 *
-	 * @version 4.9.4
+	 * @version 5.3.1
 	 * @since   2.2.0
 	 *
 	 * @todo    (dev) MultiVendorX: generate button
@@ -131,6 +131,58 @@ class Alg_WC_EAN_Compatibility {
 			add_filter( 'wc_customer_order_export_format_data_sources',            array( $this, 'wc_customer_order_export_add_column' ), 10, 3 );
 			add_filter( 'wc_customer_order_export_csv_order_row_one_row_per_item', array( $this, 'wc_customer_order_export_render_column' ), 10, 4 );
 		}
+
+		// WC Vendors
+		if ( 'yes' === get_option( 'alg_wc_ean_wc_vendors', 'yes' ) ) {
+			add_filter( 'alg_wc_ean_search', array( $this, 'wc_vendors_products_fix' ) );
+		}
+
+	}
+
+	/**
+	 * wc_vendors_products_fix.
+	 *
+	 * @version 5.3.1
+	 * @since   5.3.1
+	 *
+	 * @param   bool $do_search The EAN search status.
+	 */
+	function wc_vendors_products_fix( $do_search ) {
+
+		// Proceed only when search is enabled
+		if ( ! $do_search ) {
+			return $do_search;
+		}
+
+		// Check for the `WCV_Vendors` class
+		if (
+			! class_exists( 'WCV_Vendors' ) ||
+			! is_callable( array( 'WCV_Vendors', 'is_vendor_page' ) )
+		) {
+			return $do_search;
+		}
+
+		// Vendor page
+		if ( WCV_Vendors::is_vendor_page() ) {
+			return false;
+		}
+
+		// Dashboard shortcodes
+		global $post;
+		if (
+			is_a( $post, 'WP_Post' ) &&
+			(
+				has_shortcode( $post->post_content, 'wcv_dashboard_nav' ) ||
+				has_shortcode( $post->post_content, 'wcv_vendor_dashboard' ) ||
+				has_shortcode( $post->post_content, 'wcv_pro_dashboard_nav' ) ||
+				has_shortcode( $post->post_content, 'wcv_pro_dashboard' )
+			)
+		) {
+			return false;
+		}
+
+		// No changes
+		return $do_search;
 
 	}
 

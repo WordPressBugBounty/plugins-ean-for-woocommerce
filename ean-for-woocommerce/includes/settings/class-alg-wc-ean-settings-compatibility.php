@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Compatibility Section Settings
  *
- * @version 4.9.4
+ * @version 5.3.1
  * @since   2.2.9
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_EAN_Settings_Compatibility extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * get_settings.
 	 *
-	 * @version 4.9.4
+	 * @version 5.3.1
 	 * @since   2.2.9
 	 *
 	 * @todo    (dev) `alg_wc_ean_wcfm_hints`: better default value?
@@ -301,6 +301,15 @@ class Alg_WC_EAN_Settings_Compatibility extends Alg_WC_EAN_Settings_Section {
 				'id'       => 'alg_wc_ean_mvx_placeholder',
 				'default'  => '',
 				'type'     => 'text',
+			),
+			array(
+				'title'    => __( 'WC Vendors', 'ean-for-woocommerce' ),
+				'desc'     => __( 'Enable', 'ean-for-woocommerce' ),
+				'desc_tip' => sprintf( __( 'This will fix the "Products" tab in the %s plugin (when the frontend search is enabled in our plugin).', 'ean-for-woocommerce' ),
+					'<a target="_blank" href="https://wordpress.org/plugins/wc-vendors/">' . __( 'WC Vendors', 'ean-for-woocommerce' ) . '</a>' ),
+				'id'       => 'alg_wc_ean_wc_vendors',
+				'default'  => 'yes',
+				'type'     => 'checkbox',
 			),
 			array(
 				'type'     => 'sectionend',

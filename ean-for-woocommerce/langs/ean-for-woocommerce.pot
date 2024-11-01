@@ -1,14 +1,14 @@
 #: includes/class-alg-wc-ean-compatibility.php:100
-#: includes/class-alg-wc-ean-compatibility.php:185
-#: includes/class-alg-wc-ean-compatibility.php:285
-#: includes/class-alg-wc-ean-compatibility.php:300
-#: includes/class-alg-wc-ean-compatibility.php:319
-#: includes/class-alg-wc-ean-compatibility.php:366
-#: includes/class-alg-wc-ean-compatibility.php:444
-#: includes/class-alg-wc-ean-compatibility.php:493
-#: includes/class-alg-wc-ean-compatibility.php:527
-#: includes/class-alg-wc-ean-compatibility.php:578
-#: includes/class-alg-wc-ean-compatibility.php:603
+#: includes/class-alg-wc-ean-compatibility.php:237
+#: includes/class-alg-wc-ean-compatibility.php:337
+#: includes/class-alg-wc-ean-compatibility.php:352
+#: includes/class-alg-wc-ean-compatibility.php:371
+#: includes/class-alg-wc-ean-compatibility.php:418
+#: includes/class-alg-wc-ean-compatibility.php:496
+#: includes/class-alg-wc-ean-compatibility.php:545
+#: includes/class-alg-wc-ean-compatibility.php:579
+#: includes/class-alg-wc-ean-compatibility.php:630
+#: includes/class-alg-wc-ean-compatibility.php:655
 #: includes/class-alg-wc-ean-core.php:182
 #: includes/class-alg-wc-ean-display.php:191
 #: includes/class-alg-wc-ean-display.php:197
@@ -33,13 +33,13 @@
 msgid "EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:167
+#: includes/class-alg-wc-ean-compatibility.php:219
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:296
 msgid "EAN:"
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:372
-#: includes/class-alg-wc-ean-compatibility.php:448
+#: includes/class-alg-wc-ean-compatibility.php:424
+#: includes/class-alg-wc-ean-compatibility.php:500
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:272
 msgid ""
 "The International Article Number (also known as European Article Number or "
@@ -48,21 +48,21 @@ msgid ""
 "packaging configuration, from a specific manufacturer."
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:373
-#: includes/class-alg-wc-ean-compatibility.php:449
-#: includes/class-alg-wc-ean-compatibility.php:579
+#: includes/class-alg-wc-ean-compatibility.php:425
+#: includes/class-alg-wc-ean-compatibility.php:501
+#: includes/class-alg-wc-ean-compatibility.php:631
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:235
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:266
 msgid "Product EAN..."
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:493
+#: includes/class-alg-wc-ean-compatibility.php:545
 #: includes/class-alg-wc-ean-edit.php:195
 #, php-format
 msgid "Generate %s"
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:620
+#: includes/class-alg-wc-ean-compatibility.php:672
 #: includes/class-alg-wc-ean-search.php:224
 #, php-format
 msgid "EAN: %s"
@@ -484,6 +484,7 @@ msgstr ""
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:206
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:252
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:286
+#: includes/settings/class-alg-wc-ean-settings-compatibility.php:307
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:84
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:92
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:100
@@ -1190,6 +1191,18 @@ msgstr ""
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:285
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:288
 msgid "MultiVendorX"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ean-settings-compatibility.php:306
+#: includes/settings/class-alg-wc-ean-settings-compatibility.php:309
+msgid "WC Vendors"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ean-settings-compatibility.php:308
+#, php-format
+msgid ""
+"This will fix the \"Products\" tab in the %s plugin (when the frontend "
+"search is enabled in our plugin)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:59
