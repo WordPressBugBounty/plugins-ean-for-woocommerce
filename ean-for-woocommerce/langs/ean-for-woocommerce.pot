@@ -151,14 +151,14 @@ msgid "Are you sure?"
 msgstr ""
 
 #: includes/class-alg-wc-ean-product-tools.php:210
-#: includes/settings/class-alg-wc-ean-settings-tools.php:431
-#: includes/settings/class-alg-wc-ean-settings-tools.php:442
+#: includes/settings/class-alg-wc-ean-settings-tools.php:437
+#: includes/settings/class-alg-wc-ean-settings-tools.php:448
 msgid "Generate EAN"
 msgstr ""
 
 #: includes/class-alg-wc-ean-product-tools.php:211
-#: includes/settings/class-alg-wc-ean-settings-tools.php:432
-#: includes/settings/class-alg-wc-ean-settings-tools.php:443
+#: includes/settings/class-alg-wc-ean-settings-tools.php:438
+#: includes/settings/class-alg-wc-ean-settings-tools.php:449
 msgid "Delete EAN"
 msgstr ""
 
@@ -167,39 +167,39 @@ msgstr ""
 msgid "EAN deleted for %s products."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:527
-#: includes/class-alg-wc-ean-product-tools.php:558
+#: includes/class-alg-wc-ean-product-tools.php:539
+#: includes/class-alg-wc-ean-product-tools.php:570
 msgid "Please set the \"Meta key\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:534
+#: includes/class-alg-wc-ean-product-tools.php:546
 msgid "Please set the \"Product attribute\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:538
+#: includes/class-alg-wc-ean-product-tools.php:550
 msgid "Please set the \"Custom product attribute\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:547
+#: includes/class-alg-wc-ean-product-tools.php:559
 msgid "Please set the \"List\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:673
+#: includes/class-alg-wc-ean-product-tools.php:685
 #, php-format
 msgid "EAN generated for %s products (%s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:676
+#: includes/class-alg-wc-ean-product-tools.php:688
 #, php-format
 msgid "EAN assigned for %s products (%s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:679
+#: includes/class-alg-wc-ean-product-tools.php:691
 #, php-format
 msgid "%s products without EAN (%s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:682
+#: includes/class-alg-wc-ean-product-tools.php:694
 #, php-format
 msgid "EAN copied for %s products (%s total products)."
 msgstr ""
@@ -2526,37 +2526,42 @@ msgstr ""
 msgid "Sets actions to be automatically performed when new product is added."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-tools.php:399
+#: includes/settings/class-alg-wc-ean-settings-tools.php:398
+#: includes/settings/class-alg-wc-ean-settings-tools.php:410
+msgid "Variable product: Copy to variations"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ean-settings-tools.php:402
 msgid "Update product"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-tools.php:400
+#: includes/settings/class-alg-wc-ean-settings-tools.php:403
 msgid "Sets actions to be automatically performed when product is updated."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-tools.php:408
+#: includes/settings/class-alg-wc-ean-settings-tools.php:414
 msgid "Periodic action"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-tools.php:409
+#: includes/settings/class-alg-wc-ean-settings-tools.php:415
 msgid ""
 "Sets action to be automatically performed on a periodic basis (for all "
 "products)."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-tools.php:417
+#: includes/settings/class-alg-wc-ean-settings-tools.php:423
 msgid "Periodic action interval in seconds"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-tools.php:424
+#: includes/settings/class-alg-wc-ean-settings-tools.php:430
 msgid "\"Products > Bulk actions\""
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-tools.php:425
+#: includes/settings/class-alg-wc-ean-settings-tools.php:431
 msgid "Sets actions to be added to the \"Products > Bulk actions\" dropdown."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-tools.php:436
+#: includes/settings/class-alg-wc-ean-settings-tools.php:442
 msgid "Require confirmation?"
 msgstr ""
 

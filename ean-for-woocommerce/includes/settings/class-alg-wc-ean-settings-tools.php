@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Tools Section Settings
  *
- * @version 4.9.1
+ * @version 5.3.2
  * @since   2.2.5
  *
  * @author  Algoritmika Ltd
@@ -101,7 +101,7 @@ class Alg_WC_EAN_Settings_Tools extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * get_settings.
 	 *
-	 * @version 4.9.1
+	 * @version 5.3.2
 	 * @since   2.2.5
 	 *
 	 * @todo    (dev) Generate: Type: `EAN14`
@@ -393,7 +393,10 @@ class Alg_WC_EAN_Settings_Tools extends Alg_WC_EAN_Settings_Section {
 				'default'  => '',
 				'type'     => 'select',
 				'class'    => 'chosen_select',
-				'options'  => $this->get_product_actions_list(),
+				'options'  => array_merge(
+					$this->get_product_actions_list(),
+					array( 'copy_to_variations' => __( 'Variable product: Copy to variations', 'ean-for-woocommerce' ) )
+				),
 			),
 			array(
 				'desc'     => __( 'Update product', 'ean-for-woocommerce' ),
@@ -402,7 +405,10 @@ class Alg_WC_EAN_Settings_Tools extends Alg_WC_EAN_Settings_Section {
 				'default'  => '',
 				'type'     => 'select',
 				'class'    => 'chosen_select',
-				'options'  => $this->get_product_actions_list(),
+				'options'  => array_merge(
+					$this->get_product_actions_list(),
+					array( 'copy_to_variations' => __( 'Variable product: Copy to variations', 'ean-for-woocommerce' ) )
+				),
 			),
 			array(
 				'title'    => __( 'Periodic action', 'ean-for-woocommerce' ),

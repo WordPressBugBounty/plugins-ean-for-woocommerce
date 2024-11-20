@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8801de24241555a4f5534c38e56bdbffd10516a8',
+        'reference' => 'b807c0fbf6ed1775982ea49112d224a0680fa98c',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8801de24241555a4f5534c38e56bdbffd10516a8',
+            'reference' => 'b807c0fbf6ed1775982ea49112d224a0680fa98c',
             'dev_requirement' => false,
         ),
         'wpfactory/wpfactory-admin-menu' => array(

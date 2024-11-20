@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Product Tools Class
  *
- * @version 4.8.3
+ * @version 5.3.2
  * @since   2.1.0
  *
  * @author  Algoritmika Ltd
@@ -365,11 +365,14 @@ class Alg_WC_EAN_Product_Tools {
 	/**
 	 * product_on_insert_post.
 	 *
-	 * @version 4.8.3
+	 * @version 5.3.2
 	 * @since   2.2.8
 	 *
 	 * @todo    (dev) merge with `products_create()`?
 	 * @todo    (dev) stop on first `update_post_meta`?
+	 * @todo    (dev) `copy_to_variations`: copy empty value as well?
+	 * @todo    (desc) `copy_to_variations`: `alg_wc_ean_tool_product_variable` option is ignored - add a note somewhere?
+	 * @todo    (feature) `copy_to_variations`: all products (i.e., not only `product_on_insert_post()`)?
 	 */
 	function product_on_insert_post( $post_id, $post, $update ) {
 
@@ -378,12 +381,15 @@ class Alg_WC_EAN_Product_Tools {
 		if (
 			! empty( $action ) &&
 			in_array( $post->post_type, array( 'product', 'product_variation' ) ) &&
-			$this->is_valid_product( $post_id, $action )
+			$this->is_valid_product( $post_id, $action ) &&
+			( $product = wc_get_product( $post_id ) )
 		) {
 
-			$product = wc_get_product( $post_id );
-
-			if ( 'all' !== ( $variable_products = get_option( 'alg_wc_ean_tool_product_variable', 'all' ) ) ) {
+			if ( 'copy_to_variations' === $action ) {
+				if ( ! $product->is_type( 'variable' ) ) {
+					return;
+				}
+			} elseif ( 'all' !== ( $variable_products = get_option( 'alg_wc_ean_tool_product_variable', 'all' ) ) ) {
 				if (
 					( $product->is_type( 'variable' )  && 'variations_only' === $variable_products ) ||
 					( $product->is_type( 'variation' ) && 'variable_only'   === $variable_products )
@@ -394,7 +400,7 @@ class Alg_WC_EAN_Product_Tools {
 
 			if ( '' === ( $current_ean = get_post_meta( $post_id, alg_wc_ean()->core->ean_key, true ) ) ) {
 
-				// Action: Generate, Copy from SKU/ID/meta, Assign from the list
+				// Action: Generate, Copy from SKU/ID/meta/attribute, Assign from the list
 				$ean = '';
 				switch ( $action ) {
 
@@ -459,8 +465,14 @@ class Alg_WC_EAN_Product_Tools {
 
 			} else {
 
-				// Action: Copy to product SKU/attribute
+				// Action: Copy to product SKU/attribute/meta/variations
 				switch ( $action ) {
+
+					case 'copy_to_variations':
+						foreach ( $product->get_children() as $child_id ) {
+							alg_wc_ean()->core->set_ean( $child_id, $current_ean );
+						}
+						break;
 
 					case 'copy_to_sku':
 						update_post_meta( $post_id, '_sku', $current_ean );
