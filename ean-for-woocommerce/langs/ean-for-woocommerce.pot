@@ -167,39 +167,39 @@ msgstr ""
 msgid "EAN deleted for %s products."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:539
-#: includes/class-alg-wc-ean-product-tools.php:570
+#: includes/class-alg-wc-ean-product-tools.php:552
+#: includes/class-alg-wc-ean-product-tools.php:583
 msgid "Please set the \"Meta key\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:546
+#: includes/class-alg-wc-ean-product-tools.php:559
 msgid "Please set the \"Product attribute\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:550
+#: includes/class-alg-wc-ean-product-tools.php:563
 msgid "Please set the \"Custom product attribute\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:559
+#: includes/class-alg-wc-ean-product-tools.php:572
 msgid "Please set the \"List\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:685
+#: includes/class-alg-wc-ean-product-tools.php:698
 #, php-format
 msgid "EAN generated for %s products (%s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:688
+#: includes/class-alg-wc-ean-product-tools.php:701
 #, php-format
 msgid "EAN assigned for %s products (%s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:691
+#: includes/class-alg-wc-ean-product-tools.php:704
 #, php-format
 msgid "%s products without EAN (%s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:694
+#: includes/class-alg-wc-ean-product-tools.php:707
 #, php-format
 msgid "EAN copied for %s products (%s total products)."
 msgstr ""

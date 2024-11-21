@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Product Tools Class
  *
- * @version 5.3.2
+ * @version 5.3.3
  * @since   2.1.0
  *
  * @author  Algoritmika Ltd
@@ -365,7 +365,7 @@ class Alg_WC_EAN_Product_Tools {
 	/**
 	 * product_on_insert_post.
 	 *
-	 * @version 5.3.2
+	 * @version 5.3.3
 	 * @since   2.2.8
 	 *
 	 * @todo    (dev) merge with `products_create()`?
@@ -398,7 +398,14 @@ class Alg_WC_EAN_Product_Tools {
 				}
 			}
 
-			if ( '' === ( $current_ean = get_post_meta( $post_id, alg_wc_ean()->core->ean_key, true ) ) ) {
+			$current_ean = get_post_meta( $post_id, alg_wc_ean()->core->ean_key, true );
+			$current_ean = apply_filters(
+				'alg_wc_ean_product_tools_insert_post_current_ean',
+				$current_ean,
+				$product,
+				$action
+			);
+			if ( '' === $current_ean ) {
 
 				// Action: Generate, Copy from SKU/ID/meta/attribute, Assign from the list
 				$ean = '';
@@ -469,8 +476,14 @@ class Alg_WC_EAN_Product_Tools {
 				switch ( $action ) {
 
 					case 'copy_to_variations':
+						$meta_key = alg_wc_ean()->core->ean_key;
+						$meta_key = apply_filters(
+							'alg_wc_ean_product_tools_insert_post_copy_to_variations_meta_key',
+							$meta_key,
+							$product
+						);
 						foreach ( $product->get_children() as $child_id ) {
-							alg_wc_ean()->core->set_ean( $child_id, $current_ean );
+							update_post_meta( $child_id, $meta_key, $current_ean );
 						}
 						break;
 
