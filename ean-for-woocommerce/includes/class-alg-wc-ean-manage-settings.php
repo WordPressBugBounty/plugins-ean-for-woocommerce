@@ -38,7 +38,13 @@ class Alg_WC_EAN_Manage_Settings {
 			global $wpdb;
 			$deleted = $wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE 'alg_wc_ean%'" );
 			if ( is_callable( array( 'WC_Admin_Settings', 'add_message' ) ) ) {
-				WC_Admin_Settings::add_message( sprintf( __( 'Settings reset: %d option(s) deleted.', 'ean-for-woocommerce' ), $deleted ) );
+				WC_Admin_Settings::add_message(
+					sprintf(
+						/* Translators: %s: Number of options. */
+						__( 'Settings reset: %d option(s) deleted.', 'ean-for-woocommerce' ),
+						$deleted
+					)
+				);
 			}
 		}
 	}
@@ -68,10 +74,22 @@ class Alg_WC_EAN_Manage_Settings {
 					}
 				}
 				if ( is_callable( array( 'WC_Admin_Settings', 'add_message' ) ) ) {
-					WC_Admin_Settings::add_message( sprintf( __( 'Settings imported: %d option(s) updated.', 'ean-for-woocommerce' ), $counter ) );
+					WC_Admin_Settings::add_message(
+						sprintf(
+							/* Translators: %s: Number of options. */
+							__( 'Settings imported: %d option(s) updated.', 'ean-for-woocommerce' ),
+							$counter
+						)
+					);
 				}
 			} elseif ( is_callable( array( 'WC_Admin_Settings', 'add_message' ) ) ) {
-				WC_Admin_Settings::add_message( sprintf( __( 'Import file error: %s', 'ean-for-woocommerce' ), json_last_error_msg() ) );
+				WC_Admin_Settings::add_message(
+					sprintf(
+						/* Translators: %s: Error message. */
+						__( 'Import file error: %s', 'ean-for-woocommerce' ),
+						json_last_error_msg()
+					)
+				);
 			}
 		}
 	}

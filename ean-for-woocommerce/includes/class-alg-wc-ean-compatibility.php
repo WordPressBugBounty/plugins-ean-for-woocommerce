@@ -542,7 +542,11 @@ class Alg_WC_EAN_Compatibility {
 	 * @todo    (dev) merge with `Alg_WC_EAN_Edit::get_generate_button()`?
 	 */
 	function wcfm_variation_get_generate_button_js() {
-		$button_label = sprintf( esc_html__( 'Generate %s', 'ean-for-woocommerce' ), get_option( 'alg_wc_ean_title', esc_html__( 'EAN', 'ean-for-woocommerce' ) ) );
+		$button_label = sprintf(
+			/* Translators: %s: EAN title. */
+			esc_html__( 'Generate %s', 'ean-for-woocommerce' ),
+			get_option( 'alg_wc_ean_title', esc_html__( 'EAN', 'ean-for-woocommerce' ) )
+		);
 		?><script>
 			jQuery( document ).ready( function () {
 				jQuery( '.variation_id' ).each( function () {
@@ -668,8 +672,15 @@ class Alg_WC_EAN_Compatibility {
 	 * @todo    (dev) find better solution, e.g., add elsewhere, not to the name?
 	 */
 	function wc_pos_add_ean_to_product_name( $response, $product, $request ) {
-		if ( ( false !== strpos( $request->get_route(), '/wc-pos/' ) ) && '' !== ( $ean = alg_wc_ean()->core->get_ean( $product->get_id() ) ) ) {
-			$response->data['name'] .= ' (' . sprintf( __( 'EAN: %s', 'ean-for-woocommerce' ), $ean ) . ')';
+		if (
+			( false !== strpos( $request->get_route(), '/wc-pos/' ) ) &&
+			'' !== ( $ean = alg_wc_ean()->core->get_ean( $product->get_id() ) )
+		) {
+			$response->data['name'] .= ' (' . sprintf(
+				/* Translators: %s: EAN. */
+				__( 'EAN: %s', 'ean-for-woocommerce' ),
+				$ean
+			) . ')';
 		}
 		return $response;
 	}

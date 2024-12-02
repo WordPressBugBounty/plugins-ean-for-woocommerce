@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmu
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 4.4
 Tested up to: 6.7
-Stable tag: 5.3.3
+Stable tag: 5.3.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,10 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.3.4 - 02/12/2024 =
+* Fix - Barcode Generator - `Alg_WC_EAN_TCPDFBarcode` class loading fixed.
+* Dev - Coding standards improved.
 
 = 5.3.3 - 21/11/2024 =
 * Dev - Developers - Product Tools - Automatic actions - `alg_wc_ean_product_tools_insert_post_current_ean` filter added.

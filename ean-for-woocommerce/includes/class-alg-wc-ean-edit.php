@@ -192,7 +192,11 @@ class Alg_WC_EAN_Edit {
 				' data-product="' . $product_id . '"' .
 				' data-input="' . $input_html_id . '"' .
 			'>' .
-				sprintf( esc_html__( 'Generate %s', 'ean-for-woocommerce' ), get_option( 'alg_wc_ean_title', esc_html__( 'EAN', 'ean-for-woocommerce' ) ) ) .
+				sprintf(
+					/* Translators: %s: EAN title. */
+					esc_html__( 'Generate %s', 'ean-for-woocommerce' ),
+					get_option( 'alg_wc_ean_title', esc_html__( 'EAN', 'ean-for-woocommerce' ) )
+				) .
 			'</button>' .
 			'<span class="spinner" id="spinner-' . $input_html_id . '" style="float:none;"></span>';
 	}

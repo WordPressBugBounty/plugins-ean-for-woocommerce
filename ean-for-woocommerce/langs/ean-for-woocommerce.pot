@@ -5,18 +5,18 @@
 #: includes/class-alg-wc-ean-compatibility.php:371
 #: includes/class-alg-wc-ean-compatibility.php:418
 #: includes/class-alg-wc-ean-compatibility.php:496
-#: includes/class-alg-wc-ean-compatibility.php:545
-#: includes/class-alg-wc-ean-compatibility.php:579
-#: includes/class-alg-wc-ean-compatibility.php:630
-#: includes/class-alg-wc-ean-compatibility.php:655
+#: includes/class-alg-wc-ean-compatibility.php:548
+#: includes/class-alg-wc-ean-compatibility.php:583
+#: includes/class-alg-wc-ean-compatibility.php:634
+#: includes/class-alg-wc-ean-compatibility.php:659
 #: includes/class-alg-wc-ean-core.php:182
 #: includes/class-alg-wc-ean-display.php:191
 #: includes/class-alg-wc-ean-display.php:197
 #: includes/class-alg-wc-ean-display.php:457
-#: includes/class-alg-wc-ean-edit.php:195
-#: includes/class-alg-wc-ean-edit.php:218
-#: includes/class-alg-wc-ean-edit.php:332
-#: includes/class-alg-wc-ean-edit.php:366
+#: includes/class-alg-wc-ean-edit.php:198
+#: includes/class-alg-wc-ean-edit.php:222
+#: includes/class-alg-wc-ean-edit.php:336
+#: includes/class-alg-wc-ean-edit.php:370
 #: includes/class-alg-wc-ean-orders.php:51
 #: includes/class-alg-wc-ean-product-block-editor.php:66
 #: includes/class-alg-wc-ean.php:233 includes/class-alg-wc-ean.php:234
@@ -50,59 +50,59 @@ msgstr ""
 
 #: includes/class-alg-wc-ean-compatibility.php:425
 #: includes/class-alg-wc-ean-compatibility.php:501
-#: includes/class-alg-wc-ean-compatibility.php:631
+#: includes/class-alg-wc-ean-compatibility.php:635
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:235
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:266
 msgid "Product EAN..."
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:545
-#: includes/class-alg-wc-ean-edit.php:195
+#: includes/class-alg-wc-ean-compatibility.php:547
+#: includes/class-alg-wc-ean-edit.php:197
 #, php-format
 msgid "Generate %s"
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:672
+#: includes/class-alg-wc-ean-compatibility.php:681
 #: includes/class-alg-wc-ean-search.php:224
 #, php-format
 msgid "EAN: %s"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:214
+#: includes/class-alg-wc-ean-edit.php:218
 msgid "- No change -"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:263
+#: includes/class-alg-wc-ean-edit.php:267
 #: includes/class-alg-wc-ean-shortcodes.php:643
 msgid "Valid EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:264
+#: includes/class-alg-wc-ean-edit.php:268
 #: includes/class-alg-wc-ean-shortcodes.php:644
 msgid "Invalid EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:268
+#: includes/class-alg-wc-ean-edit.php:272
 #: includes/class-alg-wc-ean-shortcodes.php:611
 msgid "Unique EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:269
+#: includes/class-alg-wc-ean-edit.php:273
 #: includes/class-alg-wc-ean-shortcodes.php:612
 msgid "Duplicated EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-manage-settings.php:41
+#: includes/class-alg-wc-ean-manage-settings.php:44
 #, php-format
 msgid "Settings reset: %d option(s) deleted."
 msgstr ""
 
-#: includes/class-alg-wc-ean-manage-settings.php:71
+#: includes/class-alg-wc-ean-manage-settings.php:80
 #, php-format
 msgid "Settings imported: %d option(s) updated."
 msgstr ""
 
-#: includes/class-alg-wc-ean-manage-settings.php:74
+#: includes/class-alg-wc-ean-manage-settings.php:89
 #, php-format
 msgid "Import file error: %s"
 msgstr ""
