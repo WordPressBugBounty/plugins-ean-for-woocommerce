@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Settings
  *
- * @version 4.9.1
+ * @version 5.3.5
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -74,7 +74,7 @@ class Alg_WC_EAN_Settings extends WC_Settings_Page {
 	 */
 	function alg_wc_ean_file( $value ) {
 
-		// Custom attribute handling.
+		// Custom attribute handling
 		$custom_attributes = array();
 		if ( ! empty( $value['custom_attributes'] ) && is_array( $value['custom_attributes'] ) ) {
 			foreach ( $value['custom_attributes'] as $attribute => $attribute_value ) {
@@ -82,14 +82,14 @@ class Alg_WC_EAN_Settings extends WC_Settings_Page {
 			}
 		}
 
-		// Description handling.
+		// Description handling
 		$field_description = WC_Admin_Settings::get_field_description( $value );
 		$description       = $field_description['description'];
 		$tooltip_html      = $field_description['tooltip_html'];
 
 		?><tr valign="top">
 			<th scope="row" class="titledesc">
-				<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?> <?php echo $tooltip_html; // WPCS: XSS ok. ?></label>
+				<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?> <?php echo $tooltip_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
 			</th>
 			<td class="forminp forminp-file">
 				<input
@@ -100,8 +100,8 @@ class Alg_WC_EAN_Settings extends WC_Settings_Page {
 					value=""
 					class="<?php echo esc_attr( $value['class'] ); ?>"
 					placeholder=""
-					<?php echo implode( ' ', $custom_attributes ); // WPCS: XSS ok. ?>
-					/><?php echo esc_html( $value['suffix'] ); ?> <?php echo $description; // WPCS: XSS ok. ?>
+					<?php echo implode( ' ', $custom_attributes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					/><?php echo esc_html( $value['suffix'] ); ?> <?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</td>
 		</tr>
 		<?php
@@ -159,12 +159,13 @@ class Alg_WC_EAN_Settings extends WC_Settings_Page {
 	/**
 	 * admin_notices_settings_reset_success.
 	 *
-	 * @version 1.0.0
+	 * @version 5.3.5
 	 * @since   1.0.0
 	 */
 	function admin_notices_settings_reset_success() {
 		echo '<div class="notice notice-success is-dismissible"><p><strong>' .
-			__( 'Your settings have been reset.', 'ean-for-woocommerce' ) . '</strong></p></div>';
+			esc_html__( 'Your settings have been reset.', 'ean-for-woocommerce' ) .
+		'</strong></p></div>';
 	}
 
 	/**

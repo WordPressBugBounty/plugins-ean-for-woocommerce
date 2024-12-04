@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Display Class
  *
- * @version 4.9.2
+ * @version 5.3.5
  * @since   2.0.0
  *
  * @author  Algoritmika Ltd
@@ -212,7 +212,7 @@ class Alg_WC_EAN_Display {
 	/**
 	 * render_product_columns.
 	 *
-	 * @version 4.9.2
+	 * @version 5.3.5
 	 * @since   1.0.0
 	 */
 	function render_product_columns( $column, $product_id ) {
@@ -234,7 +234,7 @@ class Alg_WC_EAN_Display {
 				if ( 'no' === get_option( 'alg_wc_ean_backend_column_show_duplicates', 'yes' ) ) {
 					$values = array_unique( $values );
 				}
-				echo implode( ', ', $values );
+				echo wp_kses_post( implode( ', ', $values ) );
 			}
 		}
 	}

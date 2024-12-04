@@ -62,7 +62,11 @@ class Alg_WC_EAN_Order_Tools {
 		ob_start();
 		?>
 		<div class="alg-wc-ean-order-items-search-wrap">
-			<p><?php printf( esc_html__( 'Search results for: %s', 'ean-for-woocommerce' ), '<strong>' . esc_html( $ean ) . '</strong>' ); ?></p>
+			<p><?php printf(
+				/* Translators: %s: EAN. */
+				esc_html__( 'Search results for: %s', 'ean-for-woocommerce' ),
+				'<strong>' . esc_html( $ean ) . '</strong>'
+			); ?></p>
 			<table class="widefat striped">
 				<thead>
 					<tr>
@@ -142,7 +146,13 @@ class Alg_WC_EAN_Order_Tools {
 					}
 				}
 				if ( method_exists( 'WC_Admin_Settings', 'add_message' ) ) {
-					WC_Admin_Settings::add_message( sprintf( __( 'EAN deleted for %s order items.', 'ean-for-woocommerce' ), $count ) );
+					WC_Admin_Settings::add_message(
+						sprintf(
+							/* Translators: %s: Number of items. */
+							__( 'EAN deleted for %s order items.', 'ean-for-woocommerce' ),
+							$count
+						)
+					);
 				}
 			}
 		}
@@ -163,7 +173,13 @@ class Alg_WC_EAN_Order_Tools {
 					$count += alg_wc_ean()->core->orders->add_ean_to_order_items_meta( $order_id );
 				}
 				if ( method_exists( 'WC_Admin_Settings', 'add_message' ) ) {
-					WC_Admin_Settings::add_message( sprintf( __( 'EAN added for %s order items.', 'ean-for-woocommerce' ), $count ) );
+					WC_Admin_Settings::add_message(
+						sprintf(
+							/* Translators: %s: Number of items. */
+							__( 'EAN added for %s order items.', 'ean-for-woocommerce' ),
+							$count
+						)
+					);
 				}
 			}
 		}

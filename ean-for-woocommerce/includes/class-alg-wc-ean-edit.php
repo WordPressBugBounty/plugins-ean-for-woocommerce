@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Edit Class
  *
- * @version 5.2.2
+ * @version 5.3.5
  * @since   2.0.0
  *
  * @author  Algoritmika Ltd
@@ -123,7 +123,12 @@ class Alg_WC_EAN_Edit {
 	 * @since   4.0.0
 	 */
 	function add_generate_button() {
-		if ( is_admin() && function_exists( 'get_current_screen' ) && ( $screen = get_current_screen() ) && 'product' === $screen->post_type ) {
+		if (
+			is_admin() &&
+			function_exists( 'get_current_screen' ) &&
+			( $screen = get_current_screen() ) &&
+			'product' === $screen->post_type
+		) {
 			$this->generate_button_js();
 		}
 	}
@@ -166,11 +171,15 @@ class Alg_WC_EAN_Edit {
 	/**
 	 * generate_button_ajax.
 	 *
-	 * @version 4.0.0
+	 * @version 5.3.5
 	 * @since   4.0.0
 	 */
 	static function generate_button_ajax() {
-		echo alg_wc_ean()->core->product_tools->generate_ean( intval( $_POST['product'] ), alg_wc_ean()->core->product_tools->get_generate_data() );
+		$ean = alg_wc_ean()->core->product_tools->generate_ean(
+			intval( $_POST['product'] ),
+			alg_wc_ean()->core->product_tools->get_generate_data()
+		);
+		echo esc_html( $ean );
 		die();
 	}
 

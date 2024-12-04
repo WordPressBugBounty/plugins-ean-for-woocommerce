@@ -13,10 +13,10 @@
 #: includes/class-alg-wc-ean-display.php:191
 #: includes/class-alg-wc-ean-display.php:197
 #: includes/class-alg-wc-ean-display.php:457
-#: includes/class-alg-wc-ean-edit.php:198
-#: includes/class-alg-wc-ean-edit.php:222
-#: includes/class-alg-wc-ean-edit.php:336
-#: includes/class-alg-wc-ean-edit.php:370
+#: includes/class-alg-wc-ean-edit.php:207
+#: includes/class-alg-wc-ean-edit.php:231
+#: includes/class-alg-wc-ean-edit.php:345
+#: includes/class-alg-wc-ean-edit.php:379
 #: includes/class-alg-wc-ean-orders.php:51
 #: includes/class-alg-wc-ean-product-block-editor.php:66
 #: includes/class-alg-wc-ean.php:233 includes/class-alg-wc-ean.php:234
@@ -57,7 +57,7 @@ msgid "Product EAN..."
 msgstr ""
 
 #: includes/class-alg-wc-ean-compatibility.php:547
-#: includes/class-alg-wc-ean-edit.php:197
+#: includes/class-alg-wc-ean-edit.php:206
 #, php-format
 msgid "Generate %s"
 msgstr ""
@@ -68,26 +68,26 @@ msgstr ""
 msgid "EAN: %s"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:218
+#: includes/class-alg-wc-ean-edit.php:227
 msgid "- No change -"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:267
+#: includes/class-alg-wc-ean-edit.php:276
 #: includes/class-alg-wc-ean-shortcodes.php:643
 msgid "Valid EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:268
+#: includes/class-alg-wc-ean-edit.php:277
 #: includes/class-alg-wc-ean-shortcodes.php:644
 msgid "Invalid EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:272
+#: includes/class-alg-wc-ean-edit.php:281
 #: includes/class-alg-wc-ean-shortcodes.php:611
 msgid "Unique EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-edit.php:273
+#: includes/class-alg-wc-ean-edit.php:282
 #: includes/class-alg-wc-ean-shortcodes.php:612
 msgid "Duplicated EAN"
 msgstr ""
@@ -107,41 +107,41 @@ msgstr ""
 msgid "Import file error: %s"
 msgstr ""
 
-#: includes/class-alg-wc-ean-order-tools.php:65
+#: includes/class-alg-wc-ean-order-tools.php:67
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
 
-#: includes/class-alg-wc-ean-order-tools.php:69
-#: includes/class-alg-wc-ean-order-tools.php:98
+#: includes/class-alg-wc-ean-order-tools.php:73
+#: includes/class-alg-wc-ean-order-tools.php:102
 msgid "Order"
 msgstr ""
 
-#: includes/class-alg-wc-ean-order-tools.php:70
-#: includes/class-alg-wc-ean-order-tools.php:99
+#: includes/class-alg-wc-ean-order-tools.php:74
+#: includes/class-alg-wc-ean-order-tools.php:103
 msgid "Date"
 msgstr ""
 
-#: includes/class-alg-wc-ean-order-tools.php:71
-#: includes/class-alg-wc-ean-order-tools.php:100
+#: includes/class-alg-wc-ean-order-tools.php:75
+#: includes/class-alg-wc-ean-order-tools.php:104
 msgid "Status"
 msgstr ""
 
-#: includes/class-alg-wc-ean-order-tools.php:72
-#: includes/class-alg-wc-ean-order-tools.php:101
+#: includes/class-alg-wc-ean-order-tools.php:76
+#: includes/class-alg-wc-ean-order-tools.php:105
 msgid "Total"
 msgstr ""
 
-#: includes/class-alg-wc-ean-order-tools.php:93
+#: includes/class-alg-wc-ean-order-tools.php:97
 msgid "No orders found"
 msgstr ""
 
-#: includes/class-alg-wc-ean-order-tools.php:145
+#: includes/class-alg-wc-ean-order-tools.php:152
 #, php-format
 msgid "EAN deleted for %s order items."
 msgstr ""
 
-#: includes/class-alg-wc-ean-order-tools.php:166
+#: includes/class-alg-wc-ean-order-tools.php:179
 #, php-format
 msgid "EAN added for %s order items."
 msgstr ""

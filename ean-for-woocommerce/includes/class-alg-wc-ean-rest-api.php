@@ -86,8 +86,8 @@ class Alg_WC_EAN_REST_API {
 		if ( isset( $request['ean'] ) ) {
 
 			// Meta key/value
-			$args['meta_key']   = alg_wc_ean()->core->ean_key;
-			$args['meta_value'] = $request['ean'];
+			$args['meta_key']   = alg_wc_ean()->core->ean_key; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			$args['meta_value'] = $request['ean'];             // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 
 			// For product variations
 			$args['alg_wc_ean_rest_api'] = 'product_search';

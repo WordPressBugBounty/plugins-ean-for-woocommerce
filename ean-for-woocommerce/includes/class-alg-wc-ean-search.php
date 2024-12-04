@@ -213,8 +213,8 @@ class Alg_WC_EAN_Search {
 			$found_products = wc_get_products( array(
 				'type'         => array_merge( array_keys( wc_get_product_types() ), array( 'variation' ) ),
 				'limit'        => -1,
-				'meta_key'     => $key,
-				'meta_value'   => wc_clean( $_REQUEST['term'] ),
+				'meta_key'     => $key,                          // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value'   => wc_clean( $_REQUEST['term'] ), // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 				'meta_compare' => 'LIKE',
 				'return'       => 'ids',
 			) );

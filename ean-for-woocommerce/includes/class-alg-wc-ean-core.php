@@ -365,10 +365,10 @@ class Alg_WC_EAN_Core {
 	 */
 	function do_ean_exist( $ean, $not_product_id = false ) {
 		$args = array(
-			'meta_key'     => $this->ean_key,
-			'meta_value'   => $ean,
+			'meta_key'     => $this->ean_key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			'meta_value'   => $ean,           // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 			'post_type'    => array( 'product', 'product_variation' ),
-			'post__not_in' => ( $not_product_id ? array( $not_product_id ) : array() ),
+			'post__not_in' => ( $not_product_id ? array( $not_product_id ) : array() ), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
 			'fields'       => 'ids',
 		);
 		$query = new WP_Query( $args );
