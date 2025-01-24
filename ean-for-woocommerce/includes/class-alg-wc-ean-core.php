@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Core Class
  *
- * @version 5.2.1
+ * @version 5.4.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -137,7 +137,7 @@ class Alg_WC_EAN_Core {
 	/**
 	 * Constructor.
 	 *
-	 * @version 5.2.1
+	 * @version 5.4.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) wpml-config.xml?
@@ -149,20 +149,20 @@ class Alg_WC_EAN_Core {
 		$this->ean_key = get_option( 'alg_wc_ean_meta_key', '_alg_ean' );
 
 		if ( 'yes' === get_option( 'alg_wc_ean_plugin_enabled', 'yes' ) ) {
-			$this->edit                   = require_once( 'class-alg-wc-ean-edit.php' );
-			$this->admin                  = require_once( 'class-alg-wc-ean-admin.php' );
-			$this->search                 = require_once( 'class-alg-wc-ean-search.php' );
-			$this->display                = require_once( 'class-alg-wc-ean-display.php' );
-			$this->order_items_table      = require_once( 'class-alg-wc-ean-order-items-table.php' );
-			$this->import_export          = require_once( 'class-alg-wc-ean-export-import.php' );
-			$this->orders                 = require_once( 'class-alg-wc-ean-orders.php' );
-			$this->rest_api               = require_once( 'class-alg-wc-ean-rest-api.php' );
-			$this->product_tools          = require_once( 'class-alg-wc-ean-product-tools.php' );
-			$this->order_tools            = require_once( 'class-alg-wc-ean-order-tools.php' );
-			$this->settings_import_export = require_once( 'class-alg-wc-ean-manage-settings.php' );
-			$this->compatibility          = require_once( 'class-alg-wc-ean-compatibility.php' );
-			$this->shortcodes             = require_once( 'class-alg-wc-ean-shortcodes.php' );
-			$this->product_block_editor   = require_once( 'class-alg-wc-ean-product-block-editor.php' );
+			$this->edit                   = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-edit.php';
+			$this->admin                  = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-admin.php';
+			$this->search                 = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-search.php';
+			$this->display                = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-display.php';
+			$this->order_items_table      = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-order-items-table.php';
+			$this->import_export          = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-export-import.php';
+			$this->orders                 = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-orders.php';
+			$this->rest_api               = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-rest-api.php';
+			$this->product_tools          = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-product-tools.php';
+			$this->order_tools            = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-order-tools.php';
+			$this->settings_import_export = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-manage-settings.php';
+			$this->compatibility          = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-compatibility.php';
+			$this->shortcodes             = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-shortcodes.php';
+			$this->product_block_editor   = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-product-block-editor.php';
 		}
 
 		// Core loaded

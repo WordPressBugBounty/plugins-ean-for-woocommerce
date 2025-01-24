@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Main Class
  *
- * @version 5.3.0
+ * @version 5.4.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -175,7 +175,7 @@ final class Alg_WC_EAN {
 	/**
 	 * action_links.
 	 *
-	 * @version 2.2.0
+	 * @version 5.4.0
 	 * @since   1.0.0
 	 *
 	 * @param   mixed $links
@@ -183,12 +183,17 @@ final class Alg_WC_EAN {
 	 */
 	function action_links( $links ) {
 		$custom_links = array();
-		$custom_links[] = '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=alg_wc_ean' ) . '">' . __( 'Settings', 'woocommerce' ) . '</a>';
+
+		$custom_links[] = '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=alg_wc_ean' ) . '">' .
+			__( 'Settings', 'ean-for-woocommerce' ) .
+		'</a>';
+
 		if ( 'ean-for-woocommerce.php' === basename( ALG_WC_EAN_FILE ) ) {
 			$custom_links[] = '<a target="_blank" style="font-weight: bold; color: green;" href="https://wpfactory.com/item/ean-for-woocommerce/">' .
 				__( 'Go Pro', 'ean-for-woocommerce' ) .
 			'</a>';
 		}
+
 		return array_merge( $custom_links, $links );
 	}
 

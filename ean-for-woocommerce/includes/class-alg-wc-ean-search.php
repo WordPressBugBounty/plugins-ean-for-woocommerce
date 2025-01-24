@@ -221,7 +221,11 @@ class Alg_WC_EAN_Search {
 
 			// Products loop
 			foreach ( $found_products as $product_id ) {
-				$ean = sprintf( __( 'EAN: %s', 'ean-for-woocommerce' ), get_post_meta( $product_id, $key, true ) );
+				$ean = sprintf(
+					/* Translators: %s: EAN. */
+					__( 'EAN: %s', 'ean-for-woocommerce' ),
+					get_post_meta( $product_id, $key, true )
+				);
 				$products[ $product_id ] = get_the_title( $product_id ) . ' (' . $ean . ')';
 			}
 

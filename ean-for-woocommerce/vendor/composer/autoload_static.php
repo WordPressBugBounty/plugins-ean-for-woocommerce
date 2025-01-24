@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitca3d0f3dd39882e9397f22583086f786
+class ComposerStaticInitWPFactoryEANForWooCommerce
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -20,7 +20,7 @@ class ComposerStaticInitca3d0f3dd39882e9397f22583086f786
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitca3d0f3dd39882e9397f22583086f786::$classMap;
+            $loader->classMap = ComposerStaticInitWPFactoryEANForWooCommerce::$classMap;
 
         }, null, ClassLoader::class);
     }

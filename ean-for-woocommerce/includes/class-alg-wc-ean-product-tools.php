@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Product Tools Class
  *
- * @version 5.3.3
+ * @version 5.4.0
  * @since   2.1.0
  *
  * @author  Algoritmika Ltd
@@ -332,7 +332,13 @@ class Alg_WC_EAN_Product_Tools {
 					}
 				}
 				if ( method_exists( 'WC_Admin_Settings', 'add_message' ) ) {
-					WC_Admin_Settings::add_message( sprintf( __( 'EAN deleted for %s products.', 'ean-for-woocommerce' ), $count ) );
+					WC_Admin_Settings::add_message(
+						sprintf(
+							/* Translators: %s: Number of products. */
+							__( 'EAN deleted for %s products.', 'ean-for-woocommerce' ),
+							$count
+						)
+					);
 				}
 			}
 		}
@@ -531,7 +537,7 @@ class Alg_WC_EAN_Product_Tools {
 	/**
 	 * process_action_for_all_products.
 	 *
-	 * @version 4.8.3
+	 * @version 5.4.0
 	 * @since   2.9.0
 	 *
 	 * @todo    (dev) Copy to: do NOT overwrite?
@@ -695,16 +701,20 @@ class Alg_WC_EAN_Product_Tools {
 
 		switch ( $action ) {
 			case 'generate':
-				$message = __( 'EAN generated for %s products (%s total products).', 'ean-for-woocommerce' );
+				/* Translators: %1$s: Number of products, %2$s: Total number of products. */
+				$message = __( 'EAN generated for %1$s products (%2$s total products).', 'ean-for-woocommerce' );
 				break;
 			case 'assign_list':
-				$message = __( 'EAN assigned for %s products (%s total products).', 'ean-for-woocommerce' );
+				/* Translators: %1$s: Number of products, %2$s: Total number of products. */
+				$message = __( 'EAN assigned for %1$s products (%2$s total products).', 'ean-for-woocommerce' );
 				break;
 			case 'get_stats':
-				$message = __( '%s products without EAN (%s total products).', 'ean-for-woocommerce' );
+				/* Translators: %1$s: Number of products, %2$s: Total number of products. */
+				$message = __( '%1$s products without EAN (%2$s total products).', 'ean-for-woocommerce' );
 				break;
 			default:
-				$message = __( 'EAN copied for %s products (%s total products).', 'ean-for-woocommerce' );
+				/* Translators: %1$s: Number of products, %2$s: Total number of products. */
+				$message = __( 'EAN copied for %1$s products (%2$s total products).', 'ean-for-woocommerce' );
 		}
 
 		return array( 'result' => true, 'message' => sprintf( $message, $count, $total ) );

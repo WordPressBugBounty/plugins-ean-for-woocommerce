@@ -7,8 +7,8 @@
 #: includes/class-alg-wc-ean-compatibility.php:496
 #: includes/class-alg-wc-ean-compatibility.php:548
 #: includes/class-alg-wc-ean-compatibility.php:583
-#: includes/class-alg-wc-ean-compatibility.php:634
-#: includes/class-alg-wc-ean-compatibility.php:659
+#: includes/class-alg-wc-ean-compatibility.php:644
+#: includes/class-alg-wc-ean-compatibility.php:703
 #: includes/class-alg-wc-ean-core.php:182
 #: includes/class-alg-wc-ean-display.php:191
 #: includes/class-alg-wc-ean-display.php:197
@@ -19,7 +19,7 @@
 #: includes/class-alg-wc-ean-edit.php:379
 #: includes/class-alg-wc-ean-orders.php:51
 #: includes/class-alg-wc-ean-product-block-editor.php:66
-#: includes/class-alg-wc-ean.php:233 includes/class-alg-wc-ean.php:234
+#: includes/class-alg-wc-ean.php:238 includes/class-alg-wc-ean.php:239
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:119
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:178
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:229
@@ -50,7 +50,7 @@ msgstr ""
 
 #: includes/class-alg-wc-ean-compatibility.php:425
 #: includes/class-alg-wc-ean-compatibility.php:501
-#: includes/class-alg-wc-ean-compatibility.php:635
+#: includes/class-alg-wc-ean-compatibility.php:648
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:235
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:266
 msgid "Product EAN..."
@@ -62,8 +62,8 @@ msgstr ""
 msgid "Generate %s"
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:681
-#: includes/class-alg-wc-ean-search.php:224
+#: includes/class-alg-wc-ean-compatibility.php:725
+#: includes/class-alg-wc-ean-search.php:226
 #, php-format
 msgid "EAN: %s"
 msgstr ""
@@ -73,22 +73,22 @@ msgid "- No change -"
 msgstr ""
 
 #: includes/class-alg-wc-ean-edit.php:276
-#: includes/class-alg-wc-ean-shortcodes.php:643
+#: includes/class-alg-wc-ean-shortcodes.php:651
 msgid "Valid EAN"
 msgstr ""
 
 #: includes/class-alg-wc-ean-edit.php:277
-#: includes/class-alg-wc-ean-shortcodes.php:644
+#: includes/class-alg-wc-ean-shortcodes.php:652
 msgid "Invalid EAN"
 msgstr ""
 
 #: includes/class-alg-wc-ean-edit.php:281
-#: includes/class-alg-wc-ean-shortcodes.php:611
+#: includes/class-alg-wc-ean-shortcodes.php:619
 msgid "Unique EAN"
 msgstr ""
 
 #: includes/class-alg-wc-ean-edit.php:282
-#: includes/class-alg-wc-ean-shortcodes.php:612
+#: includes/class-alg-wc-ean-shortcodes.php:620
 msgid "Duplicated EAN"
 msgstr ""
 
@@ -162,53 +162,53 @@ msgstr ""
 msgid "Delete EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:335
+#: includes/class-alg-wc-ean-product-tools.php:338
 #, php-format
 msgid "EAN deleted for %s products."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:552
-#: includes/class-alg-wc-ean-product-tools.php:583
+#: includes/class-alg-wc-ean-product-tools.php:558
+#: includes/class-alg-wc-ean-product-tools.php:589
 msgid "Please set the \"Meta key\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:559
+#: includes/class-alg-wc-ean-product-tools.php:565
 msgid "Please set the \"Product attribute\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:563
+#: includes/class-alg-wc-ean-product-tools.php:569
 msgid "Please set the \"Custom product attribute\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:572
+#: includes/class-alg-wc-ean-product-tools.php:578
 msgid "Please set the \"List\" option."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:698
+#: includes/class-alg-wc-ean-product-tools.php:705
 #, php-format
-msgid "EAN generated for %s products (%s total products)."
+msgid "EAN generated for %1$s products (%2$s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:701
+#: includes/class-alg-wc-ean-product-tools.php:709
 #, php-format
-msgid "EAN assigned for %s products (%s total products)."
+msgid "EAN assigned for %1$s products (%2$s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:704
+#: includes/class-alg-wc-ean-product-tools.php:713
 #, php-format
-msgid "%s products without EAN (%s total products)."
+msgid "%1$s products without EAN (%2$s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean-product-tools.php:707
+#: includes/class-alg-wc-ean-product-tools.php:717
 #, php-format
-msgid "EAN copied for %s products (%s total products)."
+msgid "EAN copied for %1$s products (%2$s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean.php:186
+#: includes/class-alg-wc-ean.php:188
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-ean.php:189
+#: includes/class-alg-wc-ean.php:193
 msgid "Go Pro"
 msgstr ""
 
@@ -236,7 +236,7 @@ msgstr ""
 msgid "image link"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-extra-field.php:69
+#: includes/pro/class-alg-wc-ean-extra-field.php:73
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:40
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:71
 #: includes/settings/class-alg-wc-ean-settings-extra-fields.php:71
@@ -249,95 +249,95 @@ msgstr ""
 msgid "Barcode Options"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:50
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:88
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:137
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:52
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:94
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:147
 #, php-format
 msgid "For the %s placeholder."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:55
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:59
 msgid "Barcode width"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:56
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:60
 msgid "Width of a single bar element in pixels."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:63
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:67
 msgid "Barcode height"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:64
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:68
 msgid "Height of a single bar element in pixels."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:71
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:75
 msgid "Barcode color"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:87
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:91
 msgid "2D Barcode Options"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:93
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:101
 msgid "2D barcode width"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:94
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:102
 msgid "Width of a single rectangle element in pixels."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:101
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:109
 msgid "2D barcode height"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:102
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:110
 msgid "Height of a single rectangle element in pixels."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:109
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:117
 msgid "2D barcode color"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:115
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:123
 msgid "2D barcode content"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:121
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:129
 msgid "Product EAN"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:122
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:130
 msgid "Product URL"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:136
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:144
 msgid "Product Image Options"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:142
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:154
 msgid "Product image width"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:143
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:151
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:155
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:163
 msgid "In pixels."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:150
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:162
 msgid "Product image height"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:158
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:170
 msgid "Product image size"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:159
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:171
 msgid "Accepts any registered image size name."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print-deprecated.php:185
+#: includes/pro/class-alg-wc-ean-print-deprecated.php:199
 #, php-format
 msgid "Deprecated placeholders: %s."
 msgstr ""
@@ -388,51 +388,51 @@ msgstr ""
 msgid "Variations"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print.php:689
+#: includes/pro/class-alg-wc-ean-print.php:699
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:27
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:43
 #: includes/settings/class-alg-wc-ean-settings-barcodes.php:27
 msgid "Barcodes"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:167
+#: includes/pro/class-alg-wc-ean-pro.php:179
 #, php-format
 msgid "Product ID: %s; action: %s; result: %s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:173
+#: includes/pro/class-alg-wc-ean-pro.php:198
 #, php-format
 msgid "Product ID: %s; action: set (min_stock); result: %s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:177
+#: includes/pro/class-alg-wc-ean-pro.php:206
 #, php-format
 msgid "Product ID: %s; action: set (max_stock); result: %s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:180
-#: includes/pro/class-alg-wc-ean-pro.php:183
-#: includes/pro/class-alg-wc-ean-pro.php:209
-#: includes/pro/class-alg-wc-ean-pro.php:212
+#: includes/pro/class-alg-wc-ean-pro.php:214
+#: includes/pro/class-alg-wc-ean-pro.php:221
+#: includes/pro/class-alg-wc-ean-pro.php:256
+#: includes/pro/class-alg-wc-ean-pro.php:263
 #, php-format
 msgid "Error: %s"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:180
-#: includes/pro/class-alg-wc-ean-pro.php:209
+#: includes/pro/class-alg-wc-ean-pro.php:215
+#: includes/pro/class-alg-wc-ean-pro.php:257
 msgid "Empty or wrong security token."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:183
+#: includes/pro/class-alg-wc-ean-pro.php:222
 msgid "Product ID or security token param not set."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:207
+#: includes/pro/class-alg-wc-ean-pro.php:248
 #, php-format
 msgid "Product ID: %s; action: add_to_cart; qty: %s; user_id: %s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:212
+#: includes/pro/class-alg-wc-ean-pro.php:264
 msgid "Product ID, user ID, quantity or security token param not set."
 msgstr ""
 
@@ -1231,7 +1231,7 @@ msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:99
 #: includes/settings/class-alg-wc-ean-settings-general.php:405
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:71
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:75
 msgid "Search"
 msgstr ""
 
@@ -1741,7 +1741,7 @@ msgstr ""
 msgid "Order Tools"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:41
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:42
 #: includes/settings/class-alg-wc-ean-settings-tools.php:120
 #, php-format
 msgid ""
@@ -1749,30 +1749,30 @@ msgid ""
 "there is no undo for these tools."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:47
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:49
 #: includes/settings/class-alg-wc-ean-settings-print.php:346
 msgid "Add"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:48
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:51
 msgid "Add EANs to all order items"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:54
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:57
 #: includes/settings/class-alg-wc-ean-settings-tools.php:127
 #: includes/settings/class-alg-wc-ean-settings-tools.php:309
 msgid "Delete"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:55
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:59
 msgid "Delete EANs from all order items"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:65
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:69
 msgid "Order Search"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:66
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:70
 msgid "Searches orders by EAN (item meta)."
 msgstr ""
 

@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Order Tools Section Settings
  *
- * @version 4.9.1
+ * @version 5.4.0
  * @since   4.9.1
  *
  * @author  Algoritmika Ltd
@@ -38,21 +38,25 @@ class Alg_WC_EAN_Settings_Order_Tools extends Alg_WC_EAN_Settings_Section {
 		return array(
 			array(
 				'title'    => __( 'Order Tools', 'ean-for-woocommerce' ),
-				'desc'     => sprintf( __( 'Check the %s box and "Save changes" to run the tool. Please note that there is no undo for these tools.', 'ean-for-woocommerce' ),
-					'<span class="dashicons dashicons-admin-generic"></span>' ),
+				'desc'     => sprintf(
+					__( 'Check the %s box and "Save changes" to run the tool. Please note that there is no undo for these tools.', 'ean-for-woocommerce' ),
+					'<span class="dashicons dashicons-admin-generic"></span>'
+				),
 				'type'     => 'title',
 				'id'       => 'alg_wc_ean_tools_orders',
 			),
 			array(
 				'title'    => __( 'Add', 'ean-for-woocommerce' ),
-				'desc'     => '<span class="dashicons dashicons-admin-generic"></span> ' . __( 'Add EANs to all order items', 'ean-for-woocommerce' ),
+				'desc'     => '<span class="dashicons dashicons-admin-generic"></span> ' .
+					__( 'Add EANs to all order items', 'ean-for-woocommerce' ),
 				'id'       => 'alg_wc_ean_tool_orders_add',
 				'default'  => 'no',
 				'type'     => 'checkbox',
 			),
 			array(
 				'title'    => __( 'Delete', 'ean-for-woocommerce' ),
-				'desc'     => '<span class="dashicons dashicons-admin-generic"></span> ' . __( 'Delete EANs from all order items', 'ean-for-woocommerce' ),
+				'desc'     => '<span class="dashicons dashicons-admin-generic"></span> ' .
+					__( 'Delete EANs from all order items', 'ean-for-woocommerce' ),
 				'id'       => 'alg_wc_ean_tool_orders_delete',
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -69,11 +73,19 @@ class Alg_WC_EAN_Settings_Order_Tools extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'title'    => __( 'Search', 'ean-for-woocommerce' ),
-				'desc'     => ( isset( $_REQUEST['alg_wc_ean_order_items_search'], alg_wc_ean()->core->order_tools ) ?
-					alg_wc_ean()->core->order_tools->get_order_items_search( wc_clean( $_REQUEST['alg_wc_ean_order_items_search'] ) ) : '' ),
+				'desc'     => (
+					isset( $_REQUEST['alg_wc_ean_order_items_search'], alg_wc_ean()->core->order_tools ) ?
+					alg_wc_ean()->core->order_tools->get_order_items_search(
+						sanitize_text_field( wp_unslash( $_REQUEST['alg_wc_ean_order_items_search'] ) )
+					) :
+					''
+				),
 				'id'       => 'alg_wc_ean_order_items_search',
-				'default'  => ( isset( $_REQUEST['alg_wc_ean_order_items_search'] ) ?
-					wc_clean( $_REQUEST['alg_wc_ean_order_items_search'] ) : '' ),
+				'default'  => (
+					isset( $_REQUEST['alg_wc_ean_order_items_search'] ) ?
+					sanitize_text_field( wp_unslash( $_REQUEST['alg_wc_ean_order_items_search'] ) ) :
+					''
+				),
 				'type'     => 'text',
 			),
 			array(

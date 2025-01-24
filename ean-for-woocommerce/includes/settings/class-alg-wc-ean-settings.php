@@ -17,7 +17,7 @@ class Alg_WC_EAN_Settings extends WC_Settings_Page {
 	/**
 	 * Constructor.
 	 *
-	 * @version 4.9.1
+	 * @version 5.4.0
 	 * @since   1.0.0
 	 */
 	function __construct() {
@@ -27,34 +27,34 @@ class Alg_WC_EAN_Settings extends WC_Settings_Page {
 		parent::__construct();
 
 		// Sections
-		require_once( 'class-alg-wc-ean-settings-section.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-section.php';
 
 		// Sections: EAN
-		require_once( 'class-alg-wc-ean-settings-general.php' );
-		require_once( 'class-alg-wc-ean-settings-tools.php' );
-		require_once( 'class-alg-wc-ean-settings-order-tools.php' );
-		require_once( 'class-alg-wc-ean-settings-compatibility.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-general.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-tools.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-order-tools.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-compatibility.php';
 
 		// Sections: Barcodes
-		require_once( 'class-alg-wc-ean-settings-barcodes.php' );
-		require_once( 'class-alg-wc-ean-settings-barcodes-compatibility.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-barcodes.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-barcodes-compatibility.php';
 		new Alg_WC_EAN_Settings_Barcodes( '1d' );
 		new Alg_WC_EAN_Settings_Barcodes_Compatibility( '1d' );
 		new Alg_WC_EAN_Settings_Barcodes( '2d' );
 		new Alg_WC_EAN_Settings_Barcodes_Compatibility( '2d' );
 
 		// Sections: Print
-		require_once( 'class-alg-wc-ean-settings-print.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-print.php';
 		if ( 'yes' === get_option( 'alg_wc_ean_print_products_list_section', 'no' ) && 'yes' === get_option( 'alg_wc_ean_print_barcodes_to_pdf', 'no' ) ) {
-			require_once( 'class-alg-wc-ean-settings-print-products.php' );
+			require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-print-products.php';
 		}
 
 		// Sections: Advanced
-		require_once( 'class-alg-wc-ean-settings-advanced.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-advanced.php';
 
 		// Sections: Extra fields
-		require_once( 'class-alg-wc-ean-settings-extra-fields.php' );
-		require_once( 'class-alg-wc-ean-settings-extra-field.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-extra-fields.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ean-settings-extra-field.php';
 		for ( $i = 1; $i <= get_option( 'alg_wc_ean_extra_fields_num_total', 0 ); $i++ ) {
 			new Alg_WC_EAN_Settings_Extra_Field( $i );
 		}

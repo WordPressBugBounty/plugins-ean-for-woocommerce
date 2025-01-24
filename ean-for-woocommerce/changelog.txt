@@ -1,5 +1,23 @@
 == Changelog ==
 
+= 5.4.0 - 24/01/2025 =
+* Dev - Security - Shortcodes - `[alg_wc_ean_product_function]` - User capability check added.
+* Dev - Security - Output escaped.
+* Dev - Security - Input sanitized.
+* Dev - Code refactoring.
+* Dev - Coding standards improved.
+* Dev - Composer - `autoloader-suffix` param added.
+* WC tested up to: 9.6.
+
+= 5.3.5 - 04/12/2024 =
+* Dev - Security - Output escaped.
+* Dev - Key Manager - Library updated.
+* Dev - Coding standards improved.
+
+= 5.3.4 - 02/12/2024 =
+* Fix - Barcode Generator - `Alg_WC_EAN_TCPDFBarcode` class loading fixed.
+* Dev - Coding standards improved.
+
 = 5.3.3 - 21/11/2024 =
 * Dev - Developers - Product Tools - Automatic actions - `alg_wc_ean_product_tools_insert_post_current_ean` filter added.
 * Dev - Developers - Product Tools - Automatic actions - `alg_wc_ean_product_tools_insert_post_copy_to_variations_meta_key` filter added.

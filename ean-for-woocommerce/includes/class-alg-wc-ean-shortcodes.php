@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Shortcodes Class
  *
- * @version 4.9.9
+ * @version 5.4.0
  * @since   3.5.0
  *
  * @author  Algoritmika Ltd
@@ -249,13 +249,21 @@ class Alg_WC_EAN_Shortcodes {
 	/**
 	 * product_function_shortcode.
 	 *
-	 * @version 3.6.0
+	 * @version 5.4.0
 	 * @since   3.6.0
 	 *
 	 * @todo    (dev) `name`: sanitize?
 	 * @todo    (dev) `name`: add `alg_wc_ean_product_function_shortcode_allowed_names` option?
 	 */
 	function product_function_shortcode( $atts, $content = '' ) {
+
+		// Permissions
+		if ( ! apply_filters(
+			'alg_wc_ean_product_function_shortcode_user_capability',
+			current_user_can( 'manage_woocommerce' ) )
+		) {
+			return '';
+		}
 
 		// Atts
 		$default_atts = array(
