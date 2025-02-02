@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 5.4.1 - 02/02/2025 =
+* Dev - Languages - POT file regenerated with WP-CLI.
+* Dev - Coding standards improved.
+
 = 5.4.0 - 24/01/2025 =
 * Dev - Security - Shortcodes - `[alg_wc_ean_product_function]` - User capability check added.
 * Dev - Security - Output escaped.

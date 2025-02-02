@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Advanced Section Settings
  *
- * @version 5.1.1
+ * @version 5.4.1
  * @since   2.2.9
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_EAN_Settings_Advanced extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * get_settings.
 	 *
-	 * @version 5.1.1
+	 * @version 5.4.1
 	 * @since   2.2.9
 	 *
 	 * @todo    (dev) Import/Export: move to "Tools", and/or add dashicons?
@@ -45,7 +45,11 @@ class Alg_WC_EAN_Settings_Advanced extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'title'             => __( 'Meta key', 'ean-for-woocommerce' ),
-				'desc'              => sprintf( __( 'Default: %s', 'ean-for-woocommerce' ), '<code>_alg_ean</code>' ),
+				'desc'              => sprintf(
+					/* Translators: %s: Meta key. */
+					__( 'Default: %s', 'ean-for-woocommerce' ),
+					'<code>_alg_ean</code>'
+				),
 				'id'                => 'alg_wc_ean_meta_key',
 				'default'           => '_alg_ean',
 				'type'              => 'text',
@@ -66,9 +70,15 @@ class Alg_WC_EAN_Settings_Advanced extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'title'             => __( 'JavaScript Variation Options', 'ean-for-woocommerce' ),
-				'desc'              => sprintf( __( 'This is used only if "%s" option is set to "%s".', 'ean-for-woocommerce' ),
-						__( 'Variable products: Position in variation', 'ean-for-woocommerce' ), __( 'Product meta', 'ean-for-woocommerce' ) ) . ' ' .
-					__( 'Leave at the default value if unsure.', 'ean-for-woocommerce' ),
+				'desc'              => (
+					sprintf(
+						/* Translators: %1$s: Option title, %2$s: Option value. */
+						__( 'This is used only if "%1$s" option is set to "%2$s".', 'ean-for-woocommerce' ),
+						__( 'Variable products: Position in variation', 'ean-for-woocommerce' ),
+						__( 'Product meta', 'ean-for-woocommerce' )
+					) . ' ' .
+					__( 'Leave at the default value if unsure.', 'ean-for-woocommerce' )
+				),
 				'type'              => 'title',
 				'id'                => 'alg_wc_ean_advanced_js_options',
 			),
@@ -80,8 +90,11 @@ class Alg_WC_EAN_Settings_Advanced extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'title'             => __( 'Closest container', 'ean-for-woocommerce' ),
-				'desc'              => sprintf( __( 'If EAN is not displayed in product variations, try setting this option to %s', 'ean-for-woocommerce' ),
-					'<code>.single-product</code>' ),
+				'desc'              => sprintf(
+					/* Translators: %s: Selector. */
+					__( 'If EAN is not displayed in product variations, try setting this option to %s', 'ean-for-woocommerce' ),
+					'<code>.single-product</code>'
+				),
 				'id'                => 'alg_wc_ean_js_variations_form_closest',
 				'default'           => '.summary',
 				'type'              => 'text',
