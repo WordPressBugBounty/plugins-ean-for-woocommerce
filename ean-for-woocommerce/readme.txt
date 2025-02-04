@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmu
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 4.4
 Tested up to: 6.7
-Stable tag: 5.4.1
+Stable tag: 5.4.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,9 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.4.2 - 04/02/2025 =
+* Dev - Print - Advanced - "Define K_PATH_CACHE" option added (defaults to `no`).
 
 = 5.4.1 - 02/02/2025 =
 * Dev - Languages - POT file regenerated with WP-CLI.

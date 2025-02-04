@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Print Section Settings
  *
- * @version 4.7.4
+ * @version 5.4.2
  * @since   2.0.0
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_EAN_Settings_Print extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * get_settings.
 	 *
-	 * @version 4.7.4
+	 * @version 5.4.2
 	 * @since   2.0.0
 	 *
 	 * @see     https://www.avery.com/templates/6879 (default margins etc.)
@@ -446,6 +446,17 @@ class Alg_WC_EAN_Settings_Print extends Alg_WC_EAN_Settings_Section {
 				'desc_tip'          => __( 'Suppress PHP errors when generating PDF.', 'ean-for-woocommerce' ),
 				'id'                => 'alg_wc_ean_print_barcodes_to_pdf_settings[suppress_errors]',
 				'default'           => 'yes',
+				'type'              => 'checkbox',
+			),
+			array(
+				'title'             => __( 'Define K_PATH_CACHE', 'ean-for-woocommerce' ),
+				'desc'              => __( 'Enable', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					__( 'Sets TCPDF cache directory for temporary files.', 'ean-for-woocommerce' ) . ' ' .
+					__( 'Enable this if barcode images are empty.', 'ean-for-woocommerce' )
+				),
+				'id'                => 'alg_wc_ean_print_barcodes_to_pdf_settings[define_k_path_cache]',
+				'default'           => 'no',
 				'type'              => 'checkbox',
 			),
 			array(

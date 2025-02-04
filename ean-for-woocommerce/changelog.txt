@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 5.4.2 - 04/02/2025 =
+* Dev - Print - Advanced - "Define K_PATH_CACHE" option added (defaults to `no`).
+
 = 5.4.1 - 02/02/2025 =
 * Dev - Languages - POT file regenerated with WP-CLI.
 * Dev - Coding standards improved.

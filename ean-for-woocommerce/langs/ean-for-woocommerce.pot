@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.1\n"
+"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ean-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-02T18:39:25+00:00\n"
+"POT-Creation-Date: 2025-02-04T12:10:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ean-for-woocommerce\n"
@@ -426,7 +426,7 @@ msgstr ""
 msgid "Variations"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-print.php:699
+#: includes/pro/class-alg-wc-ean-print.php:705
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:27
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:45
 #: includes/settings/class-alg-wc-ean-settings-barcodes.php:27
@@ -542,7 +542,8 @@ msgstr ""
 #: includes/settings/class-alg-wc-ean-settings-print.php:428
 #: includes/settings/class-alg-wc-ean-settings-print.php:436
 #: includes/settings/class-alg-wc-ean-settings-print.php:445
-#: includes/settings/class-alg-wc-ean-settings-print.php:491
+#: includes/settings/class-alg-wc-ean-settings-print.php:453
+#: includes/settings/class-alg-wc-ean-settings-print.php:502
 msgid "Enable"
 msgstr ""
 
@@ -1713,8 +1714,8 @@ msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-print-products.php:46
 #: includes/settings/class-alg-wc-ean-settings-print.php:25
-#: includes/settings/class-alg-wc-ean-settings-print.php:461
-#: includes/settings/class-alg-wc-ean-settings-print.php:462
+#: includes/settings/class-alg-wc-ean-settings-print.php:472
+#: includes/settings/class-alg-wc-ean-settings-print.php:473
 msgid "Print"
 msgstr ""
 
@@ -2043,27 +2044,39 @@ msgstr ""
 msgid "Suppress PHP errors when generating PDF."
 msgstr ""
 
+#: includes/settings/class-alg-wc-ean-settings-print.php:452
+msgid "Define K_PATH_CACHE"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ean-settings-print.php:455
+msgid "Sets TCPDF cache directory for temporary files."
+msgstr ""
+
 #: includes/settings/class-alg-wc-ean-settings-print.php:456
+msgid "Enable this if barcode images are empty."
+msgstr ""
+
+#: includes/settings/class-alg-wc-ean-settings-print.php:467
 msgid "Print Tools"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-print.php:463
+#: includes/settings/class-alg-wc-ean-settings-print.php:474
 msgid "Check the box and \"Save changes\" to run the tool."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-print.php:469
+#: includes/settings/class-alg-wc-ean-settings-print.php:480
 msgid "Product(s)"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-print.php:482
+#: includes/settings/class-alg-wc-ean-settings-print.php:493
 msgid "Quantity"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-print.php:490
+#: includes/settings/class-alg-wc-ean-settings-print.php:501
 msgid "Products List"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-print.php:492
+#: includes/settings/class-alg-wc-ean-settings-print.php:503
 msgid "This will add new \"Print Products\" section to \"WooCommerce > Settings > EAN\"."
 msgstr ""
 
