@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Product Block Editor Class
  *
- * @version 5.2.1
+ * @version 5.4.3
  * @since   5.2.1
  *
  * @author  Algoritmika Ltd
@@ -17,11 +17,22 @@ class Alg_WC_EAN_Product_Block_Editor {
 	/**
 	 * Constructor.
 	 *
-	 * @version 5.2.1
+	 * @version 5.4.3
 	 * @since   5.2.1
 	 */
 	function __construct() {
+		add_action( 'init', array( $this, 'init' ) );
+	}
 
+	/**
+	 * init.
+	 *
+	 * @version 5.4.3
+	 * @since   5.4.3
+	 */
+	function init() {
+
+		// Check option and "New product editor" feature
 		if (
 			'yes' !== get_option( 'alg_wc_ean_product_block_editor', 'yes' ) ||
 			! class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ||
