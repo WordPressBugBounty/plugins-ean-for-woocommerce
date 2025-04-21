@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.3\n"
+"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ean-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-03T08:42:12+00:00\n"
+"POT-Creation-Date: 2025-04-21T12:58:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ean-for-woocommerce\n"
@@ -434,43 +434,43 @@ msgid "Barcodes"
 msgstr ""
 
 #. Translators: %1$s: Product ID, %2$s: Action, %3$s: Result.
-#: includes/pro/class-alg-wc-ean-pro.php:180
+#: includes/pro/class-alg-wc-ean-pro.php:187
 msgid "Product ID: %1$s; action: %2$s; result: %3$s;"
 msgstr ""
 
 #. Translators: %1$s: Product ID, %2$s: Result.
-#: includes/pro/class-alg-wc-ean-pro.php:200
+#: includes/pro/class-alg-wc-ean-pro.php:207
 msgid "Product ID: %1$s; action: set (min_stock); result: %2$s;"
 msgstr ""
 
 #. Translators: %1$s: Product ID, %2$s: Result.
-#: includes/pro/class-alg-wc-ean-pro.php:209
+#: includes/pro/class-alg-wc-ean-pro.php:216
 msgid "Product ID: %1$s; action: set (max_stock); result: %2$s;"
 msgstr ""
 
 #. Translators: %s: Error message.
-#: includes/pro/class-alg-wc-ean-pro.php:217
 #: includes/pro/class-alg-wc-ean-pro.php:224
-#: includes/pro/class-alg-wc-ean-pro.php:260
+#: includes/pro/class-alg-wc-ean-pro.php:231
 #: includes/pro/class-alg-wc-ean-pro.php:267
+#: includes/pro/class-alg-wc-ean-pro.php:274
 msgid "Error: %s"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:218
-#: includes/pro/class-alg-wc-ean-pro.php:261
+#: includes/pro/class-alg-wc-ean-pro.php:225
+#: includes/pro/class-alg-wc-ean-pro.php:268
 msgid "Empty or wrong security token."
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:225
+#: includes/pro/class-alg-wc-ean-pro.php:232
 msgid "Product ID or security token param not set."
 msgstr ""
 
 #. Translators: %1$s: Product ID, %2$s: Quantity, %3$s: User ID.
-#: includes/pro/class-alg-wc-ean-pro.php:252
+#: includes/pro/class-alg-wc-ean-pro.php:259
 msgid "Product ID: %1$s; action: add_to_cart; qty: %2$s; user_id: %3$s;"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-pro.php:268
+#: includes/pro/class-alg-wc-ean-pro.php:275
 msgid "Product ID, user ID, quantity or security token param not set."
 msgstr ""
 

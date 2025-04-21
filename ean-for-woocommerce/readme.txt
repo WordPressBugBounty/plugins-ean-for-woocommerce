@@ -1,9 +1,9 @@
 === EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory ===
-Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 4.4
-Tested up to: 6.7
-Stable tag: 5.4.3
+Tested up to: 6.8
+Stable tag: 5.4.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,12 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.4.4 - 21/04/2025 =
+* Fix - Translation loading fixed.
+* Dev - Key Manager - Library updated.
+* Tested up to: 6.8.
+* WC tested up to: 9.8.
 
 = 5.4.3 - 03/04/2025 =
 * Fix - General - Admin product block editor - Translation loading fixed.
