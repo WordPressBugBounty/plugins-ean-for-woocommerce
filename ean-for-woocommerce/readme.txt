@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 4.4
 Tested up to: 6.8
-Stable tag: 5.4.4
+Stable tag: 5.4.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,9 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.4.5 - 22/04/2025 =
+* Dev - 2D Barcodes > Compatibility - "QRcode class" options added (defaults to `no`).
 
 = 5.4.4 - 21/04/2025 =
 * Fix - Translation loading fixed.

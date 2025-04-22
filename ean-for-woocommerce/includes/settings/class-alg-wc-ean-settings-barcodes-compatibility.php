@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Barcodes - Compatibility Section Settings
  *
- * @version 5.4.1
+ * @version 5.4.5
  * @since   3.8.0
  *
  * @author  Algoritmika Ltd
@@ -31,7 +31,7 @@ class Alg_WC_EAN_Settings_Barcodes_Compatibility extends Alg_WC_EAN_Settings_Sec
 	/**
 	 * get_settings.
 	 *
-	 * @version 5.4.1
+	 * @version 5.4.5
 	 * @since   3.8.0
 	 */
 	function get_settings() {
@@ -223,11 +223,43 @@ class Alg_WC_EAN_Settings_Barcodes_Compatibility extends Alg_WC_EAN_Settings_Sec
 				'default'  => "[alg_wc_ean_barcode{$this->dim_suffix}]",
 				'type'     => 'textarea',
 			),
+		);
+		if ( '2d' === $this->dim ) {
+			$settings = array_merge( $settings, array(
+				array(
+					'title'    => __( 'QRcode class', 'ean-for-woocommerce' ),
+					'desc'     => __( 'Enable', 'ean-for-woocommerce' ),
+					'desc_tip' => sprintf(
+						/* Translators: %s: Class name. */
+						__( 'This will load the %s class as early as possible.', 'ean-for-woocommerce' ),
+						'<code>QRcode</code>'
+					),
+					'id'       => 'alg_wc_ean_qrcode_early_load',
+					'default'  => 'no',
+					'type'     => 'checkbox',
+				),
+				array(
+					'desc'     => sprintf(
+						/* Translators: %s: Parameter list example. */
+						__( 'Optional URL parameter list. One pair per line. E.g.: %s', 'ean-for-woocommerce' ),
+						'<pre style="background-color:#dfdfe0; padding:3px 5px 2px; width: fit-content;">' .
+							'action=alg_wc_ean_print_barcodes_to_pdf' . PHP_EOL .
+							'section=print' .
+						'</pre>'
+					),
+					'id'       => 'alg_wc_ean_qrcode_early_load_params',
+					'default'  => '',
+					'type'     => 'textarea',
+					'css'      => 'height:100px;',
+				),
+			) );
+		}
+		$settings = array_merge( $settings, array(
 			array(
 				'type'     => 'sectionend',
 				'id'       => "alg_wc_ean_barcode{$this->dim_suffix}_compatibility_options",
 			),
-		);
+		) );
 		return $settings;
 	}
 

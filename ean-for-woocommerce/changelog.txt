@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 5.4.5 - 22/04/2025 =
+* Dev - 2D Barcodes > Compatibility - "QRcode class" options added (defaults to `no`).
+
 = 5.4.4 - 21/04/2025 =
 * Fix - Translation loading fixed.
 * Dev - Key Manager - Library updated.
