@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.5\n"
+"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ean-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-22T15:38:51+00:00\n"
+"POT-Creation-Date: 2025-04-30T07:42:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ean-for-woocommerce\n"
@@ -39,17 +39,22 @@ msgstr ""
 msgid "https://wpfactory.com"
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:100
-#: includes/class-alg-wc-ean-compatibility.php:237
-#: includes/class-alg-wc-ean-compatibility.php:337
-#: includes/class-alg-wc-ean-compatibility.php:352
-#: includes/class-alg-wc-ean-compatibility.php:371
-#: includes/class-alg-wc-ean-compatibility.php:418
-#: includes/class-alg-wc-ean-compatibility.php:496
-#: includes/class-alg-wc-ean-compatibility.php:548
-#: includes/class-alg-wc-ean-compatibility.php:583
-#: includes/class-alg-wc-ean-compatibility.php:644
-#: includes/class-alg-wc-ean-compatibility.php:703
+#: includes/class-alg-wc-ean-compatibility.php:212
+#: includes/settings/class-alg-wc-ean-settings-compatibility.php:296
+msgid "EAN:"
+msgstr ""
+
+#: includes/class-alg-wc-ean-compatibility.php:230
+#: includes/class-alg-wc-ean-compatibility.php:274
+#: includes/class-alg-wc-ean-compatibility.php:366
+#: includes/class-alg-wc-ean-compatibility.php:381
+#: includes/class-alg-wc-ean-compatibility.php:400
+#: includes/class-alg-wc-ean-compatibility.php:447
+#: includes/class-alg-wc-ean-compatibility.php:525
+#: includes/class-alg-wc-ean-compatibility.php:577
+#: includes/class-alg-wc-ean-compatibility.php:612
+#: includes/class-alg-wc-ean-compatibility.php:673
+#: includes/class-alg-wc-ean-compatibility.php:732
 #: includes/class-alg-wc-ean-core.php:182
 #: includes/class-alg-wc-ean-display.php:191
 #: includes/class-alg-wc-ean-display.php:197
@@ -75,33 +80,28 @@ msgstr ""
 msgid "EAN"
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:219
-#: includes/settings/class-alg-wc-ean-settings-compatibility.php:296
-msgid "EAN:"
-msgstr ""
-
-#: includes/class-alg-wc-ean-compatibility.php:424
-#: includes/class-alg-wc-ean-compatibility.php:500
+#: includes/class-alg-wc-ean-compatibility.php:453
+#: includes/class-alg-wc-ean-compatibility.php:529
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:272
 msgid "The International Article Number (also known as European Article Number or EAN) is a standard describing a barcode symbology and numbering system used in global trade to identify a specific retail product type, in a specific packaging configuration, from a specific manufacturer."
 msgstr ""
 
-#: includes/class-alg-wc-ean-compatibility.php:425
-#: includes/class-alg-wc-ean-compatibility.php:501
-#: includes/class-alg-wc-ean-compatibility.php:648
+#: includes/class-alg-wc-ean-compatibility.php:454
+#: includes/class-alg-wc-ean-compatibility.php:530
+#: includes/class-alg-wc-ean-compatibility.php:677
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:235
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:266
 msgid "Product EAN..."
 msgstr ""
 
 #. Translators: %s: EAN title.
-#: includes/class-alg-wc-ean-compatibility.php:547
+#: includes/class-alg-wc-ean-compatibility.php:576
 #: includes/class-alg-wc-ean-edit.php:206
 msgid "Generate %s"
 msgstr ""
 
 #. Translators: %s: EAN.
-#: includes/class-alg-wc-ean-compatibility.php:725
+#: includes/class-alg-wc-ean-compatibility.php:754
 #: includes/class-alg-wc-ean-search.php:226
 msgid "EAN: %s"
 msgstr ""
@@ -250,9 +250,9 @@ msgstr ""
 msgid "Go Pro"
 msgstr ""
 
-#: includes/pro/class-alg-wc-ean-compatibility-barcodes.php:44
-#: includes/pro/class-alg-wc-ean-compatibility-barcodes.php:187
-#: includes/pro/class-alg-wc-ean-compatibility-barcodes.php:204
+#: includes/pro/class-alg-wc-ean-compatibility-barcodes.php:128
+#: includes/pro/class-alg-wc-ean-compatibility-barcodes.php:224
+#: includes/pro/class-alg-wc-ean-compatibility-barcodes.php:241
 #: includes/pro/class-alg-wc-ean-display-barcodes.php:113
 #: includes/pro/class-alg-wc-ean-export-barcodes.php:43
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:153

@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Compatibility Class
  *
- * @version 5.4.0
+ * @version 5.4.6
  * @since   2.2.0
  *
  * @author  Algoritmika Ltd
@@ -24,7 +24,7 @@ class Alg_WC_EAN_Compatibility {
 	/**
 	 * Constructor.
 	 *
-	 * @version 5.3.1
+	 * @version 5.4.6
 	 * @since   2.2.0
 	 *
 	 * @todo    (dev) MultiVendorX: generate button
@@ -91,20 +91,13 @@ class Alg_WC_EAN_Compatibility {
 
 		// "WooCommerce PDF Invoices, Packing Slips, Delivery Notes and Shipping Labels" plugin
 		if ( 'yes' === get_option( 'alg_wc_ean_wt_pklist', 'no' ) ) {
-			// Options
-			$this->wt_pklist_options = array_replace(
-				array(
-					'content'      => '<p>EAN: [alg_wc_ean]</p>',
-					'position'     => 'after_product_meta',
-					'documents'    => '',
-					'column_title' => __( 'EAN', 'ean-for-woocommerce' ),
-					'column_class' => 'wfte_product_table_head_ean wfte_text_center',
-					'column_style' => '',
-				),
+			// Options (position)
+			$_wt_pklist_options = array_replace(
+				array( 'position' => 'after_product_meta' ),
 				get_option( 'alg_wc_ean_wt_pklist_options', array() )
 			);
 			// Hooks
-			switch ( $this->wt_pklist_options['position'] ) {
+			switch ( $_wt_pklist_options['position'] ) {
 				case 'column':
 					add_filter( 'wf_pklist_package_product_table_additional_column_val', array( $this, 'add_to_wt_pklist_column_ean' ), 10, 6 );
 					add_filter( 'wf_pklist_product_table_additional_column_val',         array( $this, 'add_to_wt_pklist_column_ean' ), 10, 6 );
@@ -266,15 +259,41 @@ class Alg_WC_EAN_Compatibility {
 	}
 
 	/**
+	 * wt_pklist_options_init.
+	 *
+	 * @version 5.4.6
+	 * @since   5.4.6
+	 */
+	function wt_pklist_options_init() {
+		if ( ! isset( $this->wt_pklist_options ) ) {
+			$this->wt_pklist_options = array_replace(
+				array(
+					'content'      => '<p>EAN: [alg_wc_ean]</p>',
+					'position'     => 'after_product_meta',
+					'documents'    => '',
+					'column_title' => __( 'EAN', 'ean-for-woocommerce' ),
+					'column_class' => 'wfte_product_table_head_ean wfte_text_center',
+					'column_style' => '',
+				),
+				get_option( 'alg_wc_ean_wt_pklist_options', array() )
+			);
+		}
+	}
+
+	/**
 	 * wt_pklist_check_template_type.
 	 *
-	 * @version 3.5.1
+	 * @version 5.4.6
 	 * @since   3.5.1
 	 */
 	function wt_pklist_check_template_type( $template_type ) {
+		$this->wt_pklist_options_init();
 		if ( ! empty( $this->wt_pklist_options['documents'] ) ) {
 			if ( ! is_array( $this->wt_pklist_options['documents'] ) ) {
-				$this->wt_pklist_options['documents'] = array_map( 'trim', explode( ',', $this->wt_pklist_options['documents'] ) );
+				$this->wt_pklist_options['documents'] = array_map(
+					'trim',
+					explode( ',', $this->wt_pklist_options['documents'] )
+				);
 			}
 			return ( in_array( $template_type, $this->wt_pklist_options['documents'] ) );
 		}
@@ -321,8 +340,18 @@ class Alg_WC_EAN_Compatibility {
 	 */
 	function add_to_wt_pklist_ean( $value, $template_type, $product, $order_item, $order ) {
 		if ( $this->wt_pklist_check_template_type( $template_type ) ) {
-			$result = alg_wc_ean()->core->shortcodes->do_shortcode( $this->wt_pklist_options['content'], array( 'product_id' => $product->get_id() ) );
-			$value  = ( in_array( $this->wt_pklist_options['position'], array( 'after_product_meta', 'after_product_name' ) ) ? $value . $result : $result . $value );
+			$result = alg_wc_ean()->core->shortcodes->do_shortcode(
+				$this->wt_pklist_options['content'],
+				array( 'product_id' => $product->get_id() )
+			);
+			$value  = (
+				in_array(
+					$this->wt_pklist_options['position'],
+					array( 'after_product_meta', 'after_product_name' )
+				) ?
+				$value . $result :
+				$result . $value
+			);
 		}
 		return $value;
 	}
