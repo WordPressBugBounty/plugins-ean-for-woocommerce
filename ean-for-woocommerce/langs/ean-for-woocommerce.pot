@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.6\n"
+"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ean-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-30T07:42:24+00:00\n"
+"POT-Creation-Date: 2025-05-09T06:24:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ean-for-woocommerce\n"
@@ -111,22 +111,22 @@ msgid "- No change -"
 msgstr ""
 
 #: includes/class-alg-wc-ean-edit.php:276
-#: includes/class-alg-wc-ean-shortcodes.php:651
+#: includes/class-alg-wc-ean-shortcodes.php:675
 msgid "Valid EAN"
 msgstr ""
 
 #: includes/class-alg-wc-ean-edit.php:277
-#: includes/class-alg-wc-ean-shortcodes.php:652
+#: includes/class-alg-wc-ean-shortcodes.php:676
 msgid "Invalid EAN"
 msgstr ""
 
 #: includes/class-alg-wc-ean-edit.php:281
-#: includes/class-alg-wc-ean-shortcodes.php:619
+#: includes/class-alg-wc-ean-shortcodes.php:643
 msgid "Unique EAN"
 msgstr ""
 
 #: includes/class-alg-wc-ean-edit.php:282
-#: includes/class-alg-wc-ean-shortcodes.php:620
+#: includes/class-alg-wc-ean-shortcodes.php:644
 msgid "Duplicated EAN"
 msgstr ""
 

@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Shortcodes Class
  *
- * @version 5.4.0
+ * @version 5.4.7
  * @since   3.5.0
  *
  * @author  Algoritmika Ltd
@@ -50,6 +50,7 @@ class Alg_WC_EAN_Shortcodes {
 		add_shortcode( 'alg_wc_ean_if',                array( $this, 'if_shortcode' ) );
 		add_shortcode( 'alg_wc_ean_if_product_cat',    array( $this, 'if_product_cat_shortcode' ) );
 		add_shortcode( 'alg_wc_ean_if_product_tag',    array( $this, 'if_product_tag_shortcode' ) );
+
 	}
 
 	/**
@@ -196,22 +197,45 @@ class Alg_WC_EAN_Shortcodes {
 	}
 
 	/**
+	 * replace_brackets.
+	 *
+	 * @version 5.4.7
+	 * @since   5.4.7
+	 */
+	function replace_brackets( $value ) {
+		return str_replace( array( '{', '}' ), array( '[', ']' ), $value );
+	}
+
+	/**
 	 * if_shortcode.
 	 *
-	 * @version 4.6.0
+	 * @version 5.4.7
 	 * @since   4.6.0
 	 *
 	 * @todo    (dev) `shortcode_atts`
 	 */
 	function if_shortcode( $atts, $content = '' ) {
-		if ( ! isset( $atts['value1'], $atts['operator'], $atts['value2'] ) || ( '' === $content && ! isset( $atts['then'] ) ) ) {
+		if (
+			! isset( $atts['value1'], $atts['operator'], $atts['value2'] ) ||
+			( '' === $content && ! isset( $atts['then'] ) )
+		) {
 			return '';
 		}
-		$value1 =              do_shortcode( str_replace( array( '{', '}' ), array( '[', ']' ), $atts['value1'] ) );
-		$value2 =              do_shortcode( str_replace( array( '{', '}' ), array( '[', ']' ), $atts['value2'] ) );
-		$then   = ( '' === $content        ? str_replace( array( '{', '}' ), array( '[', ']' ), $atts['then'] ) : $content );
-		$else   = ( isset( $atts['else'] ) ? str_replace( array( '{', '}' ), array( '[', ']' ), $atts['else'] ) : '' );
-		return do_shortcode( ( $this->if_shortcode_operator( $value1, $atts['operator'], $value2 ) ? $then : $else ) );
+
+		$value1 =              do_shortcode( $this->replace_brackets( $atts['value1'] ) );
+		$value2 =              do_shortcode( $this->replace_brackets( $atts['value2'] ) );
+		$then   = ( '' === $content        ? $this->replace_brackets( $atts['then'] ) : $content );
+		$else   = ( isset( $atts['else'] ) ? $this->replace_brackets( $atts['else'] ) : '' );
+
+		return wp_kses_post(
+			do_shortcode(
+				(
+					$this->if_shortcode_operator( $value1, $atts['operator'], $value2 ) ?
+					$then :
+					$else
+				)
+			)
+		);
 	}
 
 	/**
