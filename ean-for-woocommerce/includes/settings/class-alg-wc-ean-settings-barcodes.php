@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Barcodes Section Settings
  *
- * @version 4.9.9
+ * @version 5.4.8
  * @since   2.0.0
  *
  * @author  Algoritmika Ltd
@@ -31,7 +31,7 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * get_settings.
 	 *
-	 * @version 4.9.9
+	 * @version 5.4.8
 	 * @since   2.0.0
 	 *
 	 * @todo    (desc) Enable section: better desc
@@ -44,7 +44,11 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 	function get_settings() {
 		$settings = array(
 			array(
-				'title'    => sprintf( __( '%s Options', 'ean-for-woocommerce' ), $this->desc ),
+				'title'    => sprintf(
+					/* Translators: %s: Section title. */
+					__( '%s Options', 'ean-for-woocommerce' ),
+					$this->desc
+				),
 				'type'     => 'title',
 				'id'       => "alg_wc_ean_barcode{$this->dim_suffix}_options",
 			),
@@ -66,8 +70,14 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 				'type'     => 'checkbox',
 			),
 			array(
-				'desc'     => __( 'Template', 'ean-for-woocommerce' ) . '<br>' .
-					sprintf( __( 'You should use %s shortcode here.', 'ean-for-woocommerce' ), '<code>[alg_wc_ean_barcode' . $this->dim_suffix . ']</code>' ),
+				'desc'     => (
+					__( 'Template', 'ean-for-woocommerce' ) . '<br>' .
+					sprintf(
+						/* Translators: %s: Shortcode name. */
+						__( 'You should use %s shortcode here.', 'ean-for-woocommerce' ),
+						'<code>[alg_wc_ean_barcode' . $this->dim_suffix . ']</code>'
+					)
+				),
 				'id'       => "alg_wc_ean_backend_barcode_template{$this->dim_suffix}",
 				'default'  => '[alg_wc_ean_barcode' . $this->dim_suffix . ' content="ean" w="' . ( '1d' === $this->dim ? 2  : 2 ) . '" h="' . ( '1d' === $this->dim ? 30 : 2 ) . '"]',
 				'type'     => 'textarea',
@@ -76,8 +86,13 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'    => __( 'Admin products list column', 'ean-for-woocommerce' ),
 				'desc'     => __( 'Enable', 'ean-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'Add "Barcode" column to %s.', 'ean-for-woocommerce' ),
-						'<a href="' . admin_url( 'edit.php?post_type=product' ) . '">' . __( 'admin products list', 'ean-for-woocommerce' ) . '</a>' ),
+				'desc_tip' => sprintf(
+					/* Translators: %s: Admin product list link. */
+					__( 'Add "Barcode" column to %s.', 'ean-for-woocommerce' ),
+					'<a href="' . admin_url( 'edit.php?post_type=product' ) . '">' .
+						__( 'admin products list', 'ean-for-woocommerce' ) .
+					'</a>'
+				),
 				'id'       => "alg_wc_ean_backend_column_barcode{$this->dim_suffix}",
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -89,8 +104,14 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 				'type'     => 'text',
 			),
 			array(
-				'desc'     => __( 'Column template', 'ean-for-woocommerce' ) . '<br>' .
-					sprintf( __( 'You should use %s shortcode here.', 'ean-for-woocommerce' ), '<code>[alg_wc_ean_barcode' . $this->dim_suffix . ']</code>' ),
+				'desc'     => (
+					__( 'Column template', 'ean-for-woocommerce' ) . '<br>' .
+					sprintf(
+						/* Translators: %s: Shortcode name. */
+						__( 'You should use %s shortcode here.', 'ean-for-woocommerce' ),
+						'<code>[alg_wc_ean_barcode' . $this->dim_suffix . ']</code>'
+					)
+				),
 				'id'       => "alg_wc_ean_backend_column_barcode_template{$this->dim_suffix}",
 				'default'  => '[alg_wc_ean_barcode' . $this->dim_suffix . ' content="ean" w="' . ( '1d' === $this->dim ? 1  : 1 ) . '" h="' . ( '1d' === $this->dim ? 15 : 1 ) . '" children="yes"]',
 				'type'     => 'textarea',
@@ -132,8 +153,14 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 				'type'     => 'checkbox',
 			),
 			array(
-				'desc'     => __( 'Cart template', 'ean-for-woocommerce' ) . '<br>' .
-					sprintf( __( 'You should use %s shortcode here.', 'ean-for-woocommerce' ), '<code>[alg_wc_ean_barcode' . $this->dim_suffix . ']</code>' ),
+				'desc'     => (
+					__( 'Cart template', 'ean-for-woocommerce' ) . '<br>' .
+					sprintf(
+						/* Translators: %s: Shortcode name. */
+						__( 'You should use %s shortcode here.', 'ean-for-woocommerce' ),
+						'<code>[alg_wc_ean_barcode' . $this->dim_suffix . ']</code>'
+					)
+				),
 				'id'       => "alg_wc_ean_frontend_cart_barcode_template{$this->dim_suffix}",
 				'default'  => '[alg_wc_ean_barcode' . $this->dim_suffix .
 					' before=\'<span class="sku_wrapper ean_barcode' . $this->dim_suffix . '_wrapper"><span class="ean_barcode' . $this->dim_suffix . '">\'' .
@@ -207,7 +234,11 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'    => __( 'Products', 'ean-for-woocommerce' ),
 				'desc'     => __( 'Add barcode (base64) to each product object in REST API responses', 'ean-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'E.g.: %s', 'ean-for-woocommerce' ), '<code>https://example.com/wp-json/wc/v3/products/123</code>' ),
+				'desc_tip' => sprintf(
+					/* Translators: %s: URL. */
+					__( 'E.g.: %s', 'ean-for-woocommerce' ),
+					'<code>https://example.com/wp-json/wc/v3/products/123</code>'
+				),
 				'id'       => "alg_wc_ean_rest_api_product_barcode{$this->dim_suffix}",
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -215,7 +246,11 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'    => __( 'Orders', 'ean-for-woocommerce' ),
 				'desc'     => __( 'Add barcode (base64) to each order object in REST API responses', 'ean-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'E.g.: %s', 'ean-for-woocommerce' ), '<code>https://example.com/wp-json/wc/v3/orders/465</code>' ),
+				'desc_tip' => sprintf(
+					/* Translators: %s: URL. */
+					__( 'E.g.: %s', 'ean-for-woocommerce' ),
+					'<code>https://example.com/wp-json/wc/v3/orders/465</code>'
+				),
 				'id'       => "alg_wc_ean_rest_api_order_barcode{$this->dim_suffix}",
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -241,8 +276,18 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'title'    => __( 'Barcode type', 'ean-for-woocommerce' ),
-				'desc'     => ( '2d' === $this->dim ? '' : sprintf( __( 'If set to "Automatic", will use the barcode type based on EAN type, i.e., %s for EAN-8, %s for UPC-A, %s for EAN-13, ISBN-13 and JAN, and %s for all other types.', 'ean-for-woocommerce' ),
-					'<code>EAN-8</code>', '<code>UPC-A</code>', '<code>EAN-13</code>', '<code>CODE 128</code>' ) ),
+				'desc'     => (
+					'2d' === $this->dim ?
+					'' :
+					sprintf(
+						/* Translators: %1$s: Barcode type, %2$s: Barcode type, %3$s: Barcode type, %4$s: Barcode type. */
+						__( 'If set to "Automatic", will use the barcode type based on EAN type, i.e., %1$s for EAN-8, %2$s for UPC-A, %3$s for EAN-13, ISBN-13 and JAN, and %4$s for all other types.', 'ean-for-woocommerce' ),
+						'<code>EAN-8</code>',
+						'<code>UPC-A</code>',
+						'<code>EAN-13</code>',
+						'<code>CODE 128</code>'
+					)
+				),
 				'id'       => "alg_wc_ean_barcode{$this->dim_suffix}_barcode_type",
 				'default'  => ( '2d' === $this->dim ? 'QRCODE,L' : 'AUTO' ),
 				'type'     => 'select',
@@ -281,8 +326,14 @@ class Alg_WC_EAN_Settings_Barcodes extends Alg_WC_EAN_Settings_Section {
 		$settings = array_merge( $settings, array(
 			array(
 				'title'    => __( 'Notes', 'ean-for-woocommerce' ),
-				'desc'     => '<span class="dashicons dashicons-info"></span> ' . sprintf( __( 'You can also output barcode with %s shortcode.', 'ean-for-woocommerce' ),
-					"<code>[alg_wc_ean_barcode{$this->dim_suffix}]</code>" ),
+				'desc'     => (
+					'<span class="dashicons dashicons-info"></span> ' .
+					sprintf(
+						/* Translators: %s: Shortcode name. */
+						__( 'You can also output barcode with %s shortcode.', 'ean-for-woocommerce' ),
+						"<code>[alg_wc_ean_barcode{$this->dim_suffix}]</code>"
+					)
+				),
 				'type'     => 'title',
 				'id'       => "alg_wc_ean_barcode{$this->dim_suffix}_notes",
 			),

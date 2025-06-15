@@ -2,20 +2,21 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.7\n"
+"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ean-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-09T06:24:52+00:00\n"
+"POT-Creation-Date: 2025-06-15T17:05:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ean-for-woocommerce\n"
 
 #. Plugin Name of the plugin
 #: ean-for-woocommerce.php
+#: includes/class-alg-wc-ean.php:244
 msgid "EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory"
 msgstr ""
 
@@ -65,8 +66,7 @@ msgstr ""
 #: includes/class-alg-wc-ean-edit.php:379
 #: includes/class-alg-wc-ean-orders.php:51
 #: includes/class-alg-wc-ean-product-block-editor.php:77
-#: includes/class-alg-wc-ean.php:238
-#: includes/class-alg-wc-ean.php:239
+#: includes/class-alg-wc-ean.php:243
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:119
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:178
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:229
@@ -242,11 +242,11 @@ msgstr ""
 msgid "EAN copied for %1$s products (%2$s total products)."
 msgstr ""
 
-#: includes/class-alg-wc-ean.php:188
+#: includes/class-alg-wc-ean.php:193
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-ean.php:193
+#: includes/class-alg-wc-ean.php:198
 msgid "Go Pro"
 msgstr ""
 
@@ -257,12 +257,12 @@ msgstr ""
 #: includes/pro/class-alg-wc-ean-export-barcodes.php:43
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:153
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:217
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:88
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:103
 msgid "Barcode"
 msgstr ""
 
 #: includes/pro/class-alg-wc-ean-display-barcodes.php:113
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:88
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:103
 msgid "2D barcode"
 msgstr ""
 
@@ -505,13 +505,13 @@ msgstr ""
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:180
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:202
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:231
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:62
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:78
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:101
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:120
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:128
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:155
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:270
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:66
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:88
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:122
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:141
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:149
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:182
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:315
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:47
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:61
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:72
@@ -553,7 +553,7 @@ msgid "Forces remote images in Barcodes > Order items table > Pages."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-advanced.php:62
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:182
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:209
 msgid "<strong>Please note</strong> that this option won't work on <code>localhost</code> environment."
 msgstr ""
 
@@ -567,13 +567,13 @@ msgid "This is used only if \"%1$s\" option is set to \"%2$s\"."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-advanced.php:77
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:108
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:129
 #: includes/settings/class-alg-wc-ean-settings-general.php:354
 msgid "Variable products: Position in variation"
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-advanced.php:78
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:114
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:135
 #: includes/settings/class-alg-wc-ean-settings-general.php:360
 msgid "Product meta"
 msgstr ""
@@ -654,7 +654,7 @@ msgid "\"%s\" option must be enabled."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:45
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:53
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:57
 #: includes/settings/class-alg-wc-ean-settings-print.php:87
 msgid "Enable section"
 msgstr ""
@@ -750,7 +750,7 @@ msgid "Leave empty to include in all documents."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-barcodes-compatibility.php:150
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:86
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:101
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:175
 msgid "Column title"
 msgstr ""
@@ -821,23 +821,24 @@ msgstr ""
 msgid "Optional URL parameter list. One pair per line. E.g.: %s"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:47
+#. Translators: %s: Section title.
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:49
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:53
 msgid "%s Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:61
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:65
 #: includes/settings/class-alg-wc-ean-settings-general.php:185
 msgid "Admin product edit page"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:63
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:67
 msgid "Show barcode image on admin product edit page."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:69
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:162
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:224
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:74
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:189
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:259
 #: includes/settings/class-alg-wc-ean-settings-general.php:323
 #: includes/settings/class-alg-wc-ean-settings-general.php:373
 #: includes/settings/class-alg-wc-ean-settings-general.php:389
@@ -845,150 +846,153 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:70
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:93
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:136
+#. Translators: %s: Shortcode name.
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:77
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:111
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:160
 msgid "You should use %s shortcode here."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:77
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:87
 #: includes/settings/class-alg-wc-ean-settings-general.php:280
 msgid "Admin products list column"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:79
+#. Translators: %s: Admin product list link.
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:91
 msgid "Add \"Barcode\" column to %s."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:80
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:93
 #: includes/settings/class-alg-wc-ean-settings-general.php:284
 #: includes/settings/class-alg-wc-ean-settings-print.php:89
 msgid "admin products list"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:92
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:108
 msgid "Column template"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:100
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:121
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:91
 #: includes/settings/class-alg-wc-ean-settings-general.php:315
 msgid "Single product page"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:102
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:123
 msgid "Show barcode image on single product page on frontend."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:115
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:136
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:239
 #: includes/settings/class-alg-wc-ean-settings-general.php:79
 #: includes/settings/class-alg-wc-ean-settings-general.php:361
 msgid "Description"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:119
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:140
 #: includes/settings/class-alg-wc-ean-settings-general.php:365
 msgid "Shop pages"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:121
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:142
 msgid "Show barcode on shop (e.g., category) pages on frontend."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:127
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:148
 #: includes/settings/class-alg-wc-ean-settings-general.php:381
 msgid "Cart"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:129
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:150
 msgid "Show barcode on cart page on frontend."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:135
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:157
 msgid "Cart template"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:149
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:176
 #: includes/settings/class-alg-wc-ean-settings-general.php:460
 msgid "Orders & Emails"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:154
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:216
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:181
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:247
 #: includes/settings/class-alg-wc-ean-settings-general.php:465
 #: includes/settings/class-alg-wc-ean-settings-general.php:555
 msgid "Orders"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:156
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:183
 msgid "Show barcode image on admin order edit page."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:169
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:196
 #: includes/settings/class-alg-wc-ean-settings-general.php:482
 msgid "Order items table"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:170
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:197
 #: includes/settings/class-alg-wc-ean-settings-general.php:483
 msgid "Pages"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:171
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:198
 msgid "Show barcode image in order items table on <strong>pages</strong>."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:172
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:199
 #: includes/settings/class-alg-wc-ean-settings-general.php:485
 msgid "E.g.: \"thank you\" (i.e., \"order received\") page, \"view order\" page (in \"my account\")."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:179
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:206
 #: includes/settings/class-alg-wc-ean-settings-general.php:492
 msgid "Emails"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:180
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:207
 msgid "Show barcode image in order items table in <strong>emails</strong>."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:181
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:208
 #: includes/settings/class-alg-wc-ean-settings-general.php:494
 msgid "You can limit it to the specific emails in the \"Emails list\" option below."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:189
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:216
 #: includes/settings/class-alg-wc-ean-settings-general.php:501
 msgid "Emails list"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:190
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:217
 #: includes/settings/class-alg-wc-ean-settings-general.php:502
 msgid "Leave empty to add to all emails."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:191
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:218
 #: includes/settings/class-alg-wc-ean-settings-general.php:503
 msgid "Ignored unless the \"Emails\" option above is enabled."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:203
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:230
 #: includes/settings/class-alg-wc-ean-settings-general.php:530
 msgid "REST API"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:208
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:235
 #: includes/settings/class-alg-wc-ean-settings-general.php:535
 msgid "Products"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:209
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:236
 msgid "Add barcode (base64) to each product object in REST API responses"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:210
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:218
+#. Translators: %s: URL.
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:239
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:251
 #: includes/settings/class-alg-wc-ean-settings-general.php:537
 #: includes/settings/class-alg-wc-ean-settings-general.php:545
 #: includes/settings/class-alg-wc-ean-settings-general.php:548
@@ -997,75 +1001,77 @@ msgstr ""
 msgid "E.g.: %s"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:217
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:248
 msgid "Add barcode (base64) to each order object in REST API responses"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:225
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:260
 msgid "Used for both \"Products\" and \"Orders\" REST API responses."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:238
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:273
 msgid "Advanced Barcodes Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:243
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:278
 msgid "Barcode type"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:244
-msgid "If set to \"Automatic\", will use the barcode type based on EAN type, i.e., %s for EAN-8, %s for UPC-A, %s for EAN-13, ISBN-13 and JAN, and %s for all other types."
+#. Translators: %1$s: Barcode type, %2$s: Barcode type, %3$s: Barcode type, %4$s: Barcode type.
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:284
+msgid "If set to \"Automatic\", will use the barcode type based on EAN type, i.e., %1$s for EAN-8, %2$s for UPC-A, %3$s for EAN-13, ISBN-13 and JAN, and %4$s for all other types."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:252
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:297
 msgid "QR code: Low error correction"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:253
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:298
 msgid "QR code: Medium error correction"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:254
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:299
 msgid "QR code: Better error correction"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:255
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:300
 msgid "QR code: Best error correction"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:256
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:301
 msgid "Datamatrix (ISO/IEC 16022)"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:257
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:302
 msgid "PDF417 (ISO/IEC 15438:2006)"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:260
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:305
 #: includes/settings/class-alg-wc-ean-settings-general.php:167
 msgid "Automatic"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:269
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:314
 #: includes/settings/class-alg-wc-ean-settings-print.php:444
 msgid "Suppress errors"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:270
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:315
 #: includes/settings/class-alg-wc-ean-settings-print.php:445
 msgid "recommended"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:271
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:316
 msgid "Suppress PHP errors when generating barcode."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:283
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:328
 #: includes/settings/class-alg-wc-ean-settings-general.php:577
 msgid "Notes"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-barcodes.php:284
+#. Translators: %s: Shortcode name.
+#: includes/settings/class-alg-wc-ean-settings-barcodes.php:333
 msgid "You can also output barcode with %s shortcode."
 msgstr ""
 
@@ -1239,7 +1245,7 @@ msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-extra-field.php:99
 #: includes/settings/class-alg-wc-ean-settings-general.php:405
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:75
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:76
 msgid "Search"
 msgstr ""
 
@@ -1691,40 +1697,45 @@ msgstr ""
 msgid "Order Tools"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:42
+#. Translators: %s: Dashicon.
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:43
 #: includes/settings/class-alg-wc-ean-settings-tools.php:120
 msgid "Check the %s box and \"Save changes\" to run the tool. Please note that there is no undo for these tools."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:49
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:50
 #: includes/settings/class-alg-wc-ean-settings-print.php:346
 msgid "Add"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:51
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:52
 msgid "Add EANs to all order items"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:57
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:58
 #: includes/settings/class-alg-wc-ean-settings-tools.php:127
 #: includes/settings/class-alg-wc-ean-settings-tools.php:309
 msgid "Delete"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:59
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:60
 msgid "Delete EANs from all order items"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:69
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:70
 msgid "Order Search"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ean-settings-order-tools.php:70
+#: includes/settings/class-alg-wc-ean-settings-order-tools.php:71
 msgid "Searches orders by EAN (item meta)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-print-products.php:26
 msgid "Print Products"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ean-settings-print-products.php:46
+msgid "Save changes"
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-print-products.php:46

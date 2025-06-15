@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 5.4.8 - 15/06/2025 =
+* Dev - WPFactory Admin Menu - Plugin icon added.
+* Dev - WPFactory Admin Menu - Library updated.
+* Dev - Coding standards improved.
+* WC tested up to: 9.9.
+
 = 5.4.7 - 09/05/2025 =
 * Dev - Security - Shortcodes - Output escaped.
 

@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 4.4
 Tested up to: 6.8
-Stable tag: 5.4.7
+Stable tag: 5.4.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,12 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.4.8 - 15/06/2025 =
+* Dev - WPFactory Admin Menu - Plugin icon added.
+* Dev - WPFactory Admin Menu - Library updated.
+* Dev - Coding standards improved.
+* WC tested up to: 9.9.
 
 = 5.4.7 - 09/05/2025 =
 * Dev - Security - Shortcodes - Output escaped.

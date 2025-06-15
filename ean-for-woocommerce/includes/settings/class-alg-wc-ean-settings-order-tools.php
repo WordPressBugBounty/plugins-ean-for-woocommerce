@@ -39,6 +39,7 @@ class Alg_WC_EAN_Settings_Order_Tools extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'    => __( 'Order Tools', 'ean-for-woocommerce' ),
 				'desc'     => sprintf(
+					/* Translators: %s: Dashicon. */
 					__( 'Check the %s box and "Save changes" to run the tool. Please note that there is no undo for these tools.', 'ean-for-woocommerce' ),
 					'<span class="dashicons dashicons-admin-generic"></span>'
 				),

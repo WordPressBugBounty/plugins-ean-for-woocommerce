@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Main Class
  *
- * @version 5.4.4
+ * @version 5.4.8
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -125,12 +125,17 @@ final class Alg_WC_EAN {
 	 */
 	function wc_declare_compatibility() {
 		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
-			$files = ( defined( 'ALG_WC_EAN_FILE_FREE' ) ?
+			$files = (
+				defined( 'ALG_WC_EAN_FILE_FREE' ) ?
 				array( ALG_WC_EAN_FILE, ALG_WC_EAN_FILE_FREE ) :
 				array( ALG_WC_EAN_FILE )
 			);
 			foreach ( $files as $file ) {
-				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $file, true );
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility(
+					'custom_order_tables',
+					$file,
+					true
+				);
 			}
 		}
 	}
@@ -218,7 +223,7 @@ final class Alg_WC_EAN {
 	/**
 	 * move_wc_settings_tab_to_wpfactory_menu.
 	 *
-	 * @version 5.3.0
+	 * @version 5.4.8
 	 * @since   5.3.0
 	 */
 	function move_wc_settings_tab_to_wpfactory_menu() {
@@ -236,7 +241,10 @@ final class Alg_WC_EAN {
 		$wpfactory_admin_menu->move_wc_settings_tab_to_wpfactory_menu( array(
 			'wc_settings_tab_id' => 'alg_wc_ean',
 			'menu_title'         => apply_filters( 'alg_wc_ean_settings_page_label', __( 'EAN', 'ean-for-woocommerce' ) ),
-			'page_title'         => apply_filters( 'alg_wc_ean_settings_page_label', __( 'EAN', 'ean-for-woocommerce' ) ),
+			'page_title'         => __( 'EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory', 'ean-for-woocommerce' ),
+			'plugin_icon'        => array(
+				'url' => 'https://ps.w.org/ean-for-woocommerce/assets/icon.svg',
+			),
 		) );
 
 	}

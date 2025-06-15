@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Print Products Section Settings
  *
- * @version 4.3.0
+ * @version 5.4.8
  * @since   4.3.0
  *
  * @author  Algoritmika Ltd
@@ -35,7 +35,7 @@ class Alg_WC_EAN_Settings_Print_Products extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * print_button.
 	 *
-	 * @version 4.3.0
+	 * @version 5.4.8
 	 * @since   4.3.0
 	 *
 	 * @see     https://github.com/woocommerce/woocommerce/blob/6.7.0/plugins/woocommerce/includes/admin/views/html-admin-settings.php#L40
@@ -43,7 +43,7 @@ class Alg_WC_EAN_Settings_Print_Products extends Alg_WC_EAN_Settings_Section {
 	function print_button() {
 		?>
 		<p class="submit">
-			<button name="save" class="button-primary woocommerce-save-button" type="submit" value="<?php esc_attr_e( 'Save changes', 'woocommerce' ); ?>"><?php esc_html_e( 'Print', 'ean-for-woocommerce' ); ?></button>
+			<button name="save" class="button-primary woocommerce-save-button" type="submit" value="<?php esc_attr_e( 'Save changes', 'ean-for-woocommerce' ); ?>"><?php esc_html_e( 'Print', 'ean-for-woocommerce' ); ?></button>
 		</p>
 		<?php
 	}
