@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Compatibility Section Settings
  *
- * @version 5.3.1
+ * @version 5.4.9
  * @since   2.2.9
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_EAN_Settings_Compatibility extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * get_settings.
 	 *
-	 * @version 5.3.1
+	 * @version 5.4.9
 	 * @since   2.2.9
 	 *
 	 * @todo    (dev) `alg_wc_ean_wcfm_hints`: better default value?
@@ -73,7 +73,7 @@ class Alg_WC_EAN_Settings_Compatibility extends Alg_WC_EAN_Settings_Section {
 				'desc_tip' => sprintf( __( 'This will add EAN to the product search of the %s plugin.', 'ean-for-woocommerce' ),
 						'<a target="_blank" href="' . 'https://woocommerce.com/products/point-of-sale-for-woocommerce/' . '">' .
 							__( 'Point of Sale for WooCommerce', 'ean-for-woocommerce' ) . '</a>' ) . '<br>' .
-					__( '<strong>Please note</strong> that "WooCommerce > Settings > EAN > General > Search" option must be enabled as well.', 'ean-for-woocommerce' ) . '<br>' .
+					__( '<strong>Please note</strong> that "WPFactory > EAN > General > Search" option must be enabled as well.', 'ean-for-woocommerce' ) . '<br>' .
 					__( '<strong>Alternatively</strong> you can add "EAN" to the "Scanning Fields" and "Product SKU" to the "Search Includes" options in "Point of Sale > Settings > Register".', 'ean-for-woocommerce' ) . '<br>' .
 					'* ' . __( 'To enable searching with a scanner, add "EAN" field to the "Scanning Fields" option in "Point of Sale > Settings > Register".', 'ean-for-woocommerce' ),
 				'id'       => 'alg_wc_ean_wc_pos_search',

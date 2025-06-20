@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 5.4.9 - 20/06/2025 =
+* Fix - Updated descriptions from "WooCommerce > Settings" to "WPFactory".
+
 = 5.4.8 - 15/06/2025 =
 * Dev - WPFactory Admin Menu - Plugin icon added.
 * Dev - WPFactory Admin Menu - Library updated.

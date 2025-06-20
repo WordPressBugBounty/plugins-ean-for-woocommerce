@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.8\n"
+"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.4.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ean-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-15T17:05:59+00:00\n"
+"POT-Creation-Date: 2025-06-20T16:16:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ean-for-woocommerce\n"
@@ -1120,7 +1120,7 @@ msgid "This will add EAN to the product search of the %s plugin."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:76
-msgid "<strong>Please note</strong> that \"WooCommerce > Settings > EAN > General > Search\" option must be enabled as well."
+msgid "<strong>Please note</strong> that \"WPFactory > EAN > General > Search\" option must be enabled as well."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-compatibility.php:77
@@ -2103,7 +2103,7 @@ msgid "Products List"
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-print.php:503
-msgid "This will add new \"Print Products\" section to \"WooCommerce > Settings > EAN\"."
+msgid "This will add new \"Print Products\" section to \"WPFactory > EAN\"."
 msgstr ""
 
 #: includes/settings/class-alg-wc-ean-settings-section.php:95

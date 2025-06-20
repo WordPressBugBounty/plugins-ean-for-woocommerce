@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Print Section Settings
  *
- * @version 5.4.2
+ * @version 5.4.9
  * @since   2.0.0
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_EAN_Settings_Print extends Alg_WC_EAN_Settings_Section {
 	/**
 	 * get_settings.
 	 *
-	 * @version 5.4.2
+	 * @version 5.4.9
 	 * @since   2.0.0
 	 *
 	 * @see     https://www.avery.com/templates/6879 (default margins etc.)
@@ -500,7 +500,7 @@ class Alg_WC_EAN_Settings_Print extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'             => __( 'Products List', 'ean-for-woocommerce' ),
 				'desc'              => __( 'Enable', 'ean-for-woocommerce' ),
-				'desc_tip'          => __( 'This will add new "Print Products" section to "WooCommerce > Settings > EAN".', 'ean-for-woocommerce' ),
+				'desc_tip'          => __( 'This will add new "Print Products" section to "WPFactory > EAN".', 'ean-for-woocommerce' ),
 				'id'                => 'alg_wc_ean_print_products_list_section',
 				'default'           => 'no',
 				'type'              => 'checkbox',

@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 4.4
 Tested up to: 6.8
-Stable tag: 5.4.8
+Stable tag: 5.4.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -180,7 +180,7 @@ ___
 4. After the installation is complete, click “Activate”.
 
 **Post-Activation:**
-Once activated, access the plugin's settings by navigating to “WooCommerce > Settings” and look for the relevant tab.
+Once activated, access the plugin's settings by navigating to the "WPFactory" menu and look for the relevant tab.
 
 == Screenshots ==
 
@@ -191,6 +191,9 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.4.9 - 20/06/2025 =
+* Fix - Updated descriptions from "WooCommerce > Settings" to "WPFactory".
 
 = 5.4.8 - 15/06/2025 =
 * Dev - WPFactory Admin Menu - Plugin icon added.
