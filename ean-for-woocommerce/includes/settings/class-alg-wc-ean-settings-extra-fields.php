@@ -41,26 +41,32 @@ class Alg_WC_EAN_Settings_Extra_Fields extends Alg_WC_EAN_Settings_Section {
 
 		$settings = array(
 			array(
-				'title'    => __( 'Extra Fields Options', 'ean-for-woocommerce' ),
-				'desc'     => $this->pro_msg( 'use this section' ) .
+				'title'             => __( 'Extra Fields Options', 'ean-for-woocommerce' ),
+				'desc'              => (
+					$this->pro_msg( 'use this section' ) .
 					__( 'This section allows you to add multiple extra fields per product, e.g., EAN and MPN simultaneously.', 'ean-for-woocommerce' ) . '<br>' .
 					__( 'Please note that extra fields have less features compared to the main field.', 'ean-for-woocommerce' ) . ' ' .
-					sprintf( __( 'Currently supported features are: %s.', 'ean-for-woocommerce' ), implode( ', ', array(
-						__( 'Title', 'ean-for-woocommerce' ),
-						__( 'Meta key', 'ean-for-woocommerce' ),
-						__( 'Admin product search', 'ean-for-woocommerce' ),
-						__( 'Single product page display (including variations)', 'ean-for-woocommerce' ),
-						__( 'Search (frontend)', 'ean-for-woocommerce' ),
-						__( 'Product structured data', 'ean-for-woocommerce' ),
-					) ) ),
-				'type'     => 'title',
-				'id'       => 'alg_wc_ean_extra_fields_options',
+					sprintf(
+						/* Translators: %s: Feature list. */
+						__( 'Currently supported features are: %s.', 'ean-for-woocommerce' ),
+						implode( ', ', array(
+							__( 'Title', 'ean-for-woocommerce' ),
+							__( 'Meta key', 'ean-for-woocommerce' ),
+							__( 'Admin product search', 'ean-for-woocommerce' ),
+							__( 'Single product page display (including variations)', 'ean-for-woocommerce' ),
+							__( 'Search (frontend)', 'ean-for-woocommerce' ),
+							__( 'Product structured data', 'ean-for-woocommerce' ),
+						) )
+					)
+				),
+				'type'              => 'title',
+				'id'                => 'alg_wc_ean_extra_fields_options',
 			),
 			array(
-				'title'    => __( 'Total extra fields', 'ean-for-woocommerce' ),
-				'type'     => 'number',
-				'id'       => 'alg_wc_ean_extra_fields_num_total',
-				'default'  => 0,
+				'title'             => __( 'Total extra fields', 'ean-for-woocommerce' ),
+				'type'              => 'number',
+				'id'                => 'alg_wc_ean_extra_fields_num_total',
+				'default'           => 0,
 				'custom_attributes' => array( 'min' => 0 ),
 			),
 		);
@@ -68,10 +74,18 @@ class Alg_WC_EAN_Settings_Extra_Fields extends Alg_WC_EAN_Settings_Section {
 		for ( $i = 1; $i <= get_option( 'alg_wc_ean_extra_fields_num_total', 0 ); $i++ ) {
 			$settings = array_merge( $settings, array(
 				array(
-					'title'    => sprintf( __( 'Extra field #%d', 'ean-for-woocommerce' ), $i ),
-					'type'     => 'text',
-					'id'       => "alg_wc_ean_extra_field_name[{$i}]",
-					'default'  => sprintf( __( 'Extra field #%d', 'ean-for-woocommerce' ), $i ),
+					'title'             => sprintf(
+						/* Translators: %d: Field ID. */
+						__( 'Extra field #%d', 'ean-for-woocommerce' ),
+						$i
+					),
+					'type'              => 'text',
+					'id'                => "alg_wc_ean_extra_field_name[{$i}]",
+					'default'           => sprintf(
+						/* Translators: %d: Field ID. */
+						__( 'Extra field #%d', 'ean-for-woocommerce' ),
+						$i
+					),
 					'custom_attributes' => array( 'required' => 'required' ),
 				),
 			) );
@@ -79,8 +93,8 @@ class Alg_WC_EAN_Settings_Extra_Fields extends Alg_WC_EAN_Settings_Section {
 
 		$settings = array_merge( $settings, array(
 			array(
-				'type'     => 'sectionend',
-				'id'       => 'alg_wc_ean_extra_fields_options',
+				'type'              => 'sectionend',
+				'id'                => 'alg_wc_ean_extra_fields_options',
 			),
 		) );
 

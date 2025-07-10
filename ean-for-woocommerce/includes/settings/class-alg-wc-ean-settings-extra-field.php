@@ -37,7 +37,15 @@ class Alg_WC_EAN_Settings_Extra_Field extends Alg_WC_EAN_Settings_Section {
 	 */
 	function get_desc() {
 		$name = get_option( 'alg_wc_ean_extra_field_name', array() );
-		return ( isset( $name[ $this->num ] ) && '' !== $name[ $this->num ] ? $name[ $this->num ] : sprintf( __( 'Extra field #%d', 'ean-for-woocommerce' ), $this->num ) );
+		return (
+			isset( $name[ $this->num ] ) && '' !== $name[ $this->num ] ?
+			$name[ $this->num ] :
+			sprintf(
+				/* Translators: %d: Field ID. */
+				__( 'Extra field #%d', 'ean-for-woocommerce' ),
+				$this->num
+			)
+		);
 	}
 
 	/**
@@ -50,33 +58,57 @@ class Alg_WC_EAN_Settings_Extra_Field extends Alg_WC_EAN_Settings_Section {
 
 		$settings = array(
 			array(
-				'title'             => sprintf( __( '%s Options', 'ean-for-woocommerce' ), $this->desc ),
+				'title'             => sprintf(
+					/* Translators: %s: Field title. */
+					__( '%s Options', 'ean-for-woocommerce' ),
+					$this->desc
+				),
 				'type'              => 'title',
 				'id'                => 'alg_wc_ean_extra_field_' . $this->num . '_options',
 			),
 			array(
 				'title'             => $this->get_desc(),
-				'desc'              => '<strong>' . __( 'Enable field', 'ean-for-woocommerce' ) . '</strong>',
+				'desc'              => '<strong>' .
+					__( 'Enable field', 'ean-for-woocommerce' ) .
+				'</strong>',
 				'desc_tip'          => $this->pro_msg( 'enable this field' ),
 				'type'              => 'checkbox',
 				'id'                => "alg_wc_ean_extra_field_enabled[{$this->num}]",
 				'default'           => 'no',
-				'custom_attributes' => apply_filters( 'alg_wc_ean_settings', array( 'disabled' => 'disabled' ) ),
+				'custom_attributes' => apply_filters(
+					'alg_wc_ean_settings',
+					array( 'disabled' => 'disabled' )
+				),
 			),
 			array(
 				'title'             => __( 'Title', 'ean-for-woocommerce' ),
-				'desc'              => sprintf( __( 'For example: %s', 'ean-for-woocommerce' ), '<code>MPN</code>' ),
+				'desc'              => sprintf(
+					/* Translators: %s: Example. */
+					__( 'For example: %s', 'ean-for-woocommerce' ),
+					'<code>MPN</code>'
+				),
 				'type'              => 'text',
 				'id'                => "alg_wc_ean_extra_field_name[{$this->num}]",
-				'default'           => sprintf( __( 'Extra field #%d', 'ean-for-woocommerce' ), $this->num ),
+				'default'           => sprintf(
+					/* Translators: %d: Field ID. */
+					__( 'Extra field #%d', 'ean-for-woocommerce' ),
+					$this->num
+				),
 				'custom_attributes' => array( 'required' => 'required' ),
 			),
 			array(
 				'title'             => __( 'Meta key', 'ean-for-woocommerce' ),
-				'desc'              => sprintf( __( 'For example: %s', 'ean-for-woocommerce' ), '<code>mpn</code>' ),
+				'desc'              => sprintf(
+					/* Translators: %s: Example. */
+					__( 'For example: %s', 'ean-for-woocommerce' ),
+					'<code>mpn</code>'
+				),
 				'type'              => 'text',
 				'id'                => "alg_wc_ean_extra_field_key[{$this->num}]",
-				'default'           => sprintf( 'extra_field_%d', $this->num ),
+				'default'           => sprintf(
+					'extra_field_%d',
+					$this->num
+				),
 				'custom_attributes' => array( 'required' => 'required' ),
 			),
 			array(

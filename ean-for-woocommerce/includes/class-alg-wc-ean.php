@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Main Class
  *
- * @version 5.4.8
+ * @version 5.5.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -43,7 +43,7 @@ final class Alg_WC_EAN {
 	protected static $_instance = null;
 
 	/**
-	 * Main Alg_WC_EAN Instance
+	 * Main Alg_WC_EAN Instance.
 	 *
 	 * Ensures only one instance of Alg_WC_EAN is loaded or can be loaded.
 	 *
@@ -121,7 +121,7 @@ final class Alg_WC_EAN {
 	 * @version 4.7.3
 	 * @since   4.5.0
 	 *
-	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+	 * @see     https://developer.woocommerce.com/docs/features/high-performance-order-storage/recipe-book/
 	 */
 	function wc_declare_compatibility() {
 		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
@@ -159,7 +159,10 @@ final class Alg_WC_EAN {
 	function admin() {
 
 		// Action links
-		add_filter( 'plugin_action_links_' . plugin_basename( ALG_WC_EAN_FILE ), array( $this, 'action_links' ) );
+		add_filter(
+			'plugin_action_links_' . plugin_basename( ALG_WC_EAN_FILE ),
+			array( $this, 'action_links' )
+		);
 
 		// "Recommendations" page
 		add_action( 'init', array( $this, 'add_cross_selling_library' ) );
@@ -168,7 +171,10 @@ final class Alg_WC_EAN {
 		add_action( 'init', array( $this, 'move_wc_settings_tab_to_wpfactory_menu' ) );
 
 		// Settings
-		add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_woocommerce_settings_tab' ) );
+		add_filter(
+			'woocommerce_get_settings_pages',
+			array( $this, 'add_woocommerce_settings_tab' )
+		);
 
 		// Version update
 		if ( get_option( 'alg_wc_ean_version', '' ) !== $this->version ) {
@@ -194,7 +200,11 @@ final class Alg_WC_EAN {
 		'</a>';
 
 		if ( 'ean-for-woocommerce.php' === basename( ALG_WC_EAN_FILE ) ) {
-			$custom_links[] = '<a target="_blank" style="font-weight: bold; color: green;" href="https://wpfactory.com/item/ean-for-woocommerce/">' .
+			$custom_links[] = '<a' .
+				' target="_blank"' .
+				' style="font-weight: bold; color: green;"' .
+				' href="https://wpfactory.com/item/ean-for-woocommerce/"' .
+			'>' .
 				__( 'Go Pro', 'ean-for-woocommerce' ) .
 			'</a>';
 		}
@@ -223,7 +233,7 @@ final class Alg_WC_EAN {
 	/**
 	 * move_wc_settings_tab_to_wpfactory_menu.
 	 *
-	 * @version 5.4.8
+	 * @version 5.5.0
 	 * @since   5.3.0
 	 */
 	function move_wc_settings_tab_to_wpfactory_menu() {
@@ -240,10 +250,14 @@ final class Alg_WC_EAN {
 
 		$wpfactory_admin_menu->move_wc_settings_tab_to_wpfactory_menu( array(
 			'wc_settings_tab_id' => 'alg_wc_ean',
-			'menu_title'         => apply_filters( 'alg_wc_ean_settings_page_label', __( 'EAN', 'ean-for-woocommerce' ) ),
+			'menu_title'         => apply_filters(
+				'alg_wc_ean_settings_page_label',
+				__( 'EAN', 'ean-for-woocommerce' )
+			),
 			'page_title'         => __( 'EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory', 'ean-for-woocommerce' ),
 			'plugin_icon'        => array(
-				'url' => 'https://ps.w.org/ean-for-woocommerce/assets/icon.svg',
+				'get_url_method'    => 'wporg_plugins_api',
+				'wporg_plugin_slug' => 'ean-for-woocommerce',
 			),
 		) );
 
@@ -274,11 +288,18 @@ final class Alg_WC_EAN {
 		 *
 		 * @deprecated 2.9.0
 		 */
-		if ( false !== ( $deprecated_options = get_option( 'alg_wc_ean_tool_product_generate_on', false ) ) ) {
-			if ( isset( $deprecated_options['insert_product'] ) && 'yes' === $deprecated_options['insert_product'] ) {
+		$deprecated_options = get_option( 'alg_wc_ean_tool_product_generate_on', false );
+		if ( false !== $deprecated_options ) {
+			if (
+				isset( $deprecated_options['insert_product'] ) &&
+				'yes' === $deprecated_options['insert_product']
+			) {
 				update_option( 'alg_wc_ean_tool_product_action_on_new', 'generate' );
 			}
-			if ( isset( $deprecated_options['update_product'] ) && 'yes' === $deprecated_options['update_product'] ) {
+			if (
+				isset( $deprecated_options['update_product'] ) &&
+				'yes' === $deprecated_options['update_product']
+			) {
 				update_option( 'alg_wc_ean_tool_product_action_on_update', 'generate' );
 			}
 			delete_option( 'alg_wc_ean_tool_product_generate_on' );

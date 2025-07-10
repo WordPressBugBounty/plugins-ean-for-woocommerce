@@ -56,8 +56,15 @@ class Alg_WC_EAN_Settings_Section {
 	 * @since   1.0.0
 	 */
 	function __construct() {
-		add_filter( 'woocommerce_get_sections_alg_wc_ean', array( $this, 'settings_section' ) );
-		add_filter( 'woocommerce_get_settings_alg_wc_ean_' . $this->id, array( $this, 'get_settings' ), PHP_INT_MAX );
+		add_filter(
+			'woocommerce_get_sections_alg_wc_ean',
+			array( $this, 'settings_section' )
+		);
+		add_filter(
+			'woocommerce_get_settings_alg_wc_ean_' . $this->id,
+			array( $this, 'get_settings' ),
+			PHP_INT_MAX
+		);
 	}
 
 	/**
@@ -78,9 +85,15 @@ class Alg_WC_EAN_Settings_Section {
 	 * @since   2.0.0
 	 */
 	function pro_msg( $msg = 'enable this section' ) {
-		return apply_filters( 'alg_wc_ean_settings', '<p style="padding:15px;color:black;background-color:white;font-weight:bold;">' .
-			sprintf( 'You will need <a target="_blank" href="https://wpfactory.com/item/ean-for-woocommerce/">EAN for WooCommerce Pro</a> plugin version to %s.', $msg ) .
-		'</p>' );
+		return apply_filters(
+			'alg_wc_ean_settings',
+			'<p style="padding:15px;color:black;background-color:white;font-weight:bold;">' .
+				sprintf(
+					'You will need <a target="_blank" href="https://wpfactory.com/item/ean-for-woocommerce/">EAN for WooCommerce Pro</a> plugin version to %s.',
+					$msg
+				) .
+			'</p>'
+		);
 	}
 
 	/**
