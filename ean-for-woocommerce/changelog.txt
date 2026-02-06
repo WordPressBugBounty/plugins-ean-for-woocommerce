@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 5.5.2 - 05/11/2025 =
+* Fix - Admin product edit page - "Generate" button - Save generated EAN for the product variations.
+* Dev - Admin product edit page - "Generate" button - Update the button styling for the simple products.
+* Dev - Coding standards improved.
+* WC tested up to: 10.3.
+
+= 5.5.1 - 12/10/2025 =
+* Dev - WPFactory Recommendations - Library updated (to v1.0.6).
+* WC tested up to: 10.2.
+
 = 5.5.0 - 10/07/2025 =
 * Dev - WPFactory Admin Menu - Plugin icon method updated.
 * Dev - WPFactory Admin Menu - Library updated.

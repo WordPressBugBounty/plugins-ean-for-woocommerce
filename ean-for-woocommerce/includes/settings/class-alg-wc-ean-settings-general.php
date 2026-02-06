@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - General Section Settings
  *
- * @version 5.2.1
+ * @version 5.5.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -86,13 +86,16 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			'</tr>';
 		}
 		$result .= '</table>';
-		return '<details style="cursor:pointer;"><summary>' . __( 'Type details', 'ean-for-woocommerce' ) . '</summary>' . $result . '</details>';
+		return '<details style="cursor:pointer;">' .
+			'<summary>' . __( 'Type details', 'ean-for-woocommerce' ) . '</summary>' .
+			$result .
+		'</details>';
 	}
 
 	/**
 	 * get_settings.
 	 *
-	 * @version 5.2.1
+	 * @version 5.5.2
 	 * @since   1.0.0
 	 *
 	 * @see     https://www.keyence.com/ss/products/auto_id/barcode_lecture/basic/barcode-types/
@@ -151,20 +154,25 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'             => __( 'Type', 'ean-for-woocommerce' ),
 				'desc'              => $this->get_types_desc(),
-				'desc_tip'          => sprintf( __( 'The "Type" will be used for: %s', 'ean-for-woocommerce' ),
-						'<br><br>' . implode( ',<br><br>', array(
-							'* ' . __( 'EAN validation (on the admin product edit pages, and in the admin products column)', 'ean-for-woocommerce' ),
-							'* ' . __( 'EAN input pattern (on the admin product edit pages)', 'ean-for-woocommerce' ),
-							'* ' . __( 'product structured data (e.g., for Google Search Console)', 'ean-for-woocommerce' ),
-							'* ' . __( 'outputting 1D barcodes', 'ean-for-woocommerce' ),
-						) ) . '.'
-					),
+				'desc_tip'          => sprintf(
+					/* Translators: %s: List. */
+					__( 'The "Type" will be used for: %s', 'ean-for-woocommerce' ),
+					'<br><br>' . implode( ',<br><br>', array(
+						'* ' . __( 'EAN validation (on the admin product edit pages, and in the admin products column)', 'ean-for-woocommerce' ),
+						'* ' . __( 'EAN input pattern (on the admin product edit pages)', 'ean-for-woocommerce' ),
+						'* ' . __( 'product structured data (e.g., for Google Search Console)', 'ean-for-woocommerce' ),
+						'* ' . __( 'outputting 1D barcodes', 'ean-for-woocommerce' ),
+					) ) . '.'
+				),
 				'id'                => 'alg_wc_ean_type',
 				'default'           => 'EAN13',
 				'type'              => 'select',
 				'class'             => 'chosen_select',
 				'options'           => array(
-					'AUTO'   => __( 'Automatic', 'ean-for-woocommerce' ) . ' (' . implode( ', ', array( 'EAN-13', 'UPC-A', 'EAN-8', 'ISBN-13', 'JAN', 'EAN-14' ) ) . ')',
+					'AUTO'   => (
+						__( 'Automatic', 'ean-for-woocommerce' ) .
+						' (' . implode( ', ', array( 'EAN-13', 'UPC-A', 'EAN-8', 'ISBN-13', 'JAN', 'EAN-14' ) ) . ')'
+					),
 					'EAN8'   => 'EAN-8',
 					'UPCA'   => 'UPC-A',
 					'EAN13'  => 'EAN-13',
@@ -234,8 +242,10 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Add pattern', 'ean-for-woocommerce' ),
-				'desc_tip'          => __( 'This will specify a maximum length and pattern (digits only) for the EAN input field to be checked against on the admin product edit pages.', 'ean-for-woocommerce' ) . ' ' .
-					__( 'Ignored if "Type" is set to "Custom".', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					__( 'This will specify a maximum length and pattern (digits only) for the EAN input field to be checked against on the admin product edit pages.', 'ean-for-woocommerce' ) . ' ' .
+					__( 'Ignored if "Type" is set to "Custom".', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_add_pattern',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -243,8 +253,11 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Add "Generate" button', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'This will add "Generate %s" button to the admin product edit pages.', 'ean-for-woocommerce' ),
-					get_option( 'alg_wc_ean_title', __( 'EAN', 'ean-for-woocommerce' ) ) ),
+				'desc_tip'          => sprintf(
+					/* Translators: %s: EAN title. */
+					__( 'This will add "Generate %s" button to the admin product edit pages.', 'ean-for-woocommerce' ),
+					get_option( 'alg_wc_ean_title', __( 'EAN', 'ean-for-woocommerce' ) )
+				),
 				'id'                => 'alg_wc_ean_backend_add_generate_button',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -269,8 +282,10 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'AJAX search', 'ean-for-woocommerce' ),
-				'desc_tip'          => __( 'This will enable searching by EAN in AJAX.', 'ean-for-woocommerce' ) . ' ' .
-					__( 'E.g., when searching for a product when creating new order in admin area.', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					__( 'This will enable searching by EAN in AJAX.', 'ean-for-woocommerce' ) . ' ' .
+					__( 'E.g., when searching for a product when creating new order in admin area.', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_backend_search_ajax',
 				'default'           => 'yes',
 				'type'              => 'checkbox',
@@ -279,9 +294,14 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'             => __( 'Admin products list column', 'ean-for-woocommerce' ),
 				'desc'              => __( 'Enable', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'This will add "%s" column to %s.', 'ean-for-woocommerce' ),
+				'desc_tip'          => sprintf(
+					/* Translators: %1$s: Column title, %2$s: Admin product list link. */
+					__( 'This will add "%1$s" column to %2$s.', 'ean-for-woocommerce' ),
 					get_option( 'alg_wc_ean_title', __( 'EAN', 'ean-for-woocommerce' ) ),
-					'<a href        ="' . admin_url( 'edit.php?post_type=product' ) . '">' . __( 'admin products list', 'ean-for-woocommerce' ) . '</a>' ),
+					'<a href="' . admin_url( 'edit.php?post_type=product' ) . '">' .
+						__( 'admin products list', 'ean-for-woocommerce' ) .
+					'</a>'
+				),
 				'id'                => 'alg_wc_ean_backend_column',
 				'default'           => 'yes',
 				'type'              => 'checkbox',
@@ -289,7 +309,10 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Validate', 'ean-for-woocommerce' ),
-				'desc_tip'          => __( 'Validate EAN in column.', 'ean-for-woocommerce' ) . ' ' . __( 'Invalid EANs will be marked red.', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					__( 'Validate EAN in column.', 'ean-for-woocommerce' ) . ' ' .
+					__( 'Invalid EANs will be marked red.', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_backend_column_validate',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -321,8 +344,15 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Template', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'Available placeholder: %s.', 'ean-for-woocommerce' ), '%ean%' ) . '<br><br>' .
-					__( 'You can also use shortcodes here.', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					sprintf(
+						/* Translators: %s: Placeholder name. */
+						__( 'Available placeholder: %s.', 'ean-for-woocommerce' ),
+						'%ean%'
+					) .
+					'<br><br>' .
+					__( 'You can also use shortcodes here.', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_template',
 				'default'           => alg_wc_ean()->core->get_default_template(),
 				'type'              => 'textarea',
@@ -338,10 +368,14 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 		);
 		foreach ( get_option( 'alg_wc_ean_frontend_positions', array( 'woocommerce_product_meta_start' ) ) as $position ) {
-			$position_title = ( isset( $single_product_page_positions[ $position ] ) ? $single_product_page_positions[ $position ] : $position );
+			$position_title = ( $single_product_page_positions[ $position ] ?? $position );
 			$settings = array_merge( $settings, array(
 				array(
-					'desc'          => sprintf( __( 'Position priority: "%s"', 'ean-for-woocommerce' ), $position_title ),
+					'desc'          => sprintf(
+						/* Translators: %s: Position title. */
+						'- ' . __( 'Position priority: "%s"', 'ean-for-woocommerce' ),
+						$position_title
+					),
 					'desc_tip'      => __( 'Fine-tune the position.', 'ean-for-woocommerce' ),
 					'id'            => "alg_wc_ean_frontend_positions_priorities[{$position}]",
 					'default'       => 10,
@@ -364,15 +398,25 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'             => __( 'Shop pages', 'ean-for-woocommerce' ),
 				'desc'              => __( 'Enable', 'ean-for-woocommerce' ),
-				'desc_tip'          => __( 'This will show EAN on shop (e.g., category) pages on frontend.', 'ean-for-woocommerce' ) . ' ' . $this->variable_products_note(),
+				'desc_tip'          => (
+					__( 'This will show EAN on shop (e.g., category) pages on frontend.', 'ean-for-woocommerce' ) . ' ' .
+					$this->variable_products_note()
+				),
 				'id'                => 'alg_wc_ean_frontend_loop',
 				'default'           => 'no',
 				'type'              => 'checkbox',
 			),
 			array(
 				'desc'              => __( 'Template', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'Available placeholder: %s.', 'ean-for-woocommerce' ), '%ean%' ) . '<br><br>' .
-					__( 'You can also use shortcodes here.', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					sprintf(
+						/* Translators: %s: Placeholder name. */
+						__( 'Available placeholder: %s.', 'ean-for-woocommerce' ),
+						'%ean%'
+					) .
+					'<br><br>' .
+					__( 'You can also use shortcodes here.', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_template_loop',
 				'default'           => alg_wc_ean()->core->get_default_template(),
 				'type'              => 'textarea',
@@ -387,8 +431,15 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Template', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'Available placeholder: %s.', 'ean-for-woocommerce' ), '%ean%' ) . '<br><br>' .
-					__( 'You can also use shortcodes here.', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					sprintf(
+						/* Translators: %s: Placeholder name. */
+						__( 'Available placeholder: %s.', 'ean-for-woocommerce' ),
+						'%ean%'
+					) .
+					'<br><br>' .
+					__( 'You can also use shortcodes here.', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_frontend_cart_template',
 				'default'           => alg_wc_ean()->core->get_default_template(),
 				'type'              => 'textarea',
@@ -428,9 +479,18 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 				'checkboxgroup'     => 'start',
 			),
 			array(
-				'desc'              => sprintf( __( '"%s" plugin', 'ean-for-woocommerce' ), __( 'Rank Math SEO', 'ean-for-woocommerce' ) ),
-				'desc_tip'          => sprintf( __( 'This will add EAN to the product structured data generated by the %s plugin.', 'ean-for-woocommerce' ),
-					'<a href="https://wordpress.org/plugins/seo-by-rank-math/" target="_blank">' . __( 'Rank Math SEO', 'ean-for-woocommerce' ) . '</a>' ),
+				'desc'              => sprintf(
+					/* Translators: %s: Plugin name. */
+					__( '"%s" plugin', 'ean-for-woocommerce' ),
+					__( 'Rank Math SEO', 'ean-for-woocommerce' )
+				),
+				'desc_tip'          => sprintf(
+					/* Translators: %s: Plugin link. */
+					__( 'This will add EAN to the product structured data generated by the %s plugin.', 'ean-for-woocommerce' ),
+					'<a href="https://wordpress.org/plugins/seo-by-rank-math/" target="_blank">' .
+						__( 'Rank Math SEO', 'ean-for-woocommerce' ) .
+					'</a>'
+				),
 				'id'                => 'alg_wc_ean_frontend_product_structured_data_rank_math_seo',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -438,8 +498,15 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Automatic key', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'If enabled, will use the key based on EAN type, i.e., %s for EAN-8, %s for UPC-A, %s for EAN-13, ISBN-13 and JAN, %s for EAN-14, and %s for all other types.', 'ean-for-woocommerce' ),
-					'<code>gtin8</code>', '<code>gtin12</code>', '<code>gtin13</code>', '<code>gtin14</code>', '<code>gtin</code>' ),
+				'desc_tip'          => sprintf(
+					/* Translators: %1$s-%5$s: Key. */
+					__( 'If enabled, will use the key based on EAN type, i.e., %1$s for EAN-8, %2$s for UPC-A, %3$s for EAN-13, ISBN-13 and JAN, %4$s for EAN-14, and %5$s for all other types.', 'ean-for-woocommerce' ),
+					'<code>gtin8</code>',
+					'<code>gtin12</code>',
+					'<code>gtin13</code>',
+					'<code>gtin14</code>',
+					'<code>gtin</code>'
+				),
 				'id'                => 'alg_wc_ean_frontend_product_structured_data_key_auto',
 				'default'           => 'yes',
 				'type'              => 'checkbox',
@@ -481,8 +548,10 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'             => __( 'Order items table', 'ean-for-woocommerce' ),
 				'desc'              => __( 'Pages', 'ean-for-woocommerce' ),
-				'desc_tip'          => __( 'This will show EAN in order items table on <strong>pages</strong>.', 'ean-for-woocommerce' ) . ' ' .
-					__( 'E.g.: "thank you" (i.e., "order received") page, "view order" page (in "my account").', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					__( 'This will show EAN in order items table on <strong>pages</strong>.', 'ean-for-woocommerce' ) . ' ' .
+					__( 'E.g.: "thank you" (i.e., "order received") page, "view order" page (in "my account").', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_order_items_table',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -490,8 +559,10 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Emails', 'ean-for-woocommerce' ),
-				'desc_tip'          => __( 'This will show EAN in order items table in <strong>emails</strong>.', 'ean-for-woocommerce' ) . ' ' .
-					__( 'You can limit it to the specific emails in the "Emails list" option below.', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					__( 'This will show EAN in order items table in <strong>emails</strong>.', 'ean-for-woocommerce' ) . ' ' .
+					__( 'You can limit it to the specific emails in the "Emails list" option below.', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_order_items_table_emails',
 				'default'           => get_option( 'alg_wc_ean_order_items_table', 'no' ), // for the backward compatibility
 				'type'              => 'checkbox',
@@ -499,8 +570,10 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Emails list', 'ean-for-woocommerce' ),
-				'desc_tip'          => __( 'Leave empty to add to all emails.', 'ean-for-woocommerce' ) . ' ' .
-					__( 'Ignored unless the "Emails" option above is enabled.', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					__( 'Leave empty to add to all emails.', 'ean-for-woocommerce' ) . ' ' .
+					__( 'Ignored unless the "Emails" option above is enabled.', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_order_items_table_emails_list',
 				'default'           => array(),
 				'type'              => 'multiselect',
@@ -508,16 +581,28 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 				'options'           => $this->get_wc_emails(),
 			),
 			array(
-				'desc'              => __( 'Template (HTML)', 'ean-for-woocommerce' ) . '<br>' .
-					sprintf( __( 'Available placeholder(s): %s', 'ean-for-woocommerce' ), '<code>%ean%</code>' ),
+				'desc'              => (
+					__( 'Template (HTML)', 'ean-for-woocommerce' ) . '<br>' .
+					sprintf(
+						/* Translators: %s: Placeholder list. */
+						__( 'Available placeholder(s): %s', 'ean-for-woocommerce' ),
+						'<code>%ean%</code>'
+					)
+				),
 				'id'                => 'alg_wc_ean_order_items_table_templates[html]',
 				'default'           => '<ul class="wc-item-meta"><li><span class="sku_wrapper ean_wrapper">EAN: <span class="ean">%ean%</span></span></li></ul>',
 				'type'              => 'textarea',
 				'css'               => 'height:100px;'
 			),
 			array(
-				'desc'              => __( 'Template (Plain text (emails only))', 'ean-for-woocommerce' ) . '<br>' .
-					sprintf( __( 'Available placeholder(s): %s', 'ean-for-woocommerce' ), '<code>%ean%</code>, <code>%new_line%</code>' ),
+				'desc'              => (
+					__( 'Template (Plain text (emails only))', 'ean-for-woocommerce' ) . '<br>' .
+					sprintf(
+						/* Translators: %s: Placeholder list. */
+						__( 'Available placeholder(s): %s', 'ean-for-woocommerce' ),
+						'<code>%ean%</code>, <code>%new_line%</code>'
+					)
+				),
 				'id'                => 'alg_wc_ean_order_items_table_templates[plain_text]',
 				'default'           => '%new_line%- EAN: %ean%',
 				'type'              => 'textarea',
@@ -534,7 +619,11 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'             => __( 'Products', 'ean-for-woocommerce' ),
 				'desc'              => __( 'Add EAN to each product object in REST API responses', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'E.g.: %s', 'ean-for-woocommerce' ), '<code>https://example.com/wp-json/wc/v3/products/123</code>' ),
+				'desc_tip'          => sprintf(
+					/* Translators: %s: URL. */
+					__( 'E.g.: %s', 'ean-for-woocommerce' ),
+					'<code>https://example.com/wp-json/wc/v3/products/123</code>'
+				),
 				'id'                => 'alg_wc_ean_product_rest',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -542,10 +631,25 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Search by EAN', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'E.g.: %s', 'ean-for-woocommerce' ), '<code>https://example.com/wp-json/wc/v3/products?ean=7980441417892</code>' ) .
-					'<br>* ' . sprintf( __( 'Alternatively, you can enable the "Search > This will enable searching by EAN on frontend" option, and then search using the standard %s parameter:', 'ean-for-woocommerce' ),
-						'<code>search</code>' ) .
-					'<br>' . sprintf( __( 'E.g.: %s', 'ean-for-woocommerce' ), '<code>https://example.com/wp-json/wc/v3/products?search=7980441417892</code>' ),
+				'desc_tip'          => (
+					sprintf(
+						/* Translators: %s: URL. */
+						__( 'E.g.: %s', 'ean-for-woocommerce' ),
+						'<code>https://example.com/wp-json/wc/v3/products?ean=7980441417892</code>'
+					) .
+					'<br>* ' .
+					sprintf(
+						/* Translators: %s: Parameter name. */
+						__( 'Alternatively, you can enable the "Search > This will enable searching by EAN on frontend" option, and then search using the standard %s parameter:', 'ean-for-woocommerce' ),
+						'<code>search</code>'
+					) .
+					'<br>' .
+					sprintf(
+						/* Translators: %s: URL. */
+						__( 'E.g.: %s', 'ean-for-woocommerce' ),
+						'<code>https://example.com/wp-json/wc/v3/products?search=7980441417892</code>'
+					)
+				),
 				'id'                => 'alg_wc_ean_product_search_rest',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -554,7 +658,11 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'             => __( 'Orders', 'ean-for-woocommerce' ),
 				'desc'              => __( 'Add EAN to each order object in REST API responses', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'E.g.: %s', 'ean-for-woocommerce' ), '<code>https://example.com/wp-json/wc/v3/orders/465</code>' ),
+				'desc_tip'          => sprintf(
+					/* Translators: %s: URL. */
+					__( 'E.g.: %s', 'ean-for-woocommerce' ),
+					'<code>https://example.com/wp-json/wc/v3/orders/465</code>'
+				),
 				'id'                => 'alg_wc_ean_order_items_meta_rest',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -562,8 +670,14 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			),
 			array(
 				'desc'              => __( 'Search by EAN', 'ean-for-woocommerce' ),
-				'desc_tip'          => sprintf( __( 'E.g.: %s', 'ean-for-woocommerce' ), '<code>https://example.com/wp-json/wc/v3/orders?ean=7980441417892</code>' ) .
-					'<br>* ' . __( 'Please note that the "Orders > Add EAN to new order items meta" option must be enabled.', 'ean-for-woocommerce' ),
+				'desc_tip'          => (
+					sprintf(
+						/* Translators: %s: URL. */
+						__( 'E.g.: %s', 'ean-for-woocommerce' ),
+						'<code>https://example.com/wp-json/wc/v3/orders?ean=7980441417892</code>'
+					) .
+					'<br>* ' . __( 'Please note that the "Orders > Add EAN to new order items meta" option must be enabled.', 'ean-for-woocommerce' )
+				),
 				'id'                => 'alg_wc_ean_order_items_meta_search_rest',
 				'default'           => 'no',
 				'type'              => 'checkbox',
@@ -576,10 +690,16 @@ class Alg_WC_EAN_Settings_General extends Alg_WC_EAN_Settings_Section {
 			array(
 				'title'             => __( 'Notes', 'ean-for-woocommerce' ),
 				'desc'              => implode( '<br>', array(
-					'<span class="dashicons dashicons-info"></span> ' . sprintf( __( 'You can also output EAN with %s shortcode.', 'ean-for-woocommerce' ),
-						'<code>[alg_wc_ean]</code>' ),
-					'<span class="dashicons dashicons-info"></span> ' . sprintf( __( 'EAN is stored in product meta with %s key. You may need this for some third-party plugins, e.g., for product import.', 'ean-for-woocommerce' ),
-						'<code>' . alg_wc_ean()->core->ean_key . '</code>' ),
+					'<span class="dashicons dashicons-info"></span> ' . sprintf(
+						/* Translators: %s: Shortcode name. */
+						__( 'You can also output EAN with %s shortcode.', 'ean-for-woocommerce' ),
+						'<code>[alg_wc_ean]</code>'
+					),
+					'<span class="dashicons dashicons-info"></span> ' . sprintf(
+						/* Translators: %s: Meta key. */
+						__( 'EAN is stored in product meta with %s key. You may need this for some third-party plugins, e.g., for product import.', 'ean-for-woocommerce' ),
+						'<code>' . alg_wc_ean()->core->ean_key . '</code>'
+					),
 				) ),
 				'type'              => 'title',
 				'id'                => 'alg_wc_ean_notes',
