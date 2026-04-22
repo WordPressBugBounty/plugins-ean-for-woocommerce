@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Orders Class
  *
- * @version 4.8.9
+ * @version 5.5.3
  * @since   2.1.0
  *
  * @author  Algoritmika Ltd
@@ -17,7 +17,7 @@ class Alg_WC_EAN_Orders {
 	/**
 	 * Constructor.
 	 *
-	 * @version 4.8.9
+	 * @version 5.5.3
 	 * @since   2.1.0
 	 *
 	 * @todo    (feature) option to hide the field (i.e., add it to `woocommerce_hidden_order_itemmeta`)?
@@ -27,6 +27,7 @@ class Alg_WC_EAN_Orders {
 		// Order item meta
 		if ( 'yes' === get_option( 'alg_wc_ean_order_items_meta', 'no' ) ) {
 			add_action( 'woocommerce_checkout_order_processed', array( $this, 'add_ean_to_order_items_meta' ), PHP_INT_MAX );
+			add_action( 'woocommerce_store_api_checkout_order_processed', array( $this, 'add_ean_to_order_items_meta' ), PHP_INT_MAX );
 		}
 
 		// Admin new order (AJAX)
@@ -74,15 +75,19 @@ class Alg_WC_EAN_Orders {
 	/**
 	 * add_ean_to_order_items_meta.
 	 *
-	 * @version 2.1.0
+	 * @version 5.5.3
 	 * @since   2.1.0
 	 *
 	 * @todo    (feature) editable field?
 	 * @todo    (dev) `( $do_overwrite || '' === wc_get_order_item_meta( $item_id, alg_wc_ean()->core->ean_key, true )`
 	 */
-	function add_ean_to_order_items_meta( $order_id ) {
+	function add_ean_to_order_items_meta( $order_or_order_id ) {
 		$count = 0;
-		$order = wc_get_order( $order_id );
+		$order = (
+			$order_or_order_id instanceof WC_Order ?
+			$order_or_order_id :
+			wc_get_order( $order_or_order_id )
+		);
 		if ( $order ) {
 			foreach ( $order->get_items() as $item_id => $item ) {
 				if (

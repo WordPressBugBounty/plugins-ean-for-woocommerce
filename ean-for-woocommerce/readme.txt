@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, anbinder, karzin, omardabbas
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 4.4
-Tested up to: 6.8
-Stable tag: 5.5.2
+Tested up to: 6.9
+Stable tag: 5.5.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,15 @@ Once activated, access the plugin's settings by navigating to the "WPFactory" me
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.5.3 - 22/04/2026 =
+* Dev - Orders - Add EAN to new order items meta - Block-based checkout compatibility.
+* Dev - WPFactory Recommendations - Library updated (to v1.1.0).
+* Dev - WPFactory Admin Menu - Library updated (to v1.1.0).
+* Dev - WPFactory Key Manager - Library updated (to v1.0.8).
+* Deploy script updated.
+* Tested up to: 6.9.
+* WC tested up to: 10.7.
 
 = 5.5.2 - 05/11/2025 =
 * Fix - Admin product edit page - "Generate" button - Save generated EAN for the product variations.
