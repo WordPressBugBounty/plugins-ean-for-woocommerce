@@ -1,0 +1,12 @@
+/**
+ * EAN for WooCommerce - Product Columns CSS
+ *
+ * @version 5.5.5
+ * @since   5.5.5
+ *
+ * @author  WPFactory
+ */
+
+.column-ean {
+	width: 10%;
+}
