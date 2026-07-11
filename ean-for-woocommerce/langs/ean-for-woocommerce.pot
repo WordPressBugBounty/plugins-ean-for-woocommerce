@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.5.7\n"
+"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.5.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ean-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-25T09:20:08+00:00\n"
+"POT-Creation-Date: 2026-07-11T12:11:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ean-for-woocommerce\n"
@@ -191,61 +191,61 @@ msgstr ""
 msgid "EAN added for %s order items."
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-product-tools.php:98
+#: includes/class-wpfactory-wc-ean-product-tools.php:100
 msgid "Are you sure?"
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-product-tools.php:233
+#: includes/class-wpfactory-wc-ean-product-tools.php:235
 #: includes/settings/class-wpfactory-wc-ean-settings-tools.php:467
 #: includes/settings/class-wpfactory-wc-ean-settings-tools.php:478
 msgid "Generate EAN"
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-product-tools.php:234
+#: includes/class-wpfactory-wc-ean-product-tools.php:236
 #: includes/settings/class-wpfactory-wc-ean-settings-tools.php:468
 #: includes/settings/class-wpfactory-wc-ean-settings-tools.php:479
 msgid "Delete EAN"
 msgstr ""
 
 #. Translators: %s: Number of products.
-#: includes/class-wpfactory-wc-ean-product-tools.php:361
+#: includes/class-wpfactory-wc-ean-product-tools.php:363
 msgid "EAN deleted for %s products."
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-product-tools.php:581
-#: includes/class-wpfactory-wc-ean-product-tools.php:612
+#: includes/class-wpfactory-wc-ean-product-tools.php:622
+#: includes/class-wpfactory-wc-ean-product-tools.php:653
 msgid "Please set the \"Meta key\" option."
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-product-tools.php:588
+#: includes/class-wpfactory-wc-ean-product-tools.php:629
 msgid "Please set the \"Product attribute\" option."
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-product-tools.php:592
+#: includes/class-wpfactory-wc-ean-product-tools.php:633
 msgid "Please set the \"Custom product attribute\" option."
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-product-tools.php:601
+#: includes/class-wpfactory-wc-ean-product-tools.php:642
 msgid "Please set the \"List\" option."
 msgstr ""
 
 #. Translators: %1$s: Number of products, %2$s: Total number of products.
-#: includes/class-wpfactory-wc-ean-product-tools.php:728
+#: includes/class-wpfactory-wc-ean-product-tools.php:769
 msgid "EAN generated for %1$s products (%2$s total products)."
 msgstr ""
 
 #. Translators: %1$s: Number of products, %2$s: Total number of products.
-#: includes/class-wpfactory-wc-ean-product-tools.php:732
+#: includes/class-wpfactory-wc-ean-product-tools.php:773
 msgid "EAN assigned for %1$s products (%2$s total products)."
 msgstr ""
 
 #. Translators: %1$s: Number of products, %2$s: Total number of products.
-#: includes/class-wpfactory-wc-ean-product-tools.php:736
+#: includes/class-wpfactory-wc-ean-product-tools.php:777
 msgid "%1$s products without EAN (%2$s total products)."
 msgstr ""
 
 #. Translators: %1$s: Number of products, %2$s: Total number of products.
-#: includes/class-wpfactory-wc-ean-product-tools.php:740
+#: includes/class-wpfactory-wc-ean-product-tools.php:781
 msgid "EAN copied for %1$s products (%2$s total products)."
 msgstr ""
 

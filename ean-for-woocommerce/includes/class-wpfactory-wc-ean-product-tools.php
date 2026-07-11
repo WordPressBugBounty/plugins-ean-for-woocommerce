@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Product Tools Class
  *
- * @version 5.5.6
+ * @version 5.5.8
  * @since   2.1.0
  *
  * @author  WPFactory
@@ -17,7 +17,7 @@ class WPFactory_WC_EAN_Product_Tools {
 	/**
 	 * Constructor.
 	 *
-	 * @version 5.5.5
+	 * @version 5.5.8
 	 * @since   2.1.0
 	 *
 	 * @todo    (dev) split into more files/classes, e.g., `class-wpfactory-wc-ean-crons.php`?
@@ -31,7 +31,9 @@ class WPFactory_WC_EAN_Product_Tools {
 		add_action( 'alg_wc_ean_settings_saved', array( $this, 'products_create' ) );
 
 		// Automatic actions
-		add_action( 'wp_insert_post', array( $this, 'product_on_insert_post' ), PHP_INT_MAX, 3 );
+		add_action( 'wp_insert_post', array( $this, 'on_insert_post_product' ), PHP_INT_MAX, 3 );
+		add_action( 'woocommerce_new_product', array( $this, 'on_new_product' ), PHP_INT_MAX );
+		add_action( 'woocommerce_update_product', array( $this, 'on_update_product' ), PHP_INT_MAX );
 
 		// Periodic action
 		if ( '' !== get_option( 'alg_wc_ean_products_periodic_action', '' ) ) {
@@ -392,24 +394,63 @@ class WPFactory_WC_EAN_Product_Tools {
 	}
 
 	/**
-	 * product_on_insert_post.
+	 * on_insert_post_product.
 	 *
-	 * @version 5.5.6
+	 * @version 5.5.8
+	 * @since   5.5.8
+	 */
+	function on_insert_post_product( $post_id, $post, $update ) {
+		$this->on_create_update_product( $post_id, $post->post_type, $update );
+	}
+
+	/**
+	 * on_new_product.
+	 *
+	 * @version 5.5.8
+	 * @since   5.5.8
+	 *
+	 * @todo    (v5.5.8) `woocommerce_create_product_variation`?
+	 */
+	function on_new_product( $product_id ) {
+		$this->on_create_update_product( $product_id, 'product', false );
+	}
+
+	/**
+	 * on_update_product.
+	 *
+	 * @version 5.5.8
+	 * @since   5.5.8
+	 *
+	 * @todo    (v5.5.8) `woocommerce_update_product_variation`?
+	 */
+	function on_update_product( $product_id ) {
+		$this->on_create_update_product( $product_id, 'product', true );
+	}
+
+	/**
+	 * on_create_update_product.
+	 *
+	 * @version 5.5.8
 	 * @since   2.2.8
 	 *
 	 * @todo    (dev) merge with `products_create()`?
 	 * @todo    (dev) stop on first `update_post_meta`?
 	 * @todo    (dev) `copy_to_variations`: copy empty value as well?
 	 * @todo    (desc) `copy_to_variations`: `alg_wc_ean_tool_product_variable` option is ignored - add a note somewhere?
-	 * @todo    (feature) `copy_to_variations`: all products (i.e., not only `product_on_insert_post()`)?
+	 * @todo    (feature) `copy_to_variations`: all products?
 	 */
-	function product_on_insert_post( $post_id, $post, $update ) {
+	function on_create_update_product( $post_id, $post_type, $update ) {
 
-		$action = get_option( ( $update ? 'alg_wc_ean_tool_product_action_on_update' : 'alg_wc_ean_tool_product_action_on_new' ), '' );
+		$option = (
+			$update ?
+			'alg_wc_ean_tool_product_action_on_update' :
+			'alg_wc_ean_tool_product_action_on_new'
+		);
+		$action = get_option( $option, '' );
 
 		if (
 			! empty( $action ) &&
-			in_array( $post->post_type, array( 'product', 'product_variation' ) ) &&
+			in_array( $post_type, array( 'product', 'product_variation' ) ) &&
 			$this->is_valid_product( $post_id, $action ) &&
 			( $product = wc_get_product( $post_id ) )
 		) {
@@ -493,7 +534,7 @@ class WPFactory_WC_EAN_Product_Tools {
 					}
 
 					// Prevent the new EAN from being overwritten by the variation's `input` field on the product edit page
-					if ( 'product_variation' === $post->post_type && isset( wpfactory_wc_ean()->core->edit ) ) {
+					if ( 'product_variation' === $post_type && isset( wpfactory_wc_ean()->core->edit ) ) {
 						remove_action( 'woocommerce_save_product_variation', array( wpfactory_wc_ean()->core->edit, 'save_ean_input_variation' ), 10 );
 					}
 

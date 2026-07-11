@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 5.5.8 - 11/07/2026 =
+* Dev - Product Tools - Automatic actions - New actions added (`woocommerce_new_product` and `woocommerce_update_product`).
+
 = 5.5.7 - 25/06/2026 =
 * Dev - Security - Nonce added (generate button AJAX).
 * WC tested up to: 10.9.
