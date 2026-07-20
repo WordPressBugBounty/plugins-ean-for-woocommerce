@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Compatibility Class
  *
- * @version 5.5.7
+ * @version 5.5.9
  * @since   2.2.0
  *
  * @author  WPFactory
@@ -630,12 +630,19 @@ class WPFactory_WC_EAN_Compatibility {
 	/**
 	 * wcfm_generate_button_ajax.
 	 *
-	 * @version 5.5.6
+	 * @version 5.5.9
 	 * @since   5.5.5
 	 *
 	 * @todo    (v5.5.5) check for `'yes' === get_option( 'alg_wc_ean_wcfm_add_generate_button', 'no' )`?
 	 */
 	function wcfm_generate_button_ajax() {
+		if (
+			! isset( $_POST['generate_action'] ) || // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Nonce verification is handled in `WPFactory_WC_EAN_Edit::generate_button_ajax()`.
+			'generate' !== sanitize_text_field( wp_unslash( $_POST['generate_action'] ) ) // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Nonce verification is handled in `WPFactory_WC_EAN_Edit::generate_button_ajax()`.
+		) {
+			die();
+		}
+
 		WPFactory_WC_EAN_Edit::generate_button_ajax();
 	}
 

@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Edit Class
  *
- * @version 5.5.7
+ * @version 5.5.9
  * @since   2.0.0
  *
  * @author  WPFactory
@@ -15,16 +15,17 @@ if ( ! class_exists( 'WPFactory_WC_EAN_Edit' ) ) :
 class WPFactory_WC_EAN_Edit {
 
 	/**
-	 * do_add_generate_button.
+	 * do_add_generate_buttons.
 	 *
-	 * @version 4.8.7
+	 * @version 5.5.9
+	 * @since   4.8.7
 	 */
-	public $do_add_generate_button;
+	public $do_add_generate_buttons = array();
 
 	/**
 	 * Constructor.
 	 *
-	 * @version 5.5.6
+	 * @version 5.5.9
 	 * @since   2.0.0
 	 *
 	 * @todo    (dev) position: new tab (for both simple and variable products)
@@ -86,12 +87,15 @@ class WPFactory_WC_EAN_Edit {
 				array( $this, 'add_quick_edit_js' )
 			);
 
-			// "Generate" button
-			$this->do_add_generate_button = ( 'yes' === get_option( 'alg_wc_ean_backend_add_generate_button', 'no' ) );
-			if ( $this->do_add_generate_button ) {
+			// "Generate" and "Assign from the list" buttons
+			$this->do_add_generate_buttons = array(
+				'generate'             => ( 'yes' === get_option( 'alg_wc_ean_backend_add_generate_button', 'no' ) ),
+				'assign_from_the_list' => ( 'yes' === get_option( 'alg_wc_ean_backend_add_assign_from_the_list_button', 'no' ) ),
+			);
+			if ( in_array( true, $this->do_add_generate_buttons, true ) ) {
 				add_action(
 					'admin_enqueue_scripts',
-					array( $this, 'add_generate_button' )
+					array( $this, 'add_generate_button_script' )
 				);
 				add_action(
 					'wp_ajax_wpfactory_wc_ean_generate_ajax',
@@ -150,12 +154,12 @@ class WPFactory_WC_EAN_Edit {
 	}
 
 	/**
-	 * add_generate_button.
+	 * add_generate_button_script.
 	 *
-	 * @version 5.5.7
+	 * @version 5.5.9
 	 * @since   4.0.0
 	 */
-	function add_generate_button() {
+	function add_generate_button_script() {
 		if (
 			! is_admin() ||
 			! function_exists( 'get_current_screen' ) ||
@@ -186,7 +190,7 @@ class WPFactory_WC_EAN_Edit {
 	/**
 	 * generate_button_ajax.
 	 *
-	 * @version 5.5.7
+	 * @version 5.5.9
 	 * @since   4.0.0
 	 */
 	static function generate_button_ajax() {
@@ -200,10 +204,29 @@ class WPFactory_WC_EAN_Edit {
 			die();
 		}
 
-		$ean = wpfactory_wc_ean()->core->product_tools->generate_ean(
-			intval( $_POST['product'] ?? 0 ), // phpcs:ignore WordPress.Security.NonceVerification.Missing
-			wpfactory_wc_ean()->core->product_tools->get_generate_data()
-		);
+		$ean = '';
+
+		$generate_action = sanitize_text_field( wp_unslash( $_POST['generate_action'] ?? '' ) );
+		switch ( $generate_action ) {
+
+			case 'assign_from_the_list':
+				$data = get_option( 'alg_wc_ean_tool_product_assign_list', '' );
+				if ( '' !== $data ) {
+					$data = array_map( 'trim', explode( PHP_EOL, $data ) );
+					$ean  = array_shift( $data );
+					$data = ( empty( $data ) ? '' : implode( PHP_EOL, $data ) );
+					update_option( 'alg_wc_ean_tool_product_assign_list', $data );
+				}
+				break;
+
+			default: // 'generate'
+				$ean = wpfactory_wc_ean()->core->product_tools->generate_ean(
+					intval( $_POST['product'] ?? 0 ),
+					wpfactory_wc_ean()->core->product_tools->get_generate_data()
+				);
+
+		}
+
 		echo esc_html( $ean );
 		die();
 	}
@@ -211,31 +234,54 @@ class WPFactory_WC_EAN_Edit {
 	/**
 	 * get_generate_button.
 	 *
-	 * @version 5.5.6
+	 * @version 5.5.9
 	 * @since   4.0.0
-	 *
-	 * @todo    (dev) spinner: styling?
-	 * @todo    (dev) spinner: `float: none;`?
-	 * @todo    (dev) spinner: wcfm
 	 */
-	static function get_generate_button( $product_id, $input_html_id, $button_style = '' ) {
+	static function get_generate_button( $product_id, $input_html_id, $button_style = '', $generate_action = 'generate', $do_add_spinner = true ) {
+		switch ( $generate_action ) {
+
+			case 'assign_from_the_list':
+				/* Translators: %s: EAN title. */
+				$button_label = esc_html__( 'Assign %s from the list', 'ean-for-woocommerce' );
+				break;
+
+			default: // 'generate'
+				/* Translators: %s: EAN title. */
+				$button_label = esc_html__( 'Generate %s', 'ean-for-woocommerce' );
+
+		}
+		$button_label = sprintf(
+			$button_label,
+			get_option( 'alg_wc_ean_title', esc_html__( 'EAN', 'ean-for-woocommerce' ) )
+		);
+
 		return (
 			'<button' .
 				' style="' . $button_style . '"' .
 				' type="button"' .
-				' class="button' .
-				' wpfactory_wc_ean_generate_ajax"' .
+				' class="button wpfactory_wc_ean_generate_ajax"' .
 				' data-product="' . $product_id . '"' .
 				' data-input="' . $input_html_id . '"' .
+				' data-generate-action="' . $generate_action . '"' .
 			'>' .
-				sprintf(
-					/* Translators: %s: EAN title. */
-					esc_html__( 'Generate %s', 'ean-for-woocommerce' ),
-					get_option( 'alg_wc_ean_title', esc_html__( 'EAN', 'ean-for-woocommerce' ) )
-				) .
-			'</button>' .
-			'<span class="spinner" id="spinner-' . $input_html_id . '" style="float:none;"></span>'
+				$button_label .
+			'</button> ' .
+			( $do_add_spinner ? self::get_generate_button_spinner( $input_html_id ) : '' )
 		);
+	}
+
+	/**
+	 * get_generate_button_spinner.
+	 *
+	 * @version 5.5.9
+	 * @since   5.5.9
+	 *
+	 * @todo    (dev) styling?
+	 * @todo    (dev) `float: none;`?
+	 * @todo    (dev) wcfm
+	 */
+	static function get_generate_button_spinner( $input_html_id ) {
+		return '<span class="spinner" id="spinner-' . $input_html_id . '" style="float:none;margin:10px 10px 10px 5px;"></span>';
 	}
 
 	/**
@@ -376,31 +422,45 @@ class WPFactory_WC_EAN_Edit {
 	/**
 	 * add_ean_input_variation.
 	 *
-	 * @version 5.5.6
+	 * @version 5.5.9
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) `variable{$key}` to `variable_{$key}`?
 	 */
 	function add_ean_input_variation( $loop, $variation_data, $variation ) {
 		$key = wpfactory_wc_ean()->core->ean_key;
+
+		$description = '';
+		if ( ! empty( $variation_data[ $key ][0] ) ) {
+			$description = $this->get_ean_input_desc( $variation_data[ $key ][0], $variation->ID );
+		} elseif ( in_array( true, $this->do_add_generate_buttons, true ) ) {
+			$description .= '<p>';
+			foreach ( $this->do_add_generate_buttons as $generate_action => $is_enabled ) {
+				if ( $is_enabled ) {
+					$description .= $this->get_generate_button(
+						$variation->ID,
+						"variable{$key}_{$loop}",
+						'',
+						$generate_action,
+						false
+					);
+				}
+			}
+			$description .= self::get_generate_button_spinner( "variable{$key}_{$loop}" );
+			$description .= '</p>';
+		}
+
 		woocommerce_wp_text_input( array(
 			'id'                => "variable{$key}_{$loop}",
 			'name'              => "variable{$key}[{$loop}]",
-			'value'             => ( isset( $variation_data[ $key ][0] ) ? $variation_data[ $key ][0] : '' ),
+			'value'             => ( $variation_data[ $key ][0] ?? '' ),
 			'label'             => esc_html( get_option( 'alg_wc_ean_title', __( 'EAN', 'ean-for-woocommerce' ) ) ),
 			'wrapper_class'     => 'form-row form-row-full',
 			'placeholder'       => wpfactory_wc_ean()->core->get_ean( $variation->post_parent ),
-			'description'       => (
-				! empty( $variation_data[ $key ][0] ) ?
-				$this->get_ean_input_desc( $variation_data[ $key ][0], $variation->ID ) :
-				(
-					$this->do_add_generate_button ?
-					'<p>' . $this->get_generate_button( $variation->ID, "variable{$key}_{$loop}" ) . '</p>' :
-					''
-				)
-			),
+			'description'       => $description,
 			'custom_attributes' => $this->get_ean_input_custom_atts( $variation->ID ),
 		) );
+
 		wp_nonce_field(
 			'alg_wc_ean_save_input_variation',
 			'_alg_wc_ean_save_input_variation_nonce_' . $variation->ID
@@ -443,7 +503,7 @@ class WPFactory_WC_EAN_Edit {
 	/**
 	 * add_ean_input.
 	 *
-	 * @version 5.5.6
+	 * @version 5.5.9
 	 * @since   1.0.0
 	 *
 	 * @todo    (v5.5.5) generate button: `empty( $value )` (also for variations)?
@@ -451,21 +511,33 @@ class WPFactory_WC_EAN_Edit {
 	function add_ean_input() {
 		$product_id = get_the_ID();
 		$value      = wpfactory_wc_ean()->core->get_ean( $product_id );
+
+		$description = '';
+		if ( ! empty( $value ) ) {
+			$description = $this->get_ean_input_desc( $value, $product_id );
+		} elseif ( in_array( true, $this->do_add_generate_buttons, true ) ) {
+			foreach ( $this->do_add_generate_buttons as $generate_action => $is_enabled ) {
+				if ( $is_enabled ) {
+					$description .= $this->get_generate_button(
+						$product_id,
+						wpfactory_wc_ean()->core->ean_key,
+						'margin-top:5px;',
+						$generate_action,
+						false
+					);
+				}
+			}
+			$description .= self::get_generate_button_spinner( wpfactory_wc_ean()->core->ean_key );
+		}
+
 		woocommerce_wp_text_input( array(
 			'id'                => wpfactory_wc_ean()->core->ean_key,
 			'value'             => $value,
 			'label'             => esc_html( get_option( 'alg_wc_ean_title', __( 'EAN', 'ean-for-woocommerce' ) ) ),
-			'description'       => (
-				! empty( $value ) ?
-				$this->get_ean_input_desc( $value, $product_id ) :
-				(
-					$this->do_add_generate_button ?
-					$this->get_generate_button( $product_id, wpfactory_wc_ean()->core->ean_key, 'margin-top:5px;' ) :
-					''
-				)
-			),
+			'description'       => $description,
 			'custom_attributes' => $this->get_ean_input_custom_atts( $product_id ),
 		) );
+
 		wp_nonce_field(
 			'alg_wc_ean_save_input',
 			'_alg_wc_ean_save_input_nonce'

@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Tools Section Settings
  *
- * @version 5.5.6
+ * @version 5.5.9
  * @since   2.2.5
  *
  * @author  WPFactory
@@ -105,7 +105,7 @@ class WPFactory_WC_EAN_Settings_Tools extends WPFactory_WC_EAN_Settings_Section 
 	/**
 	 * get_settings.
 	 *
-	 * @version 5.5.5
+	 * @version 5.5.9
 	 * @since   2.2.5
 	 *
 	 * @todo    (dev) Generate: Type: `EAN14`
@@ -304,6 +304,17 @@ class WPFactory_WC_EAN_Settings_Tools extends WPFactory_WC_EAN_Settings_Section 
 				'type'     => 'checkbox',
 			),
 			array(
+				'desc'     => __( 'Add "Assign from the list" button', 'ean-for-woocommerce' ),
+				'desc_tip' => sprintf(
+					/* Translators: %s: EAN title. */
+					__( 'This will add "Assign %s from the list" button to the admin product edit pages.', 'ean-for-woocommerce' ),
+					get_option( 'alg_wc_ean_title', __( 'EAN', 'ean-for-woocommerce' ) )
+				),
+				'id'       => 'alg_wc_ean_backend_add_assign_from_the_list_button',
+				'default'  => 'no',
+				'type'     => 'checkbox',
+			),
+			array(
 				'desc'     => __( 'Product categories', 'ean-for-woocommerce' ),
 				'desc_tip' => __( 'Sets which product categories to include when assigning the EANs (i.e., all other categories will be skipped).', 'ean-for-woocommerce' ) . ' ' .
 					__( 'Leave blank to use all product categories.', 'ean-for-woocommerce' ),
@@ -319,6 +330,13 @@ class WPFactory_WC_EAN_Settings_Tools extends WPFactory_WC_EAN_Settings_Section 
 				'id'       => 'alg_wc_ean_tool_product_assign_list_settings[reuse_deleted]',
 				'default'  => 'no',
 				'type'     => 'checkbox',
+			),
+			array(
+				'desc'     => __( 'Reuse deleted: Prefix', 'ean-for-woocommerce' ),
+				'desc_tip' => __( 'Reuse deleted EAN only if it starts with a specified prefix. Leave empty to reuse all EANs.', 'ean-for-woocommerce' ),
+				'id'       => 'alg_wc_ean_tool_product_assign_list_settings[reuse_deleted_prefix]',
+				'default'  => '',
+				'type'     => 'text',
 			),
 			array(
 				'desc'     => __( 'List', 'ean-for-woocommerce' ),

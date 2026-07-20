@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Product Tools Class
  *
- * @version 5.5.8
+ * @version 5.5.9
  * @since   2.1.0
  *
  * @author  WPFactory
@@ -106,22 +106,56 @@ class WPFactory_WC_EAN_Product_Tools {
 	/**
 	 * reuse_deleted.
 	 *
-	 * @version 5.5.6
+	 * @version 5.5.9
 	 * @since   3.7.0
 	 *
 	 * @todo    (dev) `product_variation` + `alg_wc_ean_tool_product_variable`?
 	 * @todo    (feature) add option to add to the end of the list (i.e., not to the beginning of the list, as it is now)
 	 */
 	function reuse_deleted( $postid, $post ) {
+		// Check settings
 		$assign_list_settings = get_option( 'alg_wc_ean_tool_product_assign_list_settings', array() );
 		if (
-			! empty( $assign_list_settings['reuse_deleted'] ) && 'yes' === $assign_list_settings['reuse_deleted'] &&
-			in_array( $post->post_type, array( 'product', 'product_variation' ) ) &&
-			'' !== ( $ean = get_post_meta( $postid, wpfactory_wc_ean()->core->ean_key, true ) )
+			empty( $assign_list_settings['reuse_deleted'] ) ||
+			'yes' !== $assign_list_settings['reuse_deleted']
 		) {
-			$data = ( '' !== ( $data = get_option( 'alg_wc_ean_tool_product_assign_list', '' ) ) ? array_map( 'trim', explode( PHP_EOL, $data ) ) : array() );
-			update_option( 'alg_wc_ean_tool_product_assign_list', implode( PHP_EOL, array_merge( array( $ean ), $data ) ) );
+			return;
 		}
+
+		// Check post type
+		if ( ! in_array( $post->post_type, array( 'product', 'product_variation' ), true ) ) {
+			return;
+		}
+
+		// Check ean
+		$ean = get_post_meta( $postid, wpfactory_wc_ean()->core->ean_key, true );
+		if ( '' === $ean ) {
+			return;
+		}
+
+		// Check prefix
+		if (
+			! empty( $assign_list_settings['reuse_deleted_prefix'] ) &&
+			0 !== strpos( $ean, $assign_list_settings['reuse_deleted_prefix'] )
+		) {
+			return;
+		}
+
+		// Check filter
+		if ( ! apply_filters( 'alg_wc_ean_tool_product_assign_list_reuse_deleted', true, $postid, $ean ) ) {
+			return;
+		}
+
+		// Add to the list
+		$data = (
+			'' !== ( $data = get_option( 'alg_wc_ean_tool_product_assign_list', '' ) ) ?
+			array_map( 'trim', explode( PHP_EOL, $data ) ) :
+			array()
+		);
+		update_option(
+			'alg_wc_ean_tool_product_assign_list',
+			implode( PHP_EOL, array_merge( array( $ean ), $data ) )
+		);
 	}
 
 	/**
@@ -430,7 +464,7 @@ class WPFactory_WC_EAN_Product_Tools {
 	/**
 	 * on_create_update_product.
 	 *
-	 * @version 5.5.8
+	 * @version 5.5.9
 	 * @since   2.2.8
 	 *
 	 * @todo    (dev) merge with `products_create()`?
@@ -577,8 +611,20 @@ class WPFactory_WC_EAN_Product_Tools {
 								}
 								$_value[ $data['sub_keys'][ $i ] ] = $current_ean;
 								update_post_meta( $post_id, $key, $_value );
+								do_action(
+									'alg_wc_ean_tool_on_create_update_product_copy_to_meta',
+									$post_id,
+									$key,
+									$_value
+								);
 							} else {
 								update_post_meta( $post_id, $key, $current_ean );
+								do_action(
+									'alg_wc_ean_tool_on_create_update_product_copy_to_meta',
+									$post_id,
+									$key,
+									$current_ean
+								);
 							}
 						}
 						break;

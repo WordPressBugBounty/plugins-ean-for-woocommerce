@@ -3,7 +3,7 @@ Contributors: wpcodefactory, anbinder, karzin, omardabbas
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 5.7
 Tested up to: 7.0
-Stable tag: 5.5.8
+Stable tag: 5.5.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,13 @@ Once activated, access the plugin's settings by navigating to the "WPFactory" me
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.5.9 - 20/07/2026 =
+* Dev - Product Tools - Assign from the list - Reuse deleted - "Prefix" option added.
+* Dev - Product Tools - Assign from the list - 'Add "Assign from the list" button' option added (defaults to `no`).
+* Dev - Developers - `alg_wc_ean_tool_product_assign_list_reuse_deleted` filter added.
+* Dev - Developers - `alg_wc_ean_tool_on_create_update_product_copy_to_meta` action added.
+* Dev - Code refactoring.
 
 = 5.5.8 - 11/07/2026 =
 * Dev - Product Tools - Automatic actions - New actions added (`woocommerce_new_product` and `woocommerce_update_product`).

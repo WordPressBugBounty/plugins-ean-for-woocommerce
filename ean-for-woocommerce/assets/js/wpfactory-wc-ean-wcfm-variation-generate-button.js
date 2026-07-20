@@ -1,7 +1,7 @@
 /**
  * EAN for WooCommerce - WCFM Variation Generate Button JS
  *
- * @version 5.5.6
+ * @version 5.5.9
  * @since   5.5.5
  *
  * @author  WPFactory
@@ -23,6 +23,7 @@ jQuery( document ).ready( function () {
 					' class="button wpfactory_wc_ean_generate_ajax wcfm_ele variable variable-subscription pw-gift-card"' +
 					' data-product="' + variation_id + '"' +
 					' data-input="' + input_id + '"' +
+					' data-generate-action="generate"' +
 				'>' +
 					wpfactoryWCEANWCFMVariationGenerateButton.buttonLabel +
 				'</button>' +
