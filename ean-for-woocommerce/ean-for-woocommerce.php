@@ -3,13 +3,13 @@
 Plugin Name: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory
 Plugin URI: https://wpfactory.com/item/ean-for-woocommerce/
 Description: Manage product GTIN (EAN, UPC, ISBN, etc.) in WooCommerce. Beautifully.
-Version: 5.5.9
+Version: 5.6.0
 Author: WPFactory
 Author URI: https://wpfactory.com
 Requires at least: 5.7
 Text Domain: ean-for-woocommerce
 Domain Path: /langs
-WC tested up to: 10.9
+WC tested up to: 11.0
 Requires Plugins: woocommerce
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -48,7 +48,7 @@ if ( 'ean-for-woocommerce.php' === basename( __FILE__ ) ) {
  * @version 5.5.6
  * @since   1.0.0
  */
-defined( 'WPFACTORY_WC_EAN_VERSION' ) || define( 'WPFACTORY_WC_EAN_VERSION', '5.5.9' );
+defined( 'WPFACTORY_WC_EAN_VERSION' ) || define( 'WPFACTORY_WC_EAN_VERSION', '5.6.0' );
 
 /**
  * WPFACTORY_WC_EAN_FILE.

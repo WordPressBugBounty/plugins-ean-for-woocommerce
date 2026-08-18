@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 5.6.0 - 17/08/2026 =
+* Fix - Products Tools - Bulk actions confirmation JS error fixed.
+* WC tested up to: 11.0.
+
 = 5.5.9 - 20/07/2026 =
 * Dev - Product Tools - Assign from the list - Reuse deleted - "Prefix" option added.
 * Dev - Product Tools - Assign from the list - 'Add "Assign from the list" button' option added (defaults to `no`).

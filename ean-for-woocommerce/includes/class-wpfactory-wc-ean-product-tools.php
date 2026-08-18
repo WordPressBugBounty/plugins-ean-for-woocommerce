@@ -2,7 +2,7 @@
 /**
  * EAN for WooCommerce - Product Tools Class
  *
- * @version 5.5.9
+ * @version 5.6.0
  * @since   2.1.0
  *
  * @author  WPFactory
@@ -56,7 +56,7 @@ class WPFactory_WC_EAN_Product_Tools {
 	/**
 	 * bulk_actions_confirmation_js.
 	 *
-	 * @version 5.5.6
+	 * @version 5.6.0
 	 * @since   4.1.2
 	 */
 	function bulk_actions_confirmation_js() {
@@ -98,7 +98,7 @@ class WPFactory_WC_EAN_Product_Tools {
 			'wpfactoryWCEANBulkActionsConfirmation',
 			array(
 				'message'    => __( 'Are you sure?', 'ean-for-woocommerce' ),
-				'confirmIDs' => $confirm_ids,
+				'confirmIDs' => array_values( $confirm_ids ),
 			),
 		);
 	}
