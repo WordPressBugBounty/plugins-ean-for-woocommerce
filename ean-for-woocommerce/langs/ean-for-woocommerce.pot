@@ -2,21 +2,21 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.6.0\n"
+"Project-Id-Version: EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory 5.6.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ean-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-17T23:42:41+00:00\n"
+"POT-Creation-Date: 2026-11-19T09:57:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ean-for-woocommerce\n"
 
 #. Plugin Name of the plugin
 #: ean-for-woocommerce.php
-#: includes/class-wpfactory-wc-ean.php:245
+#: includes/class-wpfactory-wc-ean.php:254
 msgid "EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory"
 msgstr ""
 
@@ -40,22 +40,22 @@ msgstr ""
 msgid "https://wpfactory.com"
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-compatibility.php:358
+#: includes/class-wpfactory-wc-ean-compatibility.php:377
 #: includes/settings/class-wpfactory-wc-ean-settings-compatibility.php:399
 msgid "EAN:"
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-compatibility.php:376
-#: includes/class-wpfactory-wc-ean-compatibility.php:420
-#: includes/class-wpfactory-wc-ean-compatibility.php:512
-#: includes/class-wpfactory-wc-ean-compatibility.php:527
-#: includes/class-wpfactory-wc-ean-compatibility.php:546
-#: includes/class-wpfactory-wc-ean-compatibility.php:587
-#: includes/class-wpfactory-wc-ean-compatibility.php:720
-#: includes/class-wpfactory-wc-ean-compatibility.php:798
-#: includes/class-wpfactory-wc-ean-compatibility.php:823
-#: includes/class-wpfactory-wc-ean-compatibility.php:884
-#: includes/class-wpfactory-wc-ean-compatibility.php:943
+#: includes/class-wpfactory-wc-ean-compatibility.php:399
+#: includes/class-wpfactory-wc-ean-compatibility.php:456
+#: includes/class-wpfactory-wc-ean-compatibility.php:579
+#: includes/class-wpfactory-wc-ean-compatibility.php:602
+#: includes/class-wpfactory-wc-ean-compatibility.php:634
+#: includes/class-wpfactory-wc-ean-compatibility.php:690
+#: includes/class-wpfactory-wc-ean-compatibility.php:832
+#: includes/class-wpfactory-wc-ean-compatibility.php:915
+#: includes/class-wpfactory-wc-ean-compatibility.php:944
+#: includes/class-wpfactory-wc-ean-compatibility.php:1023
+#: includes/class-wpfactory-wc-ean-compatibility.php:1088
 #: includes/class-wpfactory-wc-ean-core.php:182
 #: includes/class-wpfactory-wc-ean-display.php:203
 #: includes/class-wpfactory-wc-ean-display.php:209
@@ -66,7 +66,7 @@ msgstr ""
 #: includes/class-wpfactory-wc-ean-edit.php:536
 #: includes/class-wpfactory-wc-ean-orders.php:52
 #: includes/class-wpfactory-wc-ean-product-block-editor.php:77
-#: includes/class-wpfactory-wc-ean.php:243
+#: includes/class-wpfactory-wc-ean.php:252
 #: includes/settings/class-wpfactory-wc-ean-settings-compatibility.php:164
 #: includes/settings/class-wpfactory-wc-ean-settings-compatibility.php:235
 #: includes/settings/class-wpfactory-wc-ean-settings-compatibility.php:310
@@ -81,28 +81,28 @@ msgstr ""
 msgid "EAN"
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-compatibility.php:602
-#: includes/class-wpfactory-wc-ean-compatibility.php:729
+#: includes/class-wpfactory-wc-ean-compatibility.php:705
+#: includes/class-wpfactory-wc-ean-compatibility.php:841
 #: includes/settings/class-wpfactory-wc-ean-settings-compatibility.php:367
 msgid "The International Article Number (also known as European Article Number or EAN) is a standard describing a barcode symbology and numbering system used in global trade to identify a specific retail product type, in a specific packaging configuration, from a specific manufacturer."
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean-compatibility.php:608
-#: includes/class-wpfactory-wc-ean-compatibility.php:735
-#: includes/class-wpfactory-wc-ean-compatibility.php:888
+#: includes/class-wpfactory-wc-ean-compatibility.php:711
+#: includes/class-wpfactory-wc-ean-compatibility.php:847
+#: includes/class-wpfactory-wc-ean-compatibility.php:1027
 #: includes/settings/class-wpfactory-wc-ean-settings-compatibility.php:316
 #: includes/settings/class-wpfactory-wc-ean-settings-compatibility.php:361
 msgid "Product EAN..."
 msgstr ""
 
 #. Translators: %s: EAN title.
-#: includes/class-wpfactory-wc-ean-compatibility.php:797
+#: includes/class-wpfactory-wc-ean-compatibility.php:914
 #: includes/class-wpfactory-wc-ean-edit.php:250
 msgid "Generate %s"
 msgstr ""
 
 #. Translators: %s: EAN.
-#: includes/class-wpfactory-wc-ean-compatibility.php:965
+#: includes/class-wpfactory-wc-ean-compatibility.php:1116
 #: includes/class-wpfactory-wc-ean-search.php:226
 msgid "EAN: %s"
 msgstr ""
@@ -144,17 +144,17 @@ msgid "Nonce verification failed."
 msgstr ""
 
 #. Translators: %s: Number of options.
-#: includes/class-wpfactory-wc-ean-manage-settings.php:44
+#: includes/class-wpfactory-wc-ean-manage-settings.php:52
 msgid "Settings reset: %d option(s) deleted."
 msgstr ""
 
 #. Translators: %s: Number of options.
-#: includes/class-wpfactory-wc-ean-manage-settings.php:91
+#: includes/class-wpfactory-wc-ean-manage-settings.php:106
 msgid "Settings imported: %d option(s) updated."
 msgstr ""
 
 #. Translators: %s: Error message.
-#: includes/class-wpfactory-wc-ean-manage-settings.php:102
+#: includes/class-wpfactory-wc-ean-manage-settings.php:115
 msgid "Import file error: %s"
 msgstr ""
 
@@ -255,11 +255,11 @@ msgstr ""
 msgid "EAN copied for %1$s products (%2$s total products)."
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean.php:187
+#: includes/class-wpfactory-wc-ean.php:198
 msgid "Settings"
 msgstr ""
 
-#: includes/class-wpfactory-wc-ean.php:196
+#: includes/class-wpfactory-wc-ean.php:207
 msgid "Go Pro"
 msgstr ""
 

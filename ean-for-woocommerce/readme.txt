@@ -2,8 +2,9 @@
 Contributors: wpcodefactory, anbinder, karzin, omardabbas
 Tags: woocommerce, ean, gtin, barcode, upc
 Requires at least: 5.7
-Tested up to: 7.0
-Stable tag: 5.6.0
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 5.6.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +192,15 @@ Once activated, access the plugin's settings by navigating to the "WPFactory" me
 5. EAN for WooCommerce - Tools
 
 == Changelog ==
+
+= 5.6.1 - 19/11/2026 =
+* Dev - Coding standards improved.
+* Dev - WPFactory Admin Menu - Library updated (to v1.1.4).
+* Dev - WPFactory Cross-Selling - Library updated (to v1.1.7).
+* Dev - WPFactory Key Manager - Library updated (to v1.1.1).
+* Tested up to: 7.1.
+* WC tested up to: 11.3.
+* Requires PHP: 7.4.
 
 = 5.6.0 - 17/08/2026 =
 * Fix - Products Tools - Bulk actions confirmation JS error fixed.
